@@ -1,0 +1,32 @@
+format 212
+"cordova-plugin-file" // code::AppTestSALF::plugins::cordova-plugin-file
+  revision 1
+  modified_by 3 "camelia"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/AppTestSALF/plugins/cordova-plugin-file/"
+  cpp_src_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/AppTestSALF/plugins/cordova-plugin-file/"
+  package_ref 142595 // src
+end

@@ -1,0 +1,14 @@
+window_sizes 1879 1056 334 1539 893 104
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 154498 // dc
+    1231 714 100 A4 0 0
+end
+show_stereotypes
+selected class_ref 128156 // ClientTcp
+open
+  artifact_ref 128642 // BddSql
+  attribute_ref 128386 // configReseau
+  class_ref 128156 // ClientTcp
+end
+end

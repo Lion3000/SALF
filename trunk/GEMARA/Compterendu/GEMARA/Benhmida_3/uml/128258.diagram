@@ -1,0 +1,80 @@
+format 212
+
+classinstance 128386 class_ref 128130 // Regulateur
+  name ""   xyz 365.6 14.8 2000 life_line_z 2000
+classinstance 128514 class_ref 128258 // BaseDeDonnees
+  name ""   xyz 50.4 13.2 2000 life_line_z 2000
+classinstance 128642 class_ref 135170 // Systeme
+  name ""   xyz 212.8 23.2 2000 life_line_z 2000
+classinstance 128898 class_ref 128386 // Carrefour
+  name ""   xyz 598.6 19.8 2000 life_line_z 2000
+durationcanvas 128028 classinstance_ref 128386 // :Regulateur
+  xyzwh 400 86.7 2010 11 156
+end
+durationcanvas 128156 classinstance_ref 128642 // :Systeme
+  xyzwh 243 91.1 2010 11 151
+end
+durationcanvas 128924 classinstance_ref 128514 // :BaseDeDonnees
+  xyzwh 104 117 2010 11 116
+end
+durationcanvas 129692 classinstance_ref 128386 // :Regulateur
+  xyzwh 400 271 2010 11 40
+end
+durationcanvas 129820 classinstance_ref 128898 // :Carrefour
+  xyzwh 627 271 2010 11 25
+end
+durationcanvas 130076 classinstance_ref 128386 // :Regulateur
+  xyzwh 400 340 2010 11 40
+end
+durationcanvas 130204 classinstance_ref 128642 // :Systeme
+  xyzwh 243 339 2010 11 25
+end
+durationcanvas 130460 classinstance_ref 128642 // :Systeme
+  xyzwh 243 395 2010 11 40
+end
+durationcanvas 130588 classinstance_ref 128514 // :BaseDeDonnees
+  xyzwh 104 395 2010 11 25
+end
+msg 128284 asynchronous
+  from durationcanvas_ref 128028
+  to durationcanvas_ref 128156
+  yz 94.8 2015 explicitmsg "demanderCycle()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 271 73.8
+msg 129052 asynchronous
+  from durationcanvas_ref 128156
+  to durationcanvas_ref 128924
+  yz 122 2015 explicitmsg "extraireCycle"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 135 102
+msg 129436 return
+  from durationcanvas_ref 128924
+  to durationcanvas_ref 128156
+  yz 219 2015 explicitmsg "Cycle"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 159 199
+msg 129564 return
+  from durationcanvas_ref 128156
+  to durationcanvas_ref 128028
+  yz 222 2015 explicitmsg "Cycle"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 308 202
+msg 129948 asynchronous
+  from durationcanvas_ref 129692
+  to durationcanvas_ref 129820
+  yz 274 2015 explicitmsg "executeCycle()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 471 253
+msg 130332 asynchronous
+  from durationcanvas_ref 130076
+  to durationcanvas_ref 130204
+  yz 342 2015 explicitmsg "envoyerEtats()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 279 322
+msg 130716 asynchronous
+  from durationcanvas_ref 130460
+  to durationcanvas_ref 130588
+  yz 398 2015 explicitmsg "stockerEtat"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 141 378
+end

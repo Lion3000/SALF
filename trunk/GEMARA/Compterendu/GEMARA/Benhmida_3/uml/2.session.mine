@@ -1,0 +1,32 @@
+window_sizes 1879 1056 334 1539 893 104
+cleanlooks_style
+diagrams
+  usecasediagram_ref 128002 // dcuSystemCentral
+    1250 714 100 A4 0 0
+  sequencediagram_ref 128258 // dsSystemCentral
+    1250 714 100 A4 0 0
+  deploymentdiagram_ref 134531 // dd
+    1250 714 100 A4 12 0
+  classdiagram_ref 141314 // dc
+    961 587 100 A-Landscape 16 45
+  usecasediagram_ref 134787 // dcuRegulateur
+    499 692 100 A4 0 279
+  deploymentdiagram_ref 134786 // ddMaquette
+    1250 714 100 A4 72 0
+  objectdiagram_ref 147842 // do
+    1250 714 100 A4 0 0
+  objectdiagram_ref 154370 // do
+    124 120 100 A4 0 0
+  active  classdiagram_ref 154498 // dc
+    961 587 100 A4 12 0
+end
+show_stereotypes
+selected deploymentview_ref 128002 // vc_SystemeCentral
+open
+  artifact_ref 128642 // BddSql
+  attribute_ref 128386 // configReseau
+  artifact_ref 128130 // Regulateur
+  artifact_ref 128514 // ModbusTcp
+  artifact_ref 128258 // ComTcp
+end
+end

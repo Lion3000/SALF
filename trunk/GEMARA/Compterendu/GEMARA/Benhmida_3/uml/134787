@@ -1,0 +1,1008 @@
+format 212
+"CodeBidouille" // uml::Gemara::SALF::Code::CodeBidouille
+  revision 2
+  modified_by 3 "camelia"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "CodeBidouille/"
+  cpp_src_dir "CodeBidouille/"
+  classview 134659 "CodeBidouille"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 183299 "classeTest"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 163203 // <generalisation>
+	relation 163075 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 163203 // <generalisation>
+	  b parent class_ref 183427 // Observable
+      end
+
+      attribute 139139 "id"
+	protected explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 142467 "classeTest"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${class}::${name}${(}${)}${throw}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142595 "~classeTest"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${class}::${name}${(}${)}${throw}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142723 "getId"
+	preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142851 "changeId"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 142979 "notify"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 183427 "Observable"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 163331 // observers (<unidirectional association>)
+	relation 163203 --->
+	  stereotype "std::list"
+	  a role_name "observers" protected
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}*> ${name}${value};
+"
+	    classrelation_ref 163331 // observers (<unidirectional association>)
+	  b parent class_ref 183555 // Observer
+      end
+
+      class 183683 "iterator"
+	visibility package stereotype "typedef" base_type class_ref 183555 // Observer
+	cpp_decl "${comment}typedef std::list<${type}*>::iterator ${name};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	classrelation 163459 // <dependency>
+	  relation 163331 -_->
+	    a public
+	      cpp default "#include in source"
+	      classrelation_ref 163459 // <dependency>
+	    b parent class_ref 183555 // Observer
+	end
+      end
+
+      class 183811 "const_iterator"
+	visibility package stereotype "typedef" base_type class_ref 183555 // Observer
+	cpp_decl "${comment}typedef std::list<${type}*>::const_iterator ${name};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	classrelation 163587 // <dependency>
+	  relation 163459 -_->
+	    a public
+	      cpp default "#include in source"
+	      classrelation_ref 163587 // <dependency>
+	    b parent class_ref 183555 // Observer
+	end
+      end
+
+      operation 143107 "addObserver"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param inout name "observer" type class_ref 183555 // Observer
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143235 "deleteObserver"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param inout name "observer" type class_ref 183555 // Observer
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143363 "~Observable"
+	cpp_virtual cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract} {};
+"
+	
+	
+	
+	
+      end
+
+      operation 143491 "notify"
+	abstract preserve_cpp_body_indent cpp_virtual public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 183555 "Observer"
+      abstract visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 163715 // observables (<unidirectional association>)
+	relation 163587 --->
+	  stereotype "std::list"
+	  a role_name "observables" protected
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}*> ${name}${value};
+"
+	    classrelation_ref 163715 // observables (<unidirectional association>)
+	  b parent class_ref 183427 // Observable
+      end
+
+      class 183939 "iterator"
+	visibility package stereotype "typedef" base_type class_ref 183427 // Observable
+	cpp_decl "${comment}typedef std::list<${type}*>::iterator ${name};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	classrelation 163843 // <dependency>
+	  relation 163715 -_->
+	    a public
+	      cpp default "#include in source"
+	      classrelation_ref 163843 // <dependency>
+	    b parent class_ref 183427 // Observable
+	end
+      end
+
+      class 184067 "const_iterator"
+	visibility package stereotype "typedef" base_type class_ref 183427 // Observable
+	cpp_decl "${comment}typedef std::list<${type}*>::const_iterator ${name};
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	classrelation 163971 // <dependency>
+	  relation 163843 -_->
+	    a public
+	      cpp default "#include in source"
+	      classrelation_ref 163971 // <dependency>
+	    b parent class_ref 183427 // Observable
+	end
+      end
+
+      operation 143619 "~Observer"
+	cpp_virtual cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract} {};
+"
+	
+	
+	
+	
+      end
+
+      operation 143747 "addObservable"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param inout name "observable" type class_ref 183427 // Observable
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 143875 "deleteObservable"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param inout name "observable" type class_ref 183427 // Observable
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144003 "update"
+	abstract cpp_virtual public explicit_return_type "void"
+	nparams 1
+	  param inout name "observable" type class_ref 183427 // Observable
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 184195 "observerTest"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 164099 // <generalisation>
+	relation 163971 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 164099 // <generalisation>
+	  b parent class_ref 183555 // Observer
+      end
+
+      operation 144131 "update"
+	public explicit_return_type "void"
+	nparams 1
+	  param inout name "observable" type class_ref 183427 // Observable
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 144259 "~observerTest"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${class}::${name}${(}${)}${throw}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 184323 "ucLaunch"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 164227 // buttons (<directional composition>)
+	relation 164099 *-->
+	  stereotype "std::vector"
+	  a role_name "buttons" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	    classrelation_ref 164227 // buttons (<directional composition>)
+	  b parent class_ref 181507 // Button
+      end
+
+      classrelation 164355 // buttonActions (<directional composition>)
+	relation 164227 *-->
+	  stereotype "std::map"
+	  a role_name "buttonActions" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<int,${type}> ${name}${value};
+"
+	    classrelation_ref 164355 // buttonActions (<directional composition>)
+	  b parent class_ref 181635 // pfunc
+      end
+
+      attribute 139267 "nbAppuiStartStop"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 184451 "Test"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 164483 // <generalisation>
+	relation 164355 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 164483 // <generalisation>
+	  b parent class_ref 182019 // Flight
+      end
+
+      operation 144387 "Test"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "" explicit_type "parametres"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract} :Flight(parametres){};
+"
+	
+	
+	
+	
+      end
+    end
+  end
+
+  deploymentview 134659 "CodeBidouille"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 156291 "classeTest"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 183299 // classeTest
+      end
+    end
+
+    artifact 156419 "Observable"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 183427 // Observable
+      end
+    end
+
+    artifact 156547 "Observer"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 183555 // Observer
+      end
+    end
+
+    artifact 156675 "observerTest"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 184195 // observerTest
+      end
+    end
+
+    artifact 156803 "ucLaunch"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 184323 // ucLaunch
+      end
+    end
+
+    artifact 157059 "main"
+      stereotype "source"
+      cpp_src "int main(void)
+{
+	wiringPiSetupGpio();
+	printf (\"Raspberry Pi blink\\n\") ;
+
+	if (wiringPiSetup () == -1)
+	return 1 ;
+
+	pinMode (0, OUTPUT) ;         // aka BCM_GPIO pin 17
+
+	for (;;)
+	{
+	digitalWrite (0, 1) ;       // On
+	delay (500) ;               // mS
+	digitalWrite (0, 0) ;       // Off
+	delay (500) ;
+	}
+	return 0 ;
+}
+"
+      associated_classes
+      end
+    end
+
+    artifact 157187 "Test"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 184451 // Test
+      end
+    end
+  end
+end

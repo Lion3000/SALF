@@ -1,0 +1,726 @@
+format 212
+"ios" // code::AppTestSALF::plugins::cordova-pdf-generator::src::ios
+  revision 1
+  modified_by 3 "camelia"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/AppTestSALF/plugins/cordova-pdf-generator/src/ios/"
+  cpp_src_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/AppTestSALF/plugins/cordova-pdf-generator/src/ios/"
+  classview 141187 "ios"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 197635 "BNPageSize"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment " http://en.wikipedia.org/wiki/Paper_size"
+      attribute 145795 "BNPageSizeLetter"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 145923 "BNPageSizeGovernmentLetter"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 146051 "BNPageSizeLegal"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 146179 "BNPageSizeJuniorLegal"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 146307 "BNPageSizeLedger"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 146435 "BNPageSizeTabloid"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 146563 "BNPageSizeA0"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 146691 "BNPageSizeA1"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 146819 "BNPageSizeA2"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 146947 "BNPageSizeA3"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 147075 "BNPageSizeA4"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 147203 "BNPageSizeA5"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 147331 "BNPageSizeA6"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 147459 "BNPageSizeA7"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 147587 "BNPageSizeA8"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 147715 "BNPageSizeA9"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 147843 "BNPageSizeA10"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 147971 "BNPageSizeB0"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 148099 "BNPageSizeB1"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 148227 "BNPageSizeB2"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 148355 "BNPageSizeB3"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 148483 "BNPageSizeB4"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 148611 "BNPageSizeB5"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 148739 "BNPageSizeB6"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 148867 "BNPageSizeB7"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 148995 "BNPageSizeB8"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 149123 "BNPageSizeB9"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 149251 "BNPageSizeB10"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 149379 "BNPageSizeC0"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 149507 "BNPageSizeC1"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 149635 "BNPageSizeC2"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 149763 "BNPageSizeC3"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 149891 "BNPageSizeC4"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 150019 "BNPageSizeC5"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 150147 "BNPageSizeC6"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 150275 "BNPageSizeC7"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 150403 "BNPageSizeC8"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 150531 "BNPageSizeC9"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 150659 "BNPageSizeC10"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 150787 "BNPageSizeJapaneseB0"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 150915 "BNPageSizeJapaneseB1"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 151043 "BNPageSizeJapaneseB2"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 151171 "BNPageSizeJapaneseB3"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 151299 "BNPageSizeJapaneseB4"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 151427 "BNPageSizeJapaneseB5"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 151555 "BNPageSizeJapaneseB6"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 151683 "BNPageSizeJapaneseB7"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 151811 "BNPageSizeJapaneseB8"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 151939 "BNPageSizeJapaneseB9"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 152067 "BNPageSizeJapaneseB10"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 152195 "BNPageSizeJapaneseB11"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 152323 "BNPageSizeJapaneseB12"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 152451 "BNPageSizeCustom"
+	public type class_ref 197635 // BNPageSize
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+  end
+
+  deploymentview 141187 "ios"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 163715 "BNHtmlPdfKit"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 197635 // BNPageSize
+      end
+    end
+  end
+end

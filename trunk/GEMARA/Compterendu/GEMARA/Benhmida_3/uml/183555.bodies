@@ -1,0 +1,7 @@
+class Observer
+!!!143747.cpp!!!	addObservable(inout observable : Observable) : void
+	this->observables.push_back(observable);
+!!!143875.cpp!!!	deleteObservable(inout observable : Observable) : void
+	iterator it = std::find(this->observables.begin(),this->observables.end(),observable);
+    if(it != this->observables.end())
+       this->observables.erase(it);

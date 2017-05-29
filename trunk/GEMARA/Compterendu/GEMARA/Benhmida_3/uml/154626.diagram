@@ -1,0 +1,102 @@
+format 212
+
+classinstance 128002 class_ref 150018 // Chonometer
+  name ""   xyz 469 9 2005 life_line_z 2000
+note 128003 "appui sur -"
+  xyzwh 11 291 2000 91 37
+classinstance 128130 class_ref 157570 // SalfBoxIhm
+  name ""   xyz 135 4 2005 life_line_z 2000
+fragment 128131 "alt"
+  xyzwh 139 79 1995 423 153
+end
+fragment 128259 "alt"
+  xyzwh 131 255 1995 456 174
+end
+note 128387 "appui sur + et -"
+  xyzwh 8 490 2000 123 37
+fragment 128515 ""
+  xyzwh 145 454 1995 397 93
+end
+note 129027 "appui long sur +"
+  xyzwh 17.5 161.5 2000 95 41
+fragment 129539 "alt"
+  xyzwh 156 153 1990 372 70
+end
+fragment 129667 "alt"
+  xyzwh 137 323 2000 412 80
+end
+note 130178 "appui sur +"
+  xyzwh 17 87 2000 95 41
+note 130179 "appui long sur +"
+  xyzwh 7 364 2000 95 41
+durationcanvas 128258 classinstance_ref 128130 // :SalfBoxIhm
+  xyzwh 175 106 2010 11 32
+end
+durationcanvas 128386 classinstance_ref 128002 // :Chonometer
+  xyzwh 512 106 2010 11 39
+end
+durationcanvas 128643 classinstance_ref 128130 // :SalfBoxIhm
+  xyzwh 175 182 2010 11 31
+end
+durationcanvas 128771 classinstance_ref 128002 // :Chonometer
+  xyzwh 512 179 2010 11 26
+end
+durationcanvas 128898 classinstance_ref 128130 // :SalfBoxIhm
+  xyzwh 175 275 2010 11 37
+end
+durationcanvas 129026 classinstance_ref 128002 // :Chonometer
+  xyzwh 512 275 2010 11 26
+end
+durationcanvas 129155 classinstance_ref 128130 // :SalfBoxIhm
+  xyzwh 175 352 2010 11 40
+end
+durationcanvas 129283 classinstance_ref 128002 // :Chonometer
+  xyzwh 512 352 2010 11 25
+end
+durationcanvas 129538 classinstance_ref 128130 // :SalfBoxIhm
+  xyzwh 175 484 2010 11 40
+end
+durationcanvas 129666 classinstance_ref 128002 // :Chonometer
+  xyzwh 512 484 2010 11 25
+end
+msg 128514 asynchronous
+  from durationcanvas_ref 128258
+  to durationcanvas_ref 128386
+  yz 106 2015 explicitmsg "incrementerMinutes"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 285 84
+msg 128899 asynchronous
+  from durationcanvas_ref 128643
+  to durationcanvas_ref 128771
+  yz 185 2015 explicitmsg "incrementerRapidement"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 270 166
+msg 129154 asynchronous
+  from durationcanvas_ref 128898
+  to durationcanvas_ref 129026
+  yz 275 2015 explicitmsg "decrementerMinutes"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 283 260
+msg 129411 asynchronous
+  from durationcanvas_ref 129155
+  to durationcanvas_ref 129283
+  yz 352 2015 explicitmsg "decrementerRapidement"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 272 337
+msg 129794 asynchronous
+  from durationcanvas_ref 129538
+  to durationcanvas_ref 129666
+  yz 484 2015 explicitmsg "reset"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 331 462
+line 129795 -_-_
+  from ref 129027 z 2026 to ref 129539
+line 129923 -_-_ decenter_end 235
+  from ref 130178 z 2001 to ref 128131
+line 130051 -_-_ decenter_end 339
+  from ref 128003 z 2001 to ref 128259
+line 130435 -_-_ decenter_end 712
+  from ref 130179 z 2001 to ref 129667
+line 130563 -_-_ decenter_end 569
+  from ref 128387 z 2001 to ref 128515
+end

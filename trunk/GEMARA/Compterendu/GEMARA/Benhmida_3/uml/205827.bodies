@@ -1,0 +1,62 @@
+class UcTester
+!!!164867.cpp!!!	UcTester()
+	
+	this->bluetoothServer = new BluetoothServer(SERVER_MAC_ADRESS);
+	for(int i = 0; i>5; i++){
+		buttons[i] = false;
+	}
+	stopTest = false;
+!!!164995.cpp!!!	doIt() : void
+	std::string receivedData = this->bluetoothServer->readData();
+	switch(receivedData){
+		case BUTTONS : 
+			wiringPiSetupPhys();
+			wiringPiISR(ButtonGpio::MINUS_PIN, INT_EDGE_BOTH, minus);
+			wiringPiISR(ButtonGpio::PLUS_PIN, INT_EDGE_BOTH, plus);
+			wiringPiISR(ButtonGpio::SEQ_PIN, INT_EDGE_BOTH, seq);
+			wiringPiISR(ButtonGpio::START_STOP_PIN, INT_EDGE_BOTH, startStop);
+			wiringPiISR(ButtonGpio::TUT_PIN, INT_EDGE_BOTH, tut);
+			SalfBoxIhm::clearIoExtender();
+			pthread_t threadWaitStopRequest;
+			pthread_create(&threadWaitStopRequest, NULL, &UcTester::executeWaitCancelRequest,this);
+			while(!checkCompleteButtonTest() && !stopTest){
+				std::this_thread::sleep_for(std::chrono::milliseconds(100));
+			}
+			if(checkCompleteButtonTest()) pthread_cancel(threadWaitStopRequest);
+			this->bluetoothServer->writeData("Fin du Test des boutons");
+			break;
+			
+		case DISPLAY : 
+			SalfBoxIhm::setCompteur(11,11);
+			std::this_thread::sleep_for(std::chrono::seconds(1));
+			SalfBoxIhm::clearIoExtender();
+			this->bluetoothServer->writeData("Fin du Test de Afficheur");
+			break;
+			
+		case LEDS : 
+			SalfBoxIhm::setLeds(LedColor::ALL_LEDS_ON);
+			std::this_thread::sleep_for(std::chrono::seconds(2));
+			SalfBoxIhm::setLeds(LedColor::ALL_LEDS_OFF);
+			this->bluetoothServer->writeData("Fin du Test des leds");
+			break;
+			
+		case KLAXON : 
+			SalfBoxIhm::setLeds(LedColor::TUT_CONTACTEUR);
+			this->bluetoothServer->writeData("Fin du Test du klaxon");
+			break;
+			
+		case SPEAKERS : 
+			Speaker().play("Test des hauts parleurs");
+			this->bluetoothServer->writeData("Fin du Test des hauts-parleurs");
+		
+	}
+	
+	
+!!!165123.cpp!!!	checkCompleteButtonTest() : bool
+	int i = 0;
+	bool complete = true; 
+	while(i < 5){
+		if(buttons[i] == false)
+			return false;
+	}
+	return true;

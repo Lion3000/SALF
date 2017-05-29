@@ -1,0 +1,7 @@
+class LaunchSequence
+!!!137475.cpp!!!	countdown() : void
+	for(i=30; i>=1; i--)
+	{
+		speaker.play(std::string(i));
+		sleep(1);
+	}

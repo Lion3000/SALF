@@ -1,0 +1,3514 @@
+format 212
+"SALF_PI" // code::SALF_PI
+  revision 1
+  modified_by 3 "camelia"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/SALF_PI/"
+  cpp_src_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/SALF_PI/"
+  classview 141955 "SALF_PI"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 204163 "ButtonGpio"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\enum buttonConfig
+\\brief Enum contenant les pins gpio de chaque boutons du boitier SALF
+$Author: Benhmida$
+$Rev: 597 $
+$Date: 2017-04-24 23:17:55 +0200 (lun. 24 avril 2017) $
+"
+      attribute 156931 "START_STOP_PIN"
+	public type class_ref 204163 // ButtonGpio
+	init_value " 13"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 157059 "SEQ_PIN"
+	public type class_ref 204163 // ButtonGpio
+	init_value " 18"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 157187 "PLUS_PIN"
+	public type class_ref 204163 // ButtonGpio
+	init_value " 15"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 157315 "MINUS_PIN"
+	public type class_ref 204163 // ButtonGpio
+	init_value " 16"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 157443 "TUT_PIN"
+	public type class_ref 204163 // ButtonGpio
+	init_value " 29				// ascii : ~
+"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 204291 "Button"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment " ascii : n
+ ascii : s
+ ascii : q
+ ascii : p
+ ascii : ~"
+      attribute 157571 "START_STOP"
+	public type class_ref 204291 // Button
+	init_value " 16"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 157699 "SEQ"
+	public type class_ref 204291 // Button
+	init_value " 8"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 157827 "PLUS"
+	public type class_ref 204291 // Button
+	init_value " 4"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 157955 "MINUS"
+	public type class_ref 204291 // Button
+	init_value " 2"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 158083 "CLEAR"
+	public type class_ref 204291 // Button
+	init_value " 6"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 158211 "TUT"
+	public type class_ref 204291 // Button
+	init_value " 1			
+"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 204419 "ButtonController"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\class ButtonController
+\\brief permet de g√©rer les boutons du boitier SALF
+\\author Benhmida
+\\version $Rev: 597 $
+\\date $Date: 2017-04-24 23:17:55 +0200 (lun. 24 avril 2017) $
+"
+      attribute 158339 "nbAppuiSeq"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 158467 "symbolPosition"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 158595 "currentRace"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 158723 "buttonCombinaison"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 158851 "minuts"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 158979 "seconds"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 159107 "idFileButtons"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 159235 "sequence"
+	private explicit_type "char"
+	multiplicity "[3]"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${multiplicity}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 159363 "selectedSymbol"
+	private explicit_type "char"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 159491 "started"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 159619 "sequenceConfiguring"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 159747 "timerConfiguring"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 159875 "onPress"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 160003 "seqModified"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 160131 "symbols"
+	private explicit_type "char"
+	stereotype "std::vector"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type}> ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 176003 // database (<directional composition>)
+	relation 175619 *-->
+	  a role_name "database" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 176003 // database (<directional composition>)
+	  b parent class_ref 204547 // Database
+      end
+
+      classrelation 176131 // flight (<unidirectional association>)
+	relation 175747 --->
+	  a role_name "flight" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 176131 // flight (<unidirectional association>)
+	  b parent class_ref 204675 // Flight
+      end
+
+      operation 156419 "executeIncrementDecrement"
+	class_operation preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 1
+	  param inout name "context" explicit_type "void"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void executeIncrementDecrement();
+\\brief permet de lancer la m√©thode IncrementDecrement dans un thread
+\\param[in] context instance en cours
+\\return retourne la m√©thode IncrementDecrement de l'instance en cours
+"
+      end
+
+      operation 156547 "executeSetUpSequence"
+	class_operation preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 1
+	  param inout name "context" explicit_type "void"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void executeSetUpSequence();
+\\brief permet de lancer la m√©thode SetUpSequence dans un thread
+\\param[in] context instance en cours
+\\return retourne la m√©thode SetUpSequence de l'instance en cours
+"
+      end
+
+      operation 156675 "executeStartStopFlightLaunch"
+	class_operation preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 1
+	  param inout name "context" explicit_type "void"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void executeStartStopFlightLaunch();
+\\brief permet de lancer la m√©thode StopFlightLaunch dans un thread
+\\param[in] context instance en cours
+\\return retourne la m√©thode StopFlightLaunch de l'instance en cours
+"
+      end
+
+      operation 156803 "executeTut"
+	class_operation preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 1
+	  param inout name "context" explicit_type "void"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void executeTut();
+\\brief permet de lancer la m√©thode tut dans un thread
+\\param[in] context instance en cours
+\\return retourne la m√©thode tut de l'instance en cours
+"
+      end
+
+      operation 156931 "startStopFlightLaunch"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void startStopFlightLaunch();
+\\brief permet de d√©marrer ou d'arr√™ter le lancement du flight
+"
+      end
+
+      operation 157059 "incrementDecrement"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void incrementDecrement();
+\\brief permet d'effectuer l'incr√©mentation et la d√©cr√©mentation des minutes sur l'afficheur du boitier
+"
+      end
+
+      operation 157187 "setUpSequence"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void setUpSequence();
+\\brief permet de g√©rer le param√©trage et l'enregistrement de la s√©quence de course
+"
+      end
+
+      operation 157315 "tut"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void tut();
+\\brief envoie un signal sonore
+"
+      end
+
+      operation 157443 "resetSymbols"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void resetSymbols();
+\\brief remet √† jour les symbols contenus dans la map permettant de param√©trer la s√©quence
+"
+      end
+
+      operation 157571 "seq"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void seq();
+\\brief g√®re l'appui le bouton s√©quence
+"
+      end
+
+      operation 157699 "plusMinus"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void plusMinus();
+\\brief g√®re l'appui le bouton plusMinus
+"
+      end
+
+      operation 157827 "startStop"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void startStop();
+\\brief g√®re l'appui le bouton startStop
+"
+      end
+
+      operation 157955 "clearTimer"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void clearTimer();
+\\brief permet de remettre √† z√©ro les minutes et secondes sur l'afficheur
+"
+      end
+
+      operation 158083 "manageButtons"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void manageButtons();
+\\brief permet de lancer la m√©thode correspondant au bouton appuy√©
+"
+      end
+
+      operation 158211 "getAvailableSymbol"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getAvailableSymbol();
+\\brief permet d'afficher le premier num√©ro de course disponible (non utilis√© lors du param√©trage de la s√©quence)
+"
+      end
+
+      operation 158339 "checkSequenceConfiguration"
+	preserve_cpp_body_indent private explicit_return_type "bool"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    bool checkSequenceConfiguration();
+\\brief v√©rifie que la s√©quence de courses configur√©e soit correcte (que la m√™me course ne figure pas plusieurs fois dans la s√©quence)
+\\return retourne vrai si la s√©quence est correcte et faux dans le cas contraire
+"
+      end
+
+      operation 158467 "ButtonController"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param in name "idFileButtons" explicit_type "int"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${class}::${name}${(}${t0} ${p0}${)}${throw}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    ButtonController();
+\\brief initialise les attributs de l'instance de classe
+"
+      end
+
+      operation 158595 "~ButtonController"
+	cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract} { flight = NULL; };
+"
+	
+	
+	
+	
+	comment "\\fn   ~ButtonController();
+\\brief destructeur : vide le pointeur contenant le flight √† lancer
+"
+      end
+
+      operation 158723 "getButtonsState"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getButtonsState();
+\\brief r√©cup√®re l'√©tat des boutons et l'identifiant du bouton ayant √©t√© appuy√©
+"
+      end
+
+      class 204803 "RequestGet"
+	visibility package stereotype "struct"
+	cpp_decl "${comment}${template}struct ${name}${inherit} {
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 160259 "type"
+	  public explicit_type "long"
+	  cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 160387 "data"
+	  public explicit_type "int"
+	  multiplicity "[1]"
+	  cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${multiplicity}${value};
+"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+    end
+
+    class 204547 "Database"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\class Database
+\\brief permet de lire et √©crire dans une base de donn√©es
+\\author Benhmida
+\\version $Rev: 597 $
+\\date $Date: 2017-04-24 23:17:55 +0200 (lun. 24 avril 2017) $
+"
+      classrelation 176259 // db (<unidirectional association>)
+	relation 175875 --->
+	  a role_name "db" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 176259 // db (<unidirectional association>)
+	  b parent class_ref 198403 // sqlite3
+      end
+
+      attribute 160515 "zErrMsg"
+	private explicit_type "char"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 176387 // statement (<unidirectional association>)
+	relation 176003 --->
+	  a role_name "statement" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 176387 // statement (<unidirectional association>)
+	  b parent class_ref 200323 // sqlite3_stmt
+      end
+
+      attribute 160643 "sqlRequest"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 160771 "filename"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 158851 "Database"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "filename" explicit_type "string"
+	    defaultvalue "\"Salf.db\""
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract} : filename(filename), zErrMsg(NULL), statement(NULL), db(NULL), sqlRequest(\"\")
+	{
+		int r = sqlite3_open(filename.c_str(), &db);
+		if(r)
+		{
+			fprintf(stderr, \"Can't open database: %s\\n\", sqlite3_errmsg(db));
+			sqlite3_close(db);
+		}
+	};
+"
+	
+	
+	
+	
+	comment "\\fn    Database();
+\\brief initialise les attributs de l'instance de classe et ouvre la base de donn√©es
+\\param[in] filename nom de la base de donn√©es √† utiliser
+"
+      end
+
+      operation 158979 "~Database"
+	cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract} {
+	 sqlite3_close(db);
+	};
+"
+	
+	
+	
+	
+	comment "\\fn    ~Database();
+\\brief destructeur : ferme la base de donn√©es
+"
+      end
+
+      operation 159107 "executeRequest"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "sqlRequest" explicit_type "string"
+	  param in name "isSelectRequest" explicit_type "bool"
+	    defaultvalue "false"
+	  param inout name "data" explicit_type "std::vector<std::vector<std::string> >"
+	    defaultvalue "NULL"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} * ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} * ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    bool executeRequest();
+\\brief ex√©cute la requ√™te en param√®tre, si c'est un Select, la m√©thode renvoie le r√©sultat de la requ√™te dans un vecteur pass√© en param√®tre
+\\param[in] sqlRequest : requ√™te sql √† ex√©cuter
+\\param[in] isSelectRequest : bool√©en indiquant si la requ√™te est une selection de donn√©es ou non (vrai si select, faux sinon)
+\\param[in,out] data : vecteur contenant les donn√©es extraites de la base de donn√©es (utilis√© si la requ√™te est un select) 
+"
+      end
+
+      operation 159235 "prepareRequest"
+	preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    bool prepareRequest();
+\\brief pr√©pare la requete et permet de tester si elle est correcte
+\\return retourne 1 si la requ√™te s'est ex√©cut√© correctement et -1 dans le cas contraire
+"
+      end
+    end
+
+    class 204675 "Flight"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\class Flight
+\\brief permet de param√©trer, lancer et arr√™ter un flight  
+\\author Benhmida
+\\version $Rev: 590 $
+\\date $Date: 2017-04-17 23:07:09 +0200 (lun. 17 avril 2017) $
+"
+      classrelation 176515 // database (<directional composition>)
+	relation 176131 *-->
+	  a role_name "database" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 176515 // database (<directional composition>)
+	  b parent class_ref 204547 // Database
+      end
+
+      attribute 160899 "isActive"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 161027 "stopNow"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 161155 "currentRace"
+	private explicit_type "char"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 176643 // speaker (<unidirectional association>)
+	relation 176259 --->
+	  a role_name "speaker" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 176643 // speaker (<unidirectional association>)
+	  b parent class_ref 204931 // Speaker
+      end
+
+      attribute 161283 "completeSequence"
+	private explicit_type "char"
+	multiplicity "[Race::MAX_RACE_NUMBER]"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${multiplicity}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 161411 "minuts"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 161539 "seconds"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 176771 // mapRaceLeds (<directional composition>)
+	relation 176387 *-->
+	  stereotype "std::map"
+	  a role_name "mapRaceLeds" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<char,${type}> ${name}${value};
+"
+	    classrelation_ref 176771 // mapRaceLeds (<directional composition>)
+	  b parent class_ref 205059 // LedColor
+      end
+
+      classrelation 176899 // mapLedsReds (<directional composition>)
+	relation 176515 *-->
+	  stereotype "std::map"
+	  a role_name "mapLedsReds" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type},LedColor> ${name}${value};
+"
+	    classrelation_ref 176899 // mapLedsReds (<directional composition>)
+	  b parent class_ref 205059 // LedColor
+      end
+
+      operation 159363 "Flight"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${class}::${name}${(}${)}${throw}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    Flight();
+\\brief initialise les attributs de la classe
+"
+      end
+
+      operation 159491 "~Flight"
+	cpp_inline public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${virtual}${name}${(}${)}${volatile}${throw}${abstract} {speaker = NULL;};
+"
+	
+	
+	
+	
+	comment "\\fn    ~Flight();
+\\brief destructeur 
+"
+      end
+
+      operation 159619 "initializeMapRaceLeds"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void initializeMapRaceLeds();
+\\brief initialise la map reliant les num√©ros de course et les leds √† allumer
+"
+      end
+
+      operation 159747 "start"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void start();
+\\brief demarre le lancement du flight
+"
+      end
+
+      operation 159875 "stop"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void stop();
+\\brief stoppe le lancement du flight
+"
+      end
+
+      operation 160003 "playSeconds"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void playSeconds();
+\\brief lance le d√©compte vocal des secondes
+"
+      end
+
+      operation 160131 "executeStart"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param inout name "context" explicit_type "void"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void executeStart();
+\\brief permet √† la m√©thode start d'√™tre utilis√©e dans un tread
+\\param context instance appelante
+\\return retourne la m√©thode start
+"
+      end
+
+      operation 160259 "executePlaySeconds"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param inout name "context" explicit_type "void"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${t0} * ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${t0} * ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void executePlaySeconds();
+\\brief permet √† la m√©thode start d'√™tre utilis√©e dans un tread
+\\param context instance appelante
+\\return retourne la m√©thode playSeconds
+"
+      end
+
+      operation 160387 "setSeconds"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "seconds" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void setSeconds();
+\\brief change la valeur de l'attribut seconds
+\\param[in] seconds valeur √† ins√©rer dans l'attribut seconds
+"
+      end
+
+      operation 160515 "getIsActive"
+	preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    bool getIsActive();
+\\brief indique si le flight est en cours de lancement ou non
+\\return retourne vrai si le flight est en cours de lancement et false dans le cas contraire
+"
+      end
+
+      operation 160643 "setMinuts"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "minuts" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void setMinuts();
+\\brief change la valeur de l'attribut minuts
+\\param[in] minuts valeur √† ins√©rer dans l'attribut minuts
+"
+      end
+
+      operation 160771 "setCompleteSequence"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "first" explicit_type "char"
+	  param in name "second" explicit_type "char"
+	  param in name "third" explicit_type "char"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void setCompleteSequence();
+\\brief permet de param√©trer la s√©quence de course du flight en cours
+\\param[in] first num√©ro de course du premier d√©part
+\\param[in] second num√©ro de course du deuxi√®me d√©part
+\\param[in] third num√©ro de course du troisi√®me d√©part
+"
+      end
+
+      operation 160899 "setSequence"
+	public explicit_return_type "void"
+	nparams 1
+	  param in name "sequence" explicit_type "char"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void setSequence();
+\\brief met √† jour le digit correspondant au num√©ro de course (sequence) sur l'afficheur
+\\param[in] sequence √† afficher
+"
+      end
+
+      operation 161027 "checkMinuts"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "m" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void checkMinuts();
+\\brief active les diff√©rentes leds et change le num√©ro de sequence en fonction du chronom√®tre
+\\param m minute √† tester 
+"
+      end
+
+      operation 161155 "doFirstRace"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "m" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void doFirstRace();
+\\brief envoie les signaux visuels de la premi√®re course
+\\param m minute actuelle
+"
+      end
+
+      operation 161283 "doSecondRace"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "m" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void doSecondRace();
+\\brief envoie les signaux visuels de la deuxi√®me course
+\\param m minute actuelle
+"
+      end
+
+      operation 161411 "doThirdRace"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "m" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void doThirdRace();
+\\brief envoie les signaux visuels de la troisi√®me course
+\\param m minute actuelle 
+"
+      end
+
+      operation 161539 "getSequenceFromDb"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "sequence" explicit_type "string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}[3]${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}[3]${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getSequenceFromDb();
+\\brief r√©cup√®re la sequence dans la base de donn√©es
+* \\param[in,out] tableau de string contenant la s√©quence de course extraite de la base de donn√©es 
+"
+      end
+
+      operation 161667 "getTimerFromDb"
+	preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} * ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} * ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getTimerFromDb();
+\\brief r√©cup√®re le temps de d√©part dans la base de donn√©es
+\\return retourne un tableau d'entiers contenant les secondes et minutes extraites de la base de donn√©es
+"
+      end
+    end
+
+    class 204931 "Speaker"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\class Speaker
+\\brief permet d'effectuer un d√©compte sonore  
+\\author Benhmida
+\\version $Rev: 590 $
+\\date $Date: 2017-04-17 23:07:09 +0200 (lun. 17 avril 2017) $
+"
+      attribute 167683 "voiceLanguage"
+	private explicit_type "string"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 164483 "Speaker"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "voiceLanguage" explicit_type "string"
+	    defaultvalue "\"en\""
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract} : voiceLanguage(voiceLanguage){
+			espeak_Initialize(AUDIO_OUTPUT_PLAYBACK, 0, NULL, 0);
+			espeak_SetVoiceByName(voiceLanguage.c_str());
+		};
+"
+	
+	
+	
+	
+	comment "\\fn    Speaker();
+\\brief initialise les attributs de la classe
+"
+      end
+
+      operation 164611 "play"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "textToPlay" explicit_type "string"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void play();
+\\brief effectue synth√®se vocale du texte pass√© en param√®tre
+\\param[in] textToPlay : texte √† synth√©tiser 
+"
+      end
+
+      operation 164739 "isPlaying"
+	preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    bool isPlaying();
+\\brief indique si un texte est en cours de synth√©tisation vocale ou non
+\\return retourne vrai si le texte est en cours de synth√©tisation et faux dans le cas contraire
+"
+      end
+    end
+
+    class 205059 "LedColor"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\enum LedColor
+\\brief Enum contenant les valeurs des leds et leur positions
+$Author: Benhmida$ 
+$Rev$
+$Date$
+"
+      attribute 162179 "RED"
+	public type class_ref 205059 // LedColor
+	init_value " 8"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 162307 "TOP_LED"
+	public type class_ref 205059 // LedColor
+	init_value " 4"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 162435 "MIDDLE_LED"
+	public type class_ref 205059 // LedColor
+	init_value " 1"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 162563 "BOTTOM_LED"
+	public type class_ref 205059 // LedColor
+	init_value " 2"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 162691 "TOP_MIDDLE"
+	public type class_ref 205059 // LedColor
+	init_value " 5"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 162819 "ALL_3_LEDS"
+	public type class_ref 205059 // LedColor
+	init_value " 7"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 162947 "TOP_AND_RED"
+	public type class_ref 205059 // LedColor
+	init_value " 12"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 163075 "TOP_MIDDLE_AND_RED"
+	public type class_ref 205059 // LedColor
+	init_value " 13"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 163203 "MIDDLE_AND_RED"
+	public type class_ref 205059 // LedColor
+	init_value " 9"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 163331 "ALL_LEDS_ON"
+	public type class_ref 205059 // LedColor
+	init_value " 15"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 163459 "ALL_LEDS_OFF"
+	public type class_ref 205059 // LedColor
+	init_value " 0"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 163587 "TUT_CONTACTEUR"
+	public type class_ref 205059 // LedColor
+	init_value " 16"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 163715 "TUT_RED"
+	public type class_ref 205059 // LedColor
+	init_value " RED|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 163843 "TUT_TOP_LED"
+	public type class_ref 205059 // LedColor
+	init_value " TOP_LED|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 163971 "TUT_MIDDLE_LED"
+	public type class_ref 205059 // LedColor
+	init_value " MIDDLE_LED|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 164099 "TUT_BOTTOM_LED"
+	public type class_ref 205059 // LedColor
+	init_value " BOTTOM_LED|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 164227 "TUT_TOP_MIDDLE"
+	public type class_ref 205059 // LedColor
+	init_value " TOP_MIDDLE|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 164355 "TUT_ALL_3_LEDS"
+	public type class_ref 205059 // LedColor
+	init_value " ALL_3_LEDS|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 164483 "TUT_TOP_AND_RED"
+	public type class_ref 205059 // LedColor
+	init_value " TOP_AND_RED|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 164611 "TUT_TOP_MIDDLE_AND_RED"
+	public type class_ref 205059 // LedColor
+	init_value " TOP_MIDDLE_AND_RED|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 164739 "TUT_MIDDLE_AND_RED"
+	public type class_ref 205059 // LedColor
+	init_value " MIDDLE_AND_RED|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 164867 "TUT_ALL_LEDS_ON"
+	public type class_ref 205059 // LedColor
+	init_value " ALL_LEDS_ON|TUT_CONTACTEUR"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 164995 "TUT_ALL_LEDS_OFF"
+	public type class_ref 205059 // LedColor
+	init_value " ALL_LEDS_OFF|TUT_CONTACTEUR
+	
+	
+"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 205187 "IoExtender"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\enum IoExtender
+\\brief Enum contenant la correspondance entre les √©l√©ments du Ioextender (leds + afficheur : sequence, minutes, secondes) et leur valeurs dans le tableau envoy√© sur le spi
+$Author: Benhmida$ 
+$Rev$
+$Date$
+"
+      attribute 161667 "LEDS"
+	public type class_ref 205187 // IoExtender
+	init_value " 0"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 161795 "SEQUENCE"
+	public type class_ref 205187 // IoExtender
+	init_value " 1"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 161923 "SECONDS"
+	public type class_ref 205187 // IoExtender
+	init_value " 2"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 162051 "MINUTS"
+	public type class_ref 205187 // IoExtender
+	init_value " 3
+"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 205315 "Race"
+      visibility package stereotype "enum"
+      cpp_decl "${comment}enum ${name} {
+${items}};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\enum race
+\\brief Enum contenant les courses
+$Author: Benhmida$
+$Rev: 590 $
+$Date: 2017-04-17 23:07:09 +0200 (lun. 17 avril 2017) $
+"
+      attribute 165123 "FIRST"
+	public type class_ref 205315 // Race
+	init_value " 0"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 165251 "SECOND"
+	public type class_ref 205315 // Race
+	init_value " 1"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 165379 "THIRD"
+	public type class_ref 205315 // Race
+	init_value " 2"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 165507 "MAX_RACE_NUMBER"
+	public type class_ref 205315 // Race
+	init_value " 3						
+"
+	cpp_decl "  ${name}${value},${comment}"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 205443 "SalfBoxIhm"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      comment "\\class SalfBoxIhm
+\\brief repr√©sente le boitier SALF et permet de r√©cup√©rer et changer son √©tat
+\\author Benhmida
+\\version $Rev: 597 $
+\\date $Date: 2017-04-24 23:17:55 +0200 (lun. 23 mai 2017) $
+"
+      attribute 165635 "keySetBox"
+	class_attribute private explicit_type "key_t"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 165763 "keyGetBox"
+	class_attribute private explicit_type "key_t"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 165891 "ioExtenderFileId"
+	class_attribute private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 166019 "ioExtenderFileGet"
+	class_attribute private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 166147 "etatLeds"
+	class_attribute private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 166275 "buttonState"
+	class_attribute private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 166403 "spi"
+	class_attribute private explicit_type "std::ofstream"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      classrelation 177027 // gpioMasques (<directional composition>)
+	relation 176643 *-->
+	  stereotype "std::map"
+	  a role_name "gpioMasques" class_relation private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<${type},Button> ${name}${value};
+"
+	    classrelation_ref 177027 // gpioMasques (<directional composition>)
+	  b parent class_ref 204163 // ButtonGpio
+      end
+
+      attribute 166531 "IO_EXTENDER_SIZE"
+	class_attribute const_attribute public explicit_type "int"
+	init_value "=  4"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${h_value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	comment " constantes
+"
+      end
+
+      attribute 166659 "COMPTEUR"
+	class_attribute const_attribute public explicit_type "long"
+	init_value "=  2"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${h_value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 166787 "LEDS"
+	class_attribute const_attribute public explicit_type "long"
+	init_value "=  3"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${h_value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 166915 "SEQUENCE"
+	class_attribute const_attribute public explicit_type "long"
+	init_value "=  4"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${h_value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 167043 "ioExtender"
+	class_attribute public explicit_type "char"
+	multiplicity "[IO_EXTENDER_SIZE+1]"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${multiplicity}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      class 205571 "Request"
+	visibility package stereotype "struct"
+	cpp_decl "${comment}${template}struct ${name}${inherit} {
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 167171 "mtype"
+	  public explicit_type "long"
+	  cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 167299 "ioExtender"
+	  public explicit_type "uint8_t"
+	  multiplicity "[IO_EXTENDER_SIZE]"
+	  cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${multiplicity}${value};
+"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      class 205699 "RequestGet"
+	visibility package stereotype "struct"
+	cpp_decl "${comment}${template}struct ${name}${inherit} {
+${members}};
+${inlines}
+"
+	java_decl ""
+	php_decl ""
+	python_2_2 python_decl ""
+	idl_decl ""
+	explicit_switch_type ""
+	mysql_decl ""
+	
+	attribute 167427 "mtype"
+	  public explicit_type "long"
+	  cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+
+	attribute 167555 "data"
+	  public explicit_type "int"
+	  multiplicity "[1]"
+	  cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${multiplicity}${value};
+"
+	  java_decl ""
+	  php_decl ""
+	  python_decl ""
+	  idl_decl ""
+	  mysql_decl ""
+	  MysqlColumn
+	end
+      end
+
+      operation 161795 "initializeButtonsMap"
+	class_operation preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment " m√©thodes priv√©es
+
+\\fn    void initializeButtonsMap();
+\\brief initialise la map reliant les num√©ros de pins gpio des boutons et leurs identifiants
+"
+      end
+
+      operation 161923 "inverseDigits"
+	class_operation preserve_cpp_body_indent private explicit_return_type "uint8_t"
+	nparams 1
+	  param in name "nb" explicit_type "uint8_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void inverseDigits();
+\\brief inverse les digits du nombre √† afficher sur le boitier pour s'adapter √† la contrainte mat√©rielle de l'afficheur
+\\param[in] nb nombre √† inverser
+\\return retourne le nombre pr√™t √† l'envoi sur l'afficheur
+"
+      end
+
+      operation 162051 "inverseDigitsBack"
+	class_operation preserve_cpp_body_indent private explicit_return_type "uint8_t"
+	nparams 1
+	  param in name "nb" explicit_type "uint8_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    uint8_t inverseDigitsBack();
+\\brief permet de retrouver la valeur initiale d'un nombre en sortie de la m√©thode inverseDigits
+\\param nom description
+\\param[in] nb nombre dont on veut retrouver la valeur initiale
+\\return retourne la valeur initiale de nb
+"
+      end
+
+      operation 162179 "buttonTest"
+	class_operation preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 1
+	  param in name "pin" type class_ref 204163 // ButtonGpio
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 162307 "init"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void init();
+\\brief initialise les attributs et variables 
+"
+      end
+
+      operation 162435 "updateIoExtender"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void updateIoExtender();
+\\brief met √† jour l'afficheur
+"
+      end
+
+      operation 162563 "getIoExtender"
+	class_operation public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getIoExtender();
+\\brief r√©cup√®re l'√©tat du boitier
+"
+      end
+
+      operation 162691 "clearIoExtender"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void clearIoExtender();
+\\brief met tous les digits de l'afficheur √† z√©ro 
+"
+      end
+
+      operation 162819 "getIoExtenderFileGet"
+	class_operation preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getIoExtenderFileGet();
+\\brief permet d'obtenir l'identifiant de la file de messages des boutons 
+\\return retourne l'identifiant de la file 
+"
+      end
+
+      operation 162947 "setCompteur"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "minuts" explicit_type "uint8_t"
+	  param in name "seconds" explicit_type "uint8_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void setCompteur();
+\\brief modifie les digits de l'afficheur correspondant aux minutes et secondes 
+\\param[in] uint8_t minuts : minutes √† afficher sur le boitier
+\\param[in] uint8_t seconds: secondes √† afficher sur le boitier
+"
+      end
+
+      operation 163075 "setSequence"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 1
+	  param in name "sequence" explicit_type "uint8_t"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void setSequence();
+\\brief modifie les digits de l'afficheur correspondant √† la s√©quence (num√©ro de course)
+\\param[in] sequence : num√©ro de sequence √† afficher sur le boitier
+"
+      end
+
+      operation 163203 "setLeds"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 2
+	  param in name "positionLed" type class_ref 205059 // LedColor
+	  param in name "tutEnd" explicit_type "bool"
+	    defaultvalue "false"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void setLeds();
+\\brief allume ou √©teint une ou plusieurs leds 
+\\param[in] positionLed led ou combinaison de leds √† allumer ou √©teindre
+"
+      end
+
+      operation 163331 "getSeconds"
+	class_operation preserve_cpp_body_indent public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getSeconds();
+\\brief retourne la valeur des secondes inscrites sur l'afficheur
+\\return retourne la valeur des secondes inscrites sur l'afficheur
+"
+      end
+
+      operation 163459 "getMinuts"
+	class_operation preserve_cpp_body_indent public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getMinuts();
+\\brief retourne la valeur des minutes inscrites sur l'afficheur
+\\return retourne la valeur des minutes inscrites sur l'afficheur
+"
+      end
+
+      operation 163587 "getEtatLed"
+	class_operation preserve_cpp_body_indent public explicit_return_type "int"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getLeds();
+\\brief permet d'obtenir l'√©tat actuel des leds
+\\return retourne la valeur de l'√©tat actuel des leds
+"
+      end
+
+      operation 163715 "getSequence"
+	class_operation preserve_cpp_body_indent public explicit_return_type "char"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void getSequence();
+\\brief retourne la sequence en cours
+\\return retourne la valeur de la sequence en cours
+"
+      end
+
+      operation 163843 "doTut"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void doTut();
+\\brief m√©thode appel√© lors de l'appui sur le bouton tut
+"
+      end
+
+      operation 163971 "doSeq"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void doSeq();
+\\brief m√©thode appel√© lors de l'appui sur le bouton Seq
+"
+      end
+
+      operation 164099 "doMinus"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void doMinus();
+\\brief m√©thode appel√© lors de l'appui sur le bouton -
+"
+      end
+
+      operation 164227 "doPlus"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void doPlus();
+\\brief m√©thode appel√© lors de l'appui sur le bouton +
+"
+      end
+
+      operation 164355 "doStartStop"
+	class_operation preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+	comment "\\fn    void doStartStop();
+\\brief m√©thode appel√© lors de l'appui sur le bouton start/stop
+"
+      end
+    end
+
+    class 205827 "UcTester"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 177155 // bluetoothServer (<directional composition>)
+	relation 176771 *-->
+	  a role_name "bluetoothServer" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	    classrelation_ref 177155 // bluetoothServer (<directional composition>)
+	  b parent class_ref 205955 // BluetoothServer
+      end
+
+      attribute 167811 "buttons"
+	private explicit_type "bool"
+	multiplicity "[5]"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${multiplicity}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 167939 "stopTest"
+	private explicit_type "bool"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      operation 164867 "UcTester"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${inline}${name}${(}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${class}::${name}${(}${)}${throw}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 164995 "doIt"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 165123 "checkCompleteButtonTest"
+	preserve_cpp_body_indent public explicit_return_type "bool"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    classdiagram 161923 "dc"
+      classdiagramsettings member_max_width 0 end
+      size A0
+    end
+  end
+
+  deploymentview 141955 "SALF_PI"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 164483 "buttonConfig"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 204163 // ButtonGpio
+	class_ref 204291 // Button
+      end
+    end
+
+    artifact 164611 "ButtonController"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 204419 // ButtonController
+      end
+    end
+
+    artifact 164739 "Database"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 204547 // Database
+      end
+    end
+
+    artifact 164867 "Flight"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 204675 // Flight
+      end
+    end
+
+    artifact 164995 "IoExtender"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 205187 // IoExtender
+      end
+    end
+
+    artifact 165123 "LedColor"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 205059 // LedColor
+      end
+    end
+
+    artifact 165251 "raceConfig"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 205315 // Race
+      end
+    end
+
+    artifact 165379 "SalfBoxIhm"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 205443 // SalfBoxIhm
+      end
+    end
+
+    artifact 165507 "Speaker"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 204931 // Speaker
+      end
+    end
+
+    artifact 165635 "UcTester"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+complÈter la ligne de commande de gÈnÈration pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation gÈnÈrant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //dÈfinir toutes les mÈthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe ‡ tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque mÈthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 205827 // UcTester
+      end
+    end
+
+    artifact 166147 "main"
+      stereotype "source"
+      cpp_src "int main(int argc, char** argv)
+	{
+		int status;
+		SalfBoxIhm::init();
+		SalfBoxIhm::clearIoExtender();
+		ButtonController buttonController(SalfBoxIhm::getIoExtenderFileGet());	
+		if(fork() == 0){
+			while(true)
+			{
+				SalfBoxIhm::updateIoExtender();
+			}
+		}
+		else{
+			while(true)
+			{
+				buttonController.getButtonsState(); 
+			}			
+		}
+		wait(&status);
+		if(WIFEXITED(status))
+		{
+			puts(\"fils termin√© correctement\");
+		}	
+	}
+"
+      associated_classes
+      end
+    end
+  end
+
+  package_ref 143747 // Partie_TEST_Bluetooth
+end

@@ -1,0 +1,140 @@
+format 212
+
+activityactioncanvas 128258 activityaction_ref 135426 // activity action incrementerMinutes
+  
+  show_opaque_action_definition default
+  xyzwh 259 126 2000 160 40
+end
+activityactioncanvas 128386 activityaction_ref 135554 // activity action decrementerMinutes
+  
+  show_opaque_action_definition default
+  xyzwh 660 119 2000 151 40
+end
+activitynodecanvas 128771 activitynode_ref 148611 // decision
+  xyz 532 124 2000
+end
+activityactioncanvas 129666 activityaction_ref 135682 // activity action incrementerRapidement
+  
+  show_opaque_action_definition default
+  xyzwh 261 190 2000 178 42
+end
+activityactioncanvas 130435 activityaction_ref 135683 // activity action lireBoutonsBoitier
+  
+  show_opaque_action_definition default
+  xyzwh 443 61 3005 167 42
+end
+activitynodecanvas 131459 activitynode_ref 149123 // merge
+  xyz 530 317 2000
+end
+activityactioncanvas 133762 activityaction_ref 135938 // activity action resetChrononometre
+  
+  show_opaque_action_definition default
+  xyzwh 470 221 2005 152 55
+end
+activitynodecanvas 135427 activitynode_ref 149379 // activity_final
+  xyz 531 406 2000
+end
+expansionregioncanvas 135683 expansionregion_ref 128131 // 
+  xyzwh 239 47 1995 602 313
+end
+activityactioncanvas 138115 activityaction_ref 135810 // activity action decrementerRapidement
+  
+  show_opaque_action_definition default
+  xyzwh 633 187 2000 186 40
+end
+activitynodecanvas 138499 activitynode_ref 160003 // decision
+  xyz 444 123 2000
+end
+activitynodecanvas 139139 activitynode_ref 160131 // decision
+  xyz 619 124 2000
+end
+activitynodecanvas 141442 activitynode_ref 136322 // initial_node
+  xyz 525 19 2000
+end
+flowcanvas 129027 flow_ref 150403 // <flow>
+  
+  from ref 128771 z 2006 label "[appui + et -]" xyz 502 184 2006 to ref 133762
+   write_horizontally default
+end
+flowcanvas 130691 flow_ref 151555 // <flow>
+  decenter_begin 589
+  decenter_end 360
+  
+  from ref 130435 z 3006 to ref 128771
+   write_horizontally default
+end
+flowcanvas 131715 flow_ref 154115 // <flow>
+  decenter_begin 460
+  
+  from ref 133762 z 2006 to ref 131459
+   write_horizontally default
+end
+flowcanvas 132483 flow_ref 154499 // <flow>
+  
+  from ref 129666 z 2001 label "[fin incrementation]" xyz 378.5 282 2001 to ref 131459
+   write_horizontally default
+end
+flowcanvas 135171 flow_ref 155523 // <flow>
+  decenter_begin 526
+  decenter_end 550
+  
+  from ref 141442 z 3006 to ref 130435
+   write_horizontally default
+end
+flowcanvas 135555 flow_ref 155779 // <flow>
+  decenter_begin 480
+  
+  from ref 131459 z 2001 label "[plus d'appui]" xyz 494.5 372 2001 to ref 135427
+   write_horizontally default
+end
+flowcanvas 138627 flow_ref 176131 // <flow>
+  
+  from ref 128771 z 2001 label "[appui +]" xyz 476 141 3000 to ref 138499
+   write_horizontally default
+end
+flowcanvas 138755 flow_ref 176259 // <flow>
+  
+  from ref 138499 z 2001 to ref 128258
+   write_horizontally default
+end
+flowcanvas 138883 flow_ref 176387 // <flow>
+  decenter_end 870
+  
+  from ref 138499 z 2001 label "[appui long]" xyz 372 164.5 3000 to ref 129666
+   write_horizontally default
+end
+flowcanvas 139267 flow_ref 176515 // <flow>
+  
+  from ref 128771 z 2001 label "[appui -]" xyz 559 142 3000 to ref 139139
+   write_horizontally default
+end
+flowcanvas 139395 flow_ref 176643 // <flow>
+  
+  from ref 139139 z 2001 label "[appui long]" xyz 635 163 3000 to ref 138115
+   write_horizontally default
+end
+flowcanvas 139523 flow_ref 176771 // <flow>
+  
+  from ref 139139 z 2001 to ref 128386
+   write_horizontally default
+end
+flowcanvas 139651 flow_ref 176899 // <flow>
+  
+  from ref 128386 z 2001 to point 827 138
+  line 139779 z 2001 to point 827 332
+  line 139907 z 2001 to ref 131459
+   write_horizontally default
+end
+flowcanvas 140035 flow_ref 177027 // <flow>
+  
+  from ref 128258 z 2001 to point 245 145
+  line 140291 z 2001 to point 245 333
+  line 140163 z 2001 to ref 131459
+   write_horizontally default
+end
+flowcanvas 140547 flow_ref 177155 // <flow>
+  
+  from ref 138115 z 2001 to ref 131459
+   write_horizontally default
+end
+end

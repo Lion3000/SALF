@@ -1,0 +1,7 @@
+
+// COURSES
+
+#define FIRST_COURSE 1
+#define SECOND_COURSE 2
+#define THIRD_COURSE 3
+

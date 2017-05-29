@@ -1,0 +1,12 @@
+class Timer
+!!!141827.cpp!!!	getInitialTime() : double
+	return this-> initialTime;
+!!!141955.cpp!!!	getMinuts() : int
+	return this->minuts;
+!!!142083.cpp!!!	getSeconds() : int
+	return this->seconds;
+!!!142211.cpp!!!	setInitialTime(in minuts : int, in seconds : int) : void
+	sprintf((char *)strTime.c_str(), "%d.%d",minuts, seconds);	
+	this->minuts = minuts;
+	this->seconds = seconds;
+	this->initialTime = std::stod(strTime.c_str());

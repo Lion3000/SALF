@@ -1,0 +1,101 @@
+format 212
+
+classcanvas 128130 class_ref 128028 // Regulateur
+  classdiagramsettings member_max_width 0 end
+  xyz 527.2 274.6 2000
+end
+classcanvas 128258 class_ref 128412 // ModbusTcp
+  classdiagramsettings member_max_width 0 end
+  xyz 90.6 40 3005
+end
+classcanvas 128514 class_ref 128284 // EmetteurUDP
+  classdiagramsettings member_max_width 0 end
+  xyz 36.6 339.9 3005
+end
+classcanvas 129922 class_ref 168194 // Carrefour
+  classdiagramsettings member_max_width 0 end
+  xyz 217.2 239.4 3011
+end
+classcanvas 130562 class_ref 174722 // SystemeCentral
+  classdiagramsettings member_max_width 0 end
+  xyz 433.4 567 2000
+end
+classcanvas 131202 class_ref 174850 // Cycle
+  classdiagramsettings member_max_width 0 end
+  xyz 479.4 791.2 2000
+end
+classcanvas 131458 class_ref 128156 // ClientTCP
+  classdiagramsettings member_max_width 0 end
+  xyz 41.2 591 3016
+end
+classcanvas 133122 class_ref 188290 // State
+  classdiagramsettings member_max_width 0 end
+  xyz 825 857.2 2000
+end
+classcanvas 133378 class_ref 188418 // Action
+  classdiagramsettings member_max_width 0 end
+  xyz 871.8 554 2000
+end
+relationcanvas 130050 relation_ref 168066 // <generalisation>
+  decenter_end 508
+  from ref 129922 z 3012 to ref 128258
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130434 relation_ref 167938 // <directional composition>
+  decenter_begin 480
+  from ref 128130 z 3012 to ref 129922
+  role_a_pos 498 359 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131714 relation_ref 181634 // <generalisation>
+  decenter_begin 518
+  decenter_end 525
+  from ref 130562 z 3017 to ref 131458
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132354 relation_ref 188418 // <directional composition>
+  from ref 130562 z 2001 to ref 131202
+  role_a_pos 642 765 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132482 relation_ref 188546 // <composition>
+  decenter_begin 479
+  from ref 128130 z 2001 to ref 130562
+  role_a_pos 641 541 3000 role_b_pos 641 511 3000
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133506 relation_ref 216706 // <unidirectional association>
+  decenter_end 475
+  from ref 133122 z 2001 to ref 133378
+  role_a_pos 969 775 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135170 relation_ref 243074 // <directional composition>
+  from ref 131202 z 2001 stereotype "<<:vector>>" xyz 804 934 3000 to ref 133122
+  role_a_pos 770 911 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135682 relation_ref 256642 // <dependency>
+  decenter_begin 518
+  decenter_end 516
+  from ref 130562 z 2001 to ref 133378
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 135810 relation_ref 256770 // <dependency>
+  geometry HV unfixed
+  decenter_begin 480
+  decenter_end 475
+  from ref 128130 z 2001 to point 957 381
+  line 135938 z 2001 to ref 133378
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 136066 relation_ref 256898 // <generalisation>
+  from ref 129922 z 3012 to ref 128514
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

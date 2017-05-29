@@ -1,0 +1,85 @@
+format 212
+
+usecasecanvas 128002 usecase_ref 128002 // altern
+  xyzwh 334 266 3005 79 37 label_xy 353 272
+end
+subject 128003 "SALF"
+  xyzwh 232 51 2000 282 412
+classcanvas 128131 class_ref 168195 // ComiteCourse
+  simpleclassdiagramsettings end
+  xyz 66 197 2000
+end
+classcanvas 128258 class_ref 157570 // SalfBoxIhm
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 572 217 2000
+end
+usecasecanvas 128259 usecase_ref 128003 // launchSequence
+  xyzwh 310 105 3005 137 45 label_xy 323 112
+end
+usecasecanvas 128387 usecase_ref 128131 // stopSequence
+  xyzwh 307 196 3005 127 41 label_xy 323 203
+end
+usecasecanvas 128515 usecase_ref 128259 // testerBoitier
+  xyzwh 316 330 3005 111 45 label_xy 332 339
+end
+classcanvas 129154 class_ref 157826 // Time
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 576 90 2000
+end
+classcanvas 129410 class_ref 157442 // Button
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 742 158 2000
+end
+classcanvas 129538 class_ref 149890 // Speakers
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 735 227 2000
+end
+classcanvas 129666 class_ref 167939 // Led
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 740 383 2000
+end
+classcanvas 129794 class_ref 157954 // Klaxon
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 738 291 2000
+end
+line 128386 ---- decenter_begin 464
+  from ref 128131 z 3006 to ref 128002
+line 128514 ----
+  from ref 128131 z 3006 to ref 128515
+line 128642 ----
+  from ref 128259 z 3006 to ref 128258
+line 128770 ----
+  from ref 128387 z 3006 to ref 128258
+line 128898 ----
+  from ref 128002 z 3006 to ref 128258
+line 129026 ----
+  from ref 128515 z 3006 to ref 128258
+line 129282 ----
+  from ref 128259 z 3006 to ref 129154
+line 129283 ----
+  from ref 128131 z 3006 to ref 128259
+relationcanvas 131714 relation_ref 136834 // <dependency>
+  from ref 128258 z 2001 to ref 129538
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131842 relation_ref 136962 // <dependency>
+  from ref 128258 z 2001 to ref 129794
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131970 relation_ref 137090 // <dependency>
+  from ref 128258 z 2001 to ref 129410
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132098 relation_ref 137218 // <dependency>
+  from ref 128258 z 2001 to ref 129666
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+simplerelationcanvas 132226 simplerelation_ref 134530
+  decenter_end 445
+  from ref 128387 z 3006 stereotype "<<extend>>" xyz 331.5 164 3000 to ref 128259
+end
+end

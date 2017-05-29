@@ -1,0 +1,41 @@
+format 212
+
+classcanvas 128028 class_ref 128540 // BddSql
+  classdiagramsettings member_max_width 0 end
+  xyzwh 723 589 2000 81 43
+end
+classcanvas 128156 class_ref 128412 // ModbusTcp
+  classdiagramsettings member_max_width 0 end
+  xyz 478 144 2000
+end
+classcanvas 128284 class_ref 128284 // ExpediteurUdp
+  classdiagramsettings member_max_width 0 end
+  xyz 114 449 2000
+end
+classcanvas 128540 class_ref 128028 // Regulateur
+  classdiagramsettings member_max_width 0 end
+  xyz 40 160 2000
+end
+classcanvas 128668 class_ref 141954 // SystemeCentral
+  classdiagramsettings member_max_width 0 end
+  xyz 920 673 2000
+end
+relationcanvas 128514 relation_ref 134914 // 
+  from ref 128540 z 2001 to ref 128284
+  role_a_pos 177 419 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130588 relation_ref 129308 // <association>
+  decenter_begin 561
+  decenter_end 585
+  from ref 128668 z 2001 to ref 128028
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130972 relation_ref 129692 // <association>
+  decenter_end 561
+  from ref 128284 z 2001 to ref 128668
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

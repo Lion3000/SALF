@@ -1,0 +1,34 @@
+format 212
+
+activitynodecanvas 128003 activitynode_ref 174083 // initial_node
+  xyz 339 25 2000
+end
+activityactioncanvas 128131 activityaction_ref 135683 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 300 77 2000 100 60
+end
+activityactioncanvas 128387 activityaction_ref 169859 // activity action lancerSignalSonore
+  
+  show_opaque_action_definition default
+  xyzwh 270 190 2000 157 52
+end
+activitynodecanvas 128643 activitynode_ref 174211 // activity_final
+  xyz 337 267 2000
+end
+flowcanvas 128259 flow_ref 200963 // <flow>
+  
+  from ref 128003 z 2001 to ref 128131
+   write_horizontally default
+end
+flowcanvas 128515 flow_ref 201091 // <flow>
+  
+  from ref 128131 z 2001 label "[appui bouton tut]" xyz 291 153 3000 to ref 128387
+   write_horizontally default
+end
+flowcanvas 128771 flow_ref 201219 // <flow>
+  
+  from ref 128387 z 2001 to ref 128643
+   write_horizontally default
+end
+end

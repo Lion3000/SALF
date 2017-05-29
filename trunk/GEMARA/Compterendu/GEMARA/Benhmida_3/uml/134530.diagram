@@ -1,0 +1,76 @@
+format 212
+
+classinstancecanvas 128003 classinstance_ref 134531 // seq
+  xyz 494 133 2000
+end
+classinstancecanvas 128258 classinstance_ref 134786 // 
+  xyz 293 36 2000
+end
+classinstancecanvas 128386 classinstance_ref 134914 // 
+  xyz 462 55 2000
+end
+classinstancecanvas 128387 classinstance_ref 134659 // 
+  xyz 109 175 2006
+end
+classinstancecanvas 128514 classinstance_ref 135042 // startStop
+  xyz 475 278 2000
+end
+classinstancecanvas 128515 classinstance_ref 141187 // led
+  xyz 155 234 2000
+end
+classinstancecanvas 128899 classinstance_ref 141315 // timer
+  xyz 308 275 2000
+end
+classinstancecanvas 129154 classinstance_ref 135682 // 
+  xyz 107 121 2000
+end
+classinstancecanvas 129282 classinstance_ref 135810 // 
+  xyz 157 49 2000
+end
+classinstancecanvas 129666 classinstance_ref 135938 // 
+  xyz 326 177 2000
+end
+classinstancecanvas 130690 classinstance_ref 142466 // plus
+  xyz 498 203 2000
+end
+classinstancecanvas 130818 classinstance_ref 142594 // minus
+  xyz 493 165 2000
+end
+classinstancecanvas 130946 classinstance_ref 142722 // tut
+  xyz 486 244 2005
+end
+objectlinkcanvas 128131 norel
+  from ref 128003 z 2001 to ref 129666
+  no_role_a no_role_b
+objectlinkcanvas 128643 norel
+  from ref 129666 z 2001 to ref 128515
+  no_role_a no_role_b
+objectlinkcanvas 129027 norel
+  from ref 129666 z 2001 to ref 128899
+  no_role_a no_role_b
+objectlinkcanvas 129283 norel
+  from ref 128387 z 2007 to ref 129666
+  no_role_a no_role_b
+objectlinkcanvas 129794 norel
+  from ref 129666 z 2006 to ref 128258
+  no_role_a no_role_b
+objectlinkcanvas 130050 norel
+  from ref 129666 z 2001 to ref 128386
+  no_role_a no_role_b
+objectlinkcanvas 130434 norel
+  decenter_end 76
+  from ref 129666 z 2001 to ref 128514
+  no_role_a no_role_b
+objectlinkcanvas 130562 norel
+  from ref 129282 z 2001 to ref 129666
+  no_role_a no_role_b
+objectlinkcanvas 131074 norel
+  from ref 129666 z 2001 to ref 130818
+  no_role_a no_role_b
+objectlinkcanvas 131202 norel
+  from ref 129666 z 2006 to ref 130946
+  no_role_a no_role_b
+objectlinkcanvas 131330 norel
+  from ref 129666 z 2001 to ref 130690
+  no_role_a no_role_b
+end

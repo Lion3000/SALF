@@ -1,0 +1,35 @@
+format 212
+
+activityactioncanvas 128003 activityaction_ref 135683 // activity action lireBoutonsBoitier
+  
+  show_opaque_action_definition default
+  xyzwh 265 70 2000 161 56
+end
+activitynodecanvas 128131 activitynode_ref 149507 // initial_node
+  xyz 333 30 2000
+end
+activityactioncanvas 128387 activityaction_ref 136707 // activity action doIt
+  
+  show_opaque_action_definition default
+  xyzwh 295 195 2000 100 60
+end
+activitynodecanvas 128643 activitynode_ref 149635 // activity_final
+  xyz 332 311 2000
+end
+flowcanvas 128259 flow_ref 155907 // <flow>
+  decenter_end 480
+  
+  from ref 128131 z 2001 to ref 128003
+   write_horizontally default
+end
+flowcanvas 128515 flow_ref 156035 // <flow>
+  
+  from ref 128003 z 2001 label "[appui start/stop]" xyz 289 150.5 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 128771 flow_ref 156163 // <flow>
+  
+  from ref 128387 z 2001 to ref 128643
+   write_horizontally default
+end
+end

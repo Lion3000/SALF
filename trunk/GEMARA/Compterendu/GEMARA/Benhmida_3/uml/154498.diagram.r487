@@ -1,0 +1,141 @@
+format 212
+
+activityactioncanvas 128002 activityaction_ref 134914 // activity action entrerModeProgrammation
+  
+  show_opaque_action_definition default
+  xyzwh 89 248 2000 196 61
+end
+activityactioncanvas 128130 activityaction_ref 135298 // activity action sortirModeProgrammation
+  
+  show_opaque_action_definition default
+  xyzwh 310 628 2000 197 47
+end
+activityactioncanvas 128258 activityaction_ref 135426 // activity action incrementerMinutes
+  
+  show_opaque_action_definition default
+  xyzwh 867 622 2000 159 49
+end
+activityactioncanvas 128386 activityaction_ref 135554 // activity action decrementerMinutes
+  
+  show_opaque_action_definition default
+  xyzwh 537 225 2000 168 54
+end
+note 129026 "appui +"
+  xyzwh 1093 662 2000 77 43
+note 129154 "appui -"
+  xyzwh 1183 413 2000 71 39
+note 129538 "si appui long"
+  xyzwh 863 473 2000 109 43
+activityactioncanvas 129666 activityaction_ref 135682 // activity action AccelererIncrementation
+  
+  show_opaque_action_definition default
+  xyzwh 175 518 2000 185 51
+end
+activityactioncanvas 129794 activityaction_ref 135810 // activity action AccelererDecrementation
+  
+  show_opaque_action_definition default
+  xyzwh 844 194 2000 199 52
+end
+activitynodecanvas 129922 activitynode_ref 135426 // decision
+  xyz 822 310 2005
+end
+note 130306 "si appui long"
+  xyzwh 45 433 2000 113 45
+activityactioncanvas 133762 activityaction_ref 135938 // activity action resetChrononometre
+  
+  show_opaque_action_definition default
+  xyzwh 512 124 2005 152 55
+end
+note 133890 "appui + et -"
+  xyzwh 732 37 2010 103 43
+note 136322 "deux appuis sur start/stop"
+  xyzwh 40 112 2000 211 43
+activitynodecanvas 137090 activitynode_ref 135938 // activity_final
+  xyz 391 712 2000
+end
+note 139650 "appui sur start/stop"
+  xyzwh 493 568 2000 151 41
+note 140930 "si autre action"
+  xyzwh 64 600 2000 117 39
+activityactioncanvas 141314 activityaction_ref 136066 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 351 155 2019 100 60
+end
+activitynodecanvas 141442 activitynode_ref 136322 // initial_node
+  xyz 390 46 2000
+end
+activitynodecanvas 144770 activitynode_ref 136450 // decision
+  xyz 366 239 2000
+end
+flowcanvas 130050 flow_ref 136578 // <flow>
+  
+  from ref 129922 z 2006 to ref 129794
+   write_horizontally default
+end
+flowcanvas 130562 flow_ref 136706 // <flow>
+  decenter_begin 547
+  decenter_end 480
+  
+  from ref 128386 z 2006 to ref 129922
+   write_horizontally default
+end
+flowcanvas 131970 flow_ref 137474 // <flow>
+  decenter_end 863
+  
+  from ref 129922 z 2006 to ref 128386
+   write_horizontally default
+end
+flowcanvas 137218 flow_ref 138882 // <flow>
+  decenter_begin 472
+  
+  from ref 128130 z 2001 to ref 137090
+   write_horizontally default
+end
+flowcanvas 141570 flow_ref 140162 // <flow>
+  
+  from ref 141442 z 2020 to ref 141314
+   write_horizontally default
+end
+flowcanvas 144514 flow_ref 141186 // <flow>
+  decenter_begin 591
+  
+  from ref 128002 z 2020 to point 203 182
+  line 144642 z 2020 to ref 141314
+   write_horizontally default
+end
+flowcanvas 144898 flow_ref 141314 // <flow>
+  decenter_begin 210
+  decenter_end 243
+  
+  from ref 141314 z 2020 to ref 144770
+   write_horizontally default
+end
+flowcanvas 145026 flow_ref 141442 // <flow>
+  
+  from ref 144770 z 2001 label "[double appui start/stop]" xyz 205.5 224 3000 to ref 128002
+   write_horizontally default
+end
+flowcanvas 145154 flow_ref 141570 // <flow>
+  decenter_begin 756
+  decenter_end 570
+  
+  from ref 144770 z 2020 to ref 141314
+   write_horizontally default
+end
+flowcanvas 145282 flow_ref 141698 // <flow>
+  
+  from ref 141314 z 2020 to ref 133762
+   write_horizontally default
+end
+line 129282 -_-_
+  from ref 129026 z 2001 to ref 128258
+line 129410 -_-_ decenter_end 583
+  from ref 129154 z 2001 to ref 128386
+line 130178 -_-_ decenter_begin 82 decenter_end 727
+  from ref 129538 z 2007 to ref 130050
+line 134018 -_-_ decenter_end 697
+  from ref 133890 z 2011 to ref 133762
+line 136450 -_-_ decenter_end 316
+  from ref 136322 z 2001 to ref 128002
+end

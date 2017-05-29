@@ -1,0 +1,81 @@
+format 212
+
+activitynodecanvas 128003 activitynode_ref 157955 // initial_node
+  xyz 537 13 2000
+end
+activityactioncanvas 128131 activityaction_ref 135683 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 351 102 2000 164 63
+end
+activityactioncanvas 128899 activityaction_ref 148099 // activity action indiquerFinTest
+  
+  show_opaque_action_definition default
+  xyzwh 354 209 2000 158 52
+end
+activitynodecanvas 129155 activitynode_ref 158083 // activity_final
+  xyz 419 294 2000
+end
+activityactioncanvas 129411 activityaction_ref 148867 // activity action lireBoutonAnnulerIHMTest
+  
+  show_opaque_action_definition default
+  xyzwh 561 101 2000 208 58
+end
+activitynodecanvas 129539 activitynode_ref 158339 // fork
+  horizontal  xyzwh 330 56 3010 461 15
+end
+activityactioncanvas 130307 activityaction_ref 148995 // activity action indiquerAnnulationTest
+  
+  show_opaque_action_definition default
+  xyzwh 570 214 2000 191 58
+end
+activitynodecanvas 130563 activitynode_ref 158467 // activity_final
+  xyz 654 301 2000
+end
+expansionregioncanvas 131459 expansionregion_ref 141443 // 
+  xyzwh 254 84 3016 279 94
+end
+note 131587 "jusqu'à appui des 5 boutons"
+  xyzwh 90 101 2000 117 57
+flowcanvas 129283 flow_ref 170115 // <flow>
+  
+  from ref 128899 z 2006 to ref 129155
+   write_horizontally default
+end
+flowcanvas 130051 flow_ref 171267 // <flow>
+  decenter_begin 223
+  
+  from ref 129539 z 3011 to ref 128131
+   write_horizontally default
+end
+flowcanvas 130179 flow_ref 171395 // <flow>
+  decenter_begin 726
+  
+  from ref 129539 z 3011 to ref 129411
+   write_horizontally default
+end
+flowcanvas 130435 flow_ref 171523 // <flow>
+  
+  from ref 129411 z 2001 label "[appui bouton annulation]" xyz 581 176 2001 to ref 130307
+   write_horizontally default
+end
+flowcanvas 130691 flow_ref 171651 // <flow>
+  
+  from ref 130307 z 2001 to ref 130563
+   write_horizontally default
+end
+flowcanvas 131203 flow_ref 171779 // <flow>
+  decenter_begin 473
+  decenter_end 470
+  
+  from ref 128003 z 3011 to ref 129539
+   write_horizontally default
+end
+flowcanvas 131331 flow_ref 201347 // <flow>
+  
+  from ref 128131 z 2001 to ref 128899
+   write_horizontally default
+end
+line 131715 -_-_
+  from ref 131587 z 3017 to ref 131459
+end

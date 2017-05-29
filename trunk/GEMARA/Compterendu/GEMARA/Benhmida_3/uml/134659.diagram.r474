@@ -1,0 +1,56 @@
+format 212
+
+subject 128003 "SALF"
+  xyzwh 233 108 2000 281 388
+classcanvas 128131 class_ref 168195 // ComiteCourse
+  simpleclassdiagramsettings end
+  xyz 66 197 2000
+end
+usecasecanvas 128259 usecase_ref 128003 // launchSequence
+  xyzwh 321 156 3005 137 45 label_xy 333 167
+end
+usecasecanvas 128387 usecase_ref 128131 // stopSequence
+  xyzwh 326 220 3005 127 41 label_xy 342 229
+end
+usecasecanvas 128515 usecase_ref 128259 // testerBoitier
+  xyzwh 332 436 3005 103 41 label_xy 344 445
+end
+usecasecanvas 128643 usecase_ref 128387 // configureTimer
+  xyzwh 320 281 3010 129 45 label_xy 333 291
+end
+usecasecanvas 128771 usecase_ref 128515 // modifySequence
+  xyzwh 313 351 3010 139 45 label_xy 329 362
+end
+classcanvas 128899 class_ref 168323 // Button
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 590 434 2000
+end
+classcanvas 129027 class_ref 149890 // Speakers
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 586 521 2000
+end
+classcanvas 129155 class_ref 168067 // Timer
+  simpleclassdiagramsettings class_drawing_mode class end
+  xyz 603 213 2000
+end
+classcanvas 129539 class_ref 167939 // Led
+  simpleclassdiagramsettings end
+  xyz 611 98 2000
+end
+classcanvas 129923 class_ref 168451 // Database
+  simpleclassdiagramsettings end
+  xyz 596 279 2000
+end
+line 129283 ----
+  from ref 128131 z 3006 to ref 128259
+line 129411 ----
+  from ref 129155 z 3011 to ref 128643
+line 129667 ----
+  from ref 128387 z 3006 to ref 129155
+line 129795 ----
+  from ref 128259 z 3006 to ref 129155
+line 130051 ----
+  from ref 128515 z 3006 to ref 128899
+line 130179 ----
+  from ref 128515 z 3006 to ref 129027
+end

@@ -1,0 +1,9 @@
+window_sizes 1742 924 435 1301 763 104
+cleanlooks_style
+show_stereotypes
+selected classdiagram_ref 161026 // dc
+open
+  class_ref 148482 // BaseDeDonnees
+  classview_ref 134530 // vc_Regulateur
+end
+end

@@ -1,0 +1,47 @@
+class Database
+!!!159107.cpp!!!	executeRequest(in sqlRequest : string, in isSelectRequest : bool = false, inout data : std::vector<std::vector<std::string> > = NULL) : void
+	this->sqlRequest = sqlRequest;
+	if(prepareRequest()== -1) { exit(0);}
+	if(isSelectRequest && data != NULL) // si select
+	{
+		int currentRow = 0, i = 0;
+		int colsTotal = sqlite3_column_count(statement);
+		std::vector<std::vector<std::string> > allResult;
+		int j = 0;
+		while(1) 
+		{
+			currentRow = sqlite3_step(this->statement); // pour Un enregistrement ------ returns SQLITE_ROW if select 
+			if(currentRow == SQLITE_ROW) 
+			{					
+				std::vector<std::string> row;
+				for(i = 0; i < colsTotal; i++)
+				{
+					row.push_back(std::string(reinterpret_cast<const char *>(sqlite3_column_text(statement, i))));
+				}
+				allResult.push_back(row);
+			}
+			else if (currentRow == SQLITE_DONE) 
+			{
+				puts("SQL OK");
+				break;
+			}
+			else
+			{
+				fprintf (stderr, "Failed.\n");
+				sqlite3_finalize(this->statement);
+				exit(1);
+			}
+		}
+		sqlite3_finalize(this->statement);
+		*data = allResult;
+	}
+	else
+		sqlite3_step(this->statement);
+!!!159235.cpp!!!	prepareRequest() : int
+	if(sqlite3_prepare_v2(this->db, sqlRequest.c_str(), -1, &statement, 0)!= SQLITE_OK)
+	{
+		fprintf(stderr, "erreur prepare: %s\n", sqlite3_errmsg(db));
+		return(-1);
+	}	
+	else
+		return 1;

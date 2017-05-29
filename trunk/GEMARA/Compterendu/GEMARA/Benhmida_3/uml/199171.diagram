@@ -1,0 +1,100 @@
+format 212
+
+classcanvas 128003 class_ref 228995 // SpiComBny
+  classdiagramsettings member_max_width 0 end
+  xyz 191 69 2000
+end
+classcanvas 128131 class_ref 229123 // Digit
+  classdiagramsettings member_max_width 0 end
+  xyz 634 79 2000
+end
+classcanvas 128259 class_ref 229251 // Minuts
+  classdiagramsettings member_max_width 0 end
+  xyz 417 83 2000
+end
+classcanvas 128387 class_ref 229379 // Seconds
+  classdiagramsettings member_max_width 0 end
+  xyz 420 151 2000
+end
+classcanvas 128515 class_ref 229507 // Sequence
+  classdiagramsettings member_max_width 0 end
+  xyz 418 231 2000
+end
+classcanvas 128643 class_ref 228611 // Led
+  classdiagramsettings member_max_width 0 end
+  xyz 211 291 2000
+end
+classcanvas 128771 class_ref 229635 // Counter
+  classdiagramsettings member_max_width 0 end
+  xyz 303 290 2000
+end
+classcanvas 128899 class_ref 229763 // Button
+  classdiagramsettings member_max_width 0 end
+  xyzwh 105 290 2000 57 43
+end
+classcanvas 129027 class_ref 228739 // SalfBoxIhm
+  classdiagramsettings member_max_width 0 end
+  xyz 189 150 2000
+end
+classcanvas 129155 class_ref 230147 // Flight
+  classdiagramsettings member_max_width 0 end
+  xyz 598 232 2000
+end
+relationcanvas 129283 relation_ref 161795 // <association>
+  from ref 128515 z 2001 to ref 129155
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129411 relation_ref 193283 // <aggregation>
+  from ref 128259 z 2001 to ref 128131
+  no_role_a no_role_b
+  multiplicity_a_pos 615 108 3000 multiplicity_b_pos 481 111 3000
+end
+relationcanvas 129539 relation_ref 193411 // <aggregation>
+  from ref 128387 z 2001 to ref 128131
+  role_a_pos 610 77 3000 no_role_b
+  no_multiplicity_a multiplicity_b_pos 498 163 3000
+end
+relationcanvas 129667 relation_ref 193539 // <aggregation>
+  from ref 128515 z 2001 to ref 128131
+  no_role_a no_role_b
+  multiplicity_a_pos 615 115 3000 multiplicity_b_pos 503 214 3000
+end
+relationcanvas 129795 relation_ref 193667 // <unidirectional association>
+  from ref 128771 z 2001 to ref 129027
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129923 relation_ref 193155 // <unidirectional association>
+  from ref 128643 z 2001 to ref 129027
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130051 relation_ref 193795 // <unidirectional association>
+  decenter_begin 807
+  from ref 128899 z 2001 to ref 129027
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130179 relation_ref 193923 // <generalisation>
+  decenter_begin 528
+  from ref 129027 z 2001 to ref 128003
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130307 relation_ref 194051 // <unidirectional association>
+  from ref 129027 z 2001 to ref 128259
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130435 relation_ref 194179 // <unidirectional association>
+  from ref 129027 z 2001 to ref 128387
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130563 relation_ref 194307 // <unidirectional association>
+  from ref 129027 z 2001 to ref 128515
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

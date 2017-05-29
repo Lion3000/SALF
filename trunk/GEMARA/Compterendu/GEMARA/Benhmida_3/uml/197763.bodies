@@ -1,0 +1,60 @@
+class Dialogs
+!!!151427.cpp!!!	beep(in scId : int, in ecId : int, in times : int) : void
+    Q_UNUSED(scId)
+    Q_UNUSED(ecId)
+    Q_UNUSED(times)
+
+    _player.setVolume(100);
+    _player.setMedia(QUrl::fromLocalFile("/usr/share/sounds/ubuntu/stereo/bell.ogg"));
+    _player.play();
+!!!151555.cpp!!!	alert(in scId : int, in ecId : int, in message : QString, in title : QString, in buttonLabel : QString) : void
+    QStringList list;
+    list.append(buttonLabel);
+
+    confirm(scId, ecId, message, title, list);
+!!!151683.cpp!!!	confirm(in scId : int, in ecId : int, in message : QString, in title : QString, in buttonLabels : QStringList) : void
+    Q_UNUSED(ecId);
+
+    if (_alertCallback) {
+        qCritical() << "can't open second dialog";
+        return;
+    }
+    _alertCallback = scId;
+
+    QString s1, s2, s3;
+    if (buttonLabels.size() > 0)
+        s1 = buttonLabels[0];
+    if (buttonLabels.size() > 1)
+        s2 = buttonLabels[1];
+    if (buttonLabels.size() > 2)
+        s3 = buttonLabels[2];
+
+    QString path = m_cordova->get_app_dir() + "/../qml/notification.qml";
+    QString qml = QString("PopupUtils.open(%1, root, { root: root, cordova: cordova, title: %2, text: %3, promptVisible: false, button1Text: %4, button2Text: %5, button3Text: %6 })")
+        .arg(CordovaInternal::format(path)).arg(CordovaInternal::format(title)).arg(CordovaInternal::format(message))
+        .arg(CordovaInternal::format(s1)).arg(CordovaInternal::format(s2)).arg(CordovaInternal::format(s3));
+
+    m_cordova->execQML(qml);
+!!!151811.cpp!!!	prompt(in scId : int, in ecId : int, in message : QString, in title : QString, in buttonLabels : QStringList, in defaultText : QString) : void
+    Q_UNUSED(ecId);
+
+    if (_alertCallback) {
+        qCritical() << "can't open second dialog";
+        return;
+    }
+    _alertCallback = scId;
+
+    QString s1, s2, s3;
+    if (buttonLabels.size() > 0)
+        s1 = buttonLabels[0];
+    if (buttonLabels.size() > 1)
+        s2 = buttonLabels[1];
+    if (buttonLabels.size() > 2)
+        s3 = buttonLabels[2];
+    QString path = m_cordova->get_app_dir() + "/../qml/notification.qml";
+    QString qml = QString("PopupUtils.open(%1, root, { root: root, cordova: cordova, title: %2, text: %3, promptVisible: true, defaultPromptText: %7, button1Text: %4, button2Text: %5, button3Text: %6 })")
+        .arg(CordovaInternal::format(path)).arg(CordovaInternal::format(title)).arg(CordovaInternal::format(message))
+        .arg(CordovaInternal::format(s1)).arg(CordovaInternal::format(s2))
+        .arg(CordovaInternal::format(s3)).arg(CordovaInternal::format(defaultText));
+
+    m_cordova->execQML(qml);

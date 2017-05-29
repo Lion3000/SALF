@@ -1,0 +1,83 @@
+format 212
+
+activityactioncanvas 128003 activityaction_ref 176899 // activity action DemarrerChronometre
+  
+  show_opaque_action_definition default
+  xyzwh 260 52 2000 168 48
+end
+activitynodecanvas 128131 activitynode_ref 181763 // initial_node
+  xyz 333 12 2000
+end
+activityactioncanvas 129027 activityaction_ref 177027 // activity action Chronometre=15:30
+  
+  show_opaque_action_definition default
+  xyzwh 256 120 2000 175 56
+end
+activityactioncanvas 130819 activityaction_ref 179459 // activity action FairedecompteSonore
+  
+  show_opaque_action_definition default
+  xyzwh 256 198 2000 178 50
+end
+activityactioncanvas 133891 activityaction_ref 181763 // activity action envoyerCourse
+  
+  show_opaque_action_definition default
+  xyzwh 263 278 2000 152 60
+end
+note 134019 "for i = 0; i<3; i++"
+  xyzwh 52 203 2000 133 37
+activityactioncanvas 134147 activityaction_ref 182019 // activity action eteindreLed
+  
+  show_opaque_action_definition default
+  xyzwh 291 493 2000 100 60
+  pins
+    pincanvas 134275 pin_ref 152579 // toutes
+      xyzwh 281 499 2002 11 11 label_xy 234 484
+    end
+  end
+end
+expansionregioncanvas 134531 expansionregion_ref 147971 // 
+  xyzwh 173 260 1995 315 94
+end
+iconcanvas 134787 activitydiagram_ref 197763 // faireDecompteSonore
+  xyz 246 197 2005
+iconcanvas 134915 activitydiagram_ref 197891 // envoyerCourse
+  xyz 265 280 3010
+activitynodecanvas 135043 activitynode_ref 184451 // activity_final
+  xyz 327 586 2000
+end
+activityactioncanvas 135299 activityaction_ref 181891 // activity action arreterChronometre
+  
+  show_opaque_action_definition default
+  xyzwh 257 392 2000 166 68
+end
+flowcanvas 128515 flow_ref 209795 // <flow>
+  
+  from ref 128131 z 2001 to ref 128003
+   write_horizontally default
+end
+flowcanvas 135427 flow_ref 217091 // <flow>
+  
+  from ref 134147 z 2001 to ref 135043
+   write_horizontally default
+end
+flowcanvas 135555 flow_ref 222211 // <flow>
+  
+  from ref 135299 z 2001 to ref 134147
+   write_horizontally default
+end
+flowcanvas 135683 flow_ref 209667 // <flow>
+  
+  from ref 128003 z 2001 to ref 129027
+   write_horizontally default
+end
+flowcanvas 135811 flow_ref 216963 // <flow>
+  
+  from ref 133891 z 2001 to ref 135299
+   write_horizontally default
+end
+flowcanvas 135939 flow_ref 213763 // <flow>
+  
+  from ref 129027 z 2001 to ref 130819
+   write_horizontally default
+end
+end

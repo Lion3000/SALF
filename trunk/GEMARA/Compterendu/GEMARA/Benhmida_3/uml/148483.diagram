@@ -1,0 +1,34 @@
+format 212
+
+activitynodecanvas 128003 activitynode_ref 158595 // initial_node
+  xyz 383 35 2000
+end
+activityactioncanvas 129027 activityaction_ref 149379 // activity action allumerDigitsAfficheur
+  
+  show_opaque_action_definition default
+  xyzwh 295 93 2000 194 58
+end
+activitynodecanvas 129283 activitynode_ref 159235 // activity_final
+  xyz 378 278 2000
+end
+activityactioncanvas 129411 activityaction_ref 149251 // activity action indiquerFinTest
+  
+  show_opaque_action_definition default
+  xyzwh 327 197 2005 129 57
+end
+flowcanvas 129155 flow_ref 172803 // <flow>
+  
+  from ref 128003 z 2001 to ref 129027
+   write_horizontally default
+end
+flowcanvas 129539 flow_ref 172931 // <flow>
+  
+  from ref 129027 z 2006 to ref 129411
+   write_horizontally default
+end
+flowcanvas 129667 flow_ref 173059 // <flow>
+  
+  from ref 129411 z 2006 to ref 129283
+   write_horizontally default
+end
+end

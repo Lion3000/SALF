@@ -1,0 +1,127 @@
+format 212
+
+activityactioncanvas 128003 activityaction_ref 178947 // activity action entrerModeProgrammationSequence
+  
+  show_opaque_action_definition default
+  xyzwh 237 36 2000 275 45
+end
+activitynodecanvas 128131 activitynode_ref 184579 // initial_node
+  xyz 363 6 2000
+end
+activityactioncanvas 128387 activityaction_ref 179203 // activity action reglerSequence
+  
+  show_opaque_action_definition default
+  xyzwh 302 106 2000 145 41
+end
+iconcanvas 128515 activitydiagram_ref 197123 // entrerModeProgrammation
+  xyz 233 35 2005
+activityactioncanvas 128643 activityaction_ref 182147 // activity action reglerChronometre
+  
+  show_opaque_action_definition default
+  xyzwh 290 168 2000 166 42
+end
+activityactioncanvas 128771 activityaction_ref 176387 // activity action lancerSequence
+  
+  show_opaque_action_definition default
+  xyzwh 310 416 2000 135 56
+end
+activityactioncanvas 128899 activityaction_ref 182403 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 326 295 2000 100 60
+end
+activitynodecanvas 129539 activitynode_ref 184707 // activity_final
+  xyz 543 578 2000
+end
+activitynodecanvas 129795 activitynode_ref 150787 // fork
+  horizontal  xyzwh 204 385 2000 457 15
+end
+activityactioncanvas 130179 activityaction_ref 182531 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 507 414 2000 100 60
+end
+activityactioncanvas 130435 activityaction_ref 182659 // activity action arreterSequence
+  
+  show_opaque_action_definition default
+  xyzwh 489 509 2000 135 52
+end
+activitynodecanvas 130819 activitynode_ref 180995 // activity_final
+  xyz 365 488 2000
+end
+iconcanvas 131075 activitydiagram_ref 197507 // reglerSequence
+  xyz 300 106 2005
+iconcanvas 131203 activitydiagram_ref 197635 // reglerChronometre
+  xyz 289 170 2005
+iconcanvas 131331 activitydiagram_ref 197379 // lancerSequence
+  xyz 308 449 2005
+activityactioncanvas 131459 activityaction_ref 182275 // activity action sortirModeProgrammation
+  
+  show_opaque_action_definition default
+  xyzwh 272 231 2000 208 40
+end
+iconcanvas 131843 activitydiagram_ref 197251 // sortirModeProgrammation
+  xyz 272 229 2005
+flowcanvas 128259 flow_ref 161283 // <flow>
+  
+  from ref 128131 z 2001 to ref 128003
+   write_horizontally default
+end
+flowcanvas 129283 flow_ref 161667 // <flow>
+  
+  from ref 128003 z 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 129411 flow_ref 217731 // <flow>
+  decenter_end 500
+  
+  from ref 128387 z 2001 to ref 128643
+   write_horizontally default
+end
+flowcanvas 129923 flow_ref 162051 // <flow>
+  decenter_begin 530
+  decenter_end 385
+  
+  from ref 128899 z 2001 label "[appui bouton start/stop]" xyz 301 359 2001 to ref 129795
+   write_horizontally default
+end
+flowcanvas 130051 flow_ref 162179 // <flow>
+  decenter_begin 380
+  
+  from ref 129795 z 2001 to ref 128771
+   write_horizontally default
+end
+flowcanvas 130307 flow_ref 162307 // <flow>
+  decenter_begin 776
+  
+  from ref 129795 z 2001 to ref 130179
+   write_horizontally default
+end
+flowcanvas 130563 flow_ref 162435 // <flow>
+  
+  from ref 130179 z 2001 label "[appui bouton start/stop ]" xyz 474 481 2001 to ref 130435
+   write_horizontally default
+end
+flowcanvas 130691 flow_ref 217987 // <flow>
+  decenter_begin 488
+  
+  from ref 130435 z 2001 to ref 129539
+   write_horizontally default
+end
+flowcanvas 130947 flow_ref 208131 // <flow>
+  
+  from ref 128771 z 2001 to ref 130819
+   write_horizontally default
+end
+flowcanvas 131587 flow_ref 217859 // <flow>
+  decenter_end 485
+  
+  from ref 128643 z 2001 to ref 131459
+   write_horizontally default
+end
+flowcanvas 131715 flow_ref 222339 // <flow>
+  
+  from ref 131459 z 2001 to ref 128899
+   write_horizontally default
+end
+end

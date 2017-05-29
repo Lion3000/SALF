@@ -1,0 +1,54 @@
+format 212
+
+classinstancecanvas 128028 classinstance_ref 128028 // 1-1
+  xyz 250 289 2000
+end
+classinstancecanvas 128284 classinstance_ref 128284 // systemeCentral
+  xyz 408 290 2000
+end
+classinstancecanvas 128412 classinstance_ref 128412 // clientTcp
+  xyz 239 203 2005
+end
+classinstancecanvas 128540 classinstance_ref 128540 // serveurTcp
+  xyz 453 202 2000
+end
+classinstancecanvas 128796 classinstance_ref 128668 // recepteurUdp
+  xyz 442 399 2000
+end
+classinstancecanvas 129052 classinstance_ref 128796 // emetteurUdp
+  xyz 35 395 2000
+end
+classinstancecanvas 129436 classinstance_ref 128924 // modbus
+  xyz 42 289 2000
+end
+classinstancecanvas 129948 classinstance_ref 129052 // baseDeDonnees
+  xyz 667 290 2000
+end
+objectlinkcanvas 128668 norel
+  from ref 128540 z 2001 to ref 128284
+  no_role_a no_role_b
+objectlinkcanvas 128924 norel
+  from ref 128284 z 2001 to ref 128796
+  no_role_a no_role_b
+objectlinkcanvas 129180 norel
+  from ref 128412 z 2006 to ref 128028
+  no_role_a no_role_b
+objectlinkcanvas 129564 norel
+  from ref 129436 z 2001 to ref 128028
+  no_role_a no_role_b
+objectlinkcanvas 129692 norel
+  from ref 129436 z 2001 to ref 129052
+  no_role_a no_role_b
+objectlinkcanvas 129820 norel
+  from ref 129052 z 2001 to ref 128796
+  no_role_a no_role_b
+objectlinkcanvas 130076 norel
+  from ref 128412 z 2006 to ref 128540
+  no_role_a no_role_b
+objectlinkcanvas 130332 norel
+  from ref 128540 z 2001 to ref 129948
+  no_role_a no_role_b
+objectlinkcanvas 130460 norel
+  from ref 128796 z 2001 to ref 129948
+  no_role_a no_role_b
+end

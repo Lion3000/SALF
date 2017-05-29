@@ -1,0 +1,246 @@
+format 212
+
+classinstance 128003 class_ref 204419 // ButtonController
+  name ""   xyz 252 9 2005 life_line_z 2000
+classinstance 128131 class_ref 157570 // SalfBoxIhm
+  name ""   xyz 431 8 2010 life_line_z 2000
+classinstance 128259 class_ref 204547 // Database
+  name ""   xyz 579 6 2015 life_line_z 2000
+classinstance 128387 class_ref 220419 // main
+  name ""   xyz 33 9 2015 life_line_z 2000
+classinstance 128515 class_ref 157698 // Flight
+  name ""   xyz 728 7 2005 life_line_z 2000
+fragment 132227 "alt"
+  xyzwh 243 119 1985 552 370
+end
+note 132355 "start appuyé"
+  xyzwh 76 132 2005 105 37
+fragment 132867 "alt"
+  xyzwh 236 501 1990 553 57
+end
+note 132995 "stop appuyé"
+  xyzwh 72.5 505.5 2005 105 37
+fragment 134147 "loop"
+  xyzwh 394 393 1995 386 87
+end
+fragment 134659 "loop"
+  xyzwh 263 569 1995 251 58
+end
+note 134787 "tut appuyé"
+  xyzwh 95 577 2005 95 39
+note 135299 "seq appuyé"
+  xyzwh 91.5 668.5 2005 105 37
+note 136067 "+ ou - appuyé"
+  xyzwh 83 770 2005 121 39
+fragment 136195 "alt"
+  xyzwh 222 642 2000 434 93
+end
+fragment 137219 "alt"
+  xyzwh 233 746 2000 425 71
+end
+fragment 137859 "alt"
+  xyzwh 248 826 2000 175 57
+end
+note 137987 "+ et - appuyé"
+  xyzwh 79.5 850.5 2005 121 39
+durationcanvas 128643 classinstance_ref 128387 // :main
+  xyzwh 52 62 2010 11 29
+end
+durationcanvas 128771 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 56 2010 11 25
+end
+durationcanvas 129027 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 88 2010 11 25
+end
+durationcanvas 130051 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 126 2010 11 25
+end
+durationcanvas 130179 classinstance_ref 128515 // :Flight
+  xyzwh 748 126 2010 11 32
+end
+durationcanvas 130435 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 312 2010 11 28
+end
+durationcanvas 130563 classinstance_ref 128515 // :Flight
+  xyzwh 748 312 2010 11 26
+end
+durationcanvas 130819 classinstance_ref 128515 // :Flight
+  xyzwh 748 175 2010 11 40
+end
+durationcanvas 130947 classinstance_ref 128259 // :Database
+  xyzwh 613 175 2010 11 32
+end
+durationcanvas 131203 classinstance_ref 128515 // :Flight
+  xyzwh 748 240 2010 11 40
+end
+durationcanvas 131331 classinstance_ref 128259 // :Database
+  xyzwh 613 240 2010 11 34
+end
+durationcanvas 131843 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 356 2010 11 31
+end
+durationcanvas 131971 classinstance_ref 128515 // :Flight
+  xyzwh 748 356 2010 11 25
+end
+durationcanvas 132483 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 522 2010 11 26
+end
+durationcanvas 132611 classinstance_ref 128515 // :Flight
+  xyzwh 748 522 2010 11 25
+end
+durationcanvas 133379 classinstance_ref 128515 // :Flight
+  xyzwh 748 399 2010 11 25
+end
+durationcanvas 133507 classinstance_ref 128131 // :SalfBoxIhm
+  xyzwh 471 399 2010 11 26
+end
+durationcanvas 133763 classinstance_ref 128515 // :Flight
+  xyzwh 748 448 2010 11 25
+end
+durationcanvas 133891 classinstance_ref 128131 // :SalfBoxIhm
+  xyzwh 471 448 2010 11 27
+end
+durationcanvas 134275 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 595 2010 11 26
+end
+durationcanvas 134403 classinstance_ref 128131 // :SalfBoxIhm
+  xyzwh 471 595 2010 11 26
+end
+durationcanvas 135043 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 669 2010 11 25
+end
+durationcanvas 135427 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 701 2010 11 26
+end
+durationcanvas 135555 classinstance_ref 128259 // :Database
+  xyzwh 613 701 2010 11 25
+end
+durationcanvas 135811 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 756 2010 11 25
+end
+durationcanvas 136835 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 786 2010 11 26
+end
+durationcanvas 136963 classinstance_ref 128259 // :Database
+  xyzwh 613 786 2010 11 25
+end
+durationcanvas 137603 classinstance_ref 128003 // :ButtonController
+  xyzwh 307 834 2010 11 30
+end
+msg 128899 asynchronous
+  from durationcanvas_ref 128643
+  to durationcanvas_ref 128771
+  yz 62 2015 msg operation_ref 158723 // "getButtonsState() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 132 68
+reflexivemsg 129155 asynchronous
+  to durationcanvas_ref 129027
+  yz 89 2015 msg operation_ref 158083 // "manageButtons() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 339 85
+msg 130307 asynchronous
+  from durationcanvas_ref 130051
+  to durationcanvas_ref 130179
+  yz 126 2015 explicitmsg "setTimer(getTimerFromDB())"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 388 136
+msg 130691 asynchronous
+  from durationcanvas_ref 130435
+  to durationcanvas_ref 130563
+  yz 312 2015 explicitmsg "setCompleteSequence(setTimer(getSequenceFromDB())"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 352 293
+msg 131075 synchronous
+  from durationcanvas_ref 130819
+  to durationcanvas_ref 130947
+  yz 175 3005 explicitmsg "getTimer()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 628 156
+msg 131459 synchronous
+  from durationcanvas_ref 131203
+  to durationcanvas_ref 131331
+  yz 240 3005 explicitmsg "getSequence()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 638 221
+msg 131587 return
+  from durationcanvas_ref 130947
+  to durationcanvas_ref 130819
+  yz 196 3010 explicitmsg "timer"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 671 184
+msg 131715 return
+  from durationcanvas_ref 131331
+  to durationcanvas_ref 131203
+  yz 263 2015 explicitmsg "sequence"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 663 267
+msg 132099 asynchronous
+  from durationcanvas_ref 131843
+  to durationcanvas_ref 131971
+  yz 356 2015 explicitmsg "start()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 514 337
+msg 132739 asynchronous
+  from durationcanvas_ref 132483
+  to durationcanvas_ref 132611
+  yz 522 2015 explicitmsg "stop()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 529 527
+msg 133635 asynchronous
+  from durationcanvas_ref 133379
+  to durationcanvas_ref 133507
+  yz 399 2015 explicitmsg "setCompteur()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 574 407
+msg 134019 asynchronous
+  from durationcanvas_ref 133763
+  to durationcanvas_ref 133891
+  yz 448 2015 explicitmsg "setLeds()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 590 456
+msg 134531 asynchronous
+  from durationcanvas_ref 134275
+  to durationcanvas_ref 134403
+  yz 595 2015 explicitmsg "setLeds(tut)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 356 577
+reflexivemsg 135171 asynchronous
+  to durationcanvas_ref 135043
+  yz 670 2015 msg operation_ref 157187 // "setUpSequence() : void"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 273 647
+msg 135683 asynchronous
+  from durationcanvas_ref 135427
+  to durationcanvas_ref 135555
+  yz 701 2015 explicitmsg "executeRequest(insert into)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 366 709
+reflexivemsg 135939 asynchronous
+  to durationcanvas_ref 135811
+  yz 757 2015 explicitmsg "setUpTimer()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 342 753
+msg 137091 asynchronous
+  from durationcanvas_ref 136835
+  to durationcanvas_ref 136963
+  yz 786 2015 explicitmsg "executeRequest(insert into)"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 378 794
+reflexivemsg 137731 asynchronous
+  to durationcanvas_ref 137603
+  yz 850 2015 explicitmsg "clearTimer()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 324 858
+line 133123 -_-_
+  from ref 132355 z 2006 to ref 132227
+line 133251 -_-_
+  from ref 132995 z 3006 to ref 132867
+line 134915 -_-_
+  from ref 134787 z 2021 to ref 134659
+line 136323 -_-_
+  from ref 135299 z 2006 to ref 136195
+line 137347 -_-_
+  from ref 136067 z 2006 to ref 137219
+line 138115 -_-_
+  from ref 137987 z 2006 to ref 137859
+end

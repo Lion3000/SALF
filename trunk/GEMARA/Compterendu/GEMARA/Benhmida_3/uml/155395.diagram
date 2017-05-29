@@ -1,0 +1,54 @@
+format 212
+
+classcanvas 128003 class_ref 181507 // Button
+  classdiagramsettings member_max_width 0 end
+  xyz 365 397 2000
+end
+classcanvas 128515 class_ref 182147 // SalfBoxIhm
+  classdiagramsettings member_max_width 0 end
+  xyz 13 247 2017
+end
+classcanvas 128643 class_ref 182275 // LaunchSequence
+  classdiagramsettings member_max_width 0 end
+  xyz 311 16 2005
+end
+classcanvas 129027 class_ref 182403 // Led
+  classdiagramsettings member_max_width 0 end
+  xyz 837 39 3011
+end
+classcanvas 129667 class_ref 182531 // Speaker
+  classdiagramsettings member_max_width 0 end
+  xyz 317 206 3005
+end
+classcanvas 130051 class_ref 182019 // Flight
+  classdiagramsettings member_max_width 0 end
+  xyz 94 19 3005
+end
+relationcanvas 129155 relation_ref 162307 // <directional composition>
+  decenter_begin 675
+  from ref 128643 z 3012 stereotype "<<:vector>>" xyz 624 73 3012 to ref 129027
+  role_a_pos 794 70 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129795 relation_ref 162435 // <directional composition>
+  decenter_begin 676
+  from ref 128643 z 3006 to ref 129667
+  role_a_pos 535 180 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129923 relation_ref 164483 // <association>
+  from ref 128515 z 2018 to ref 128003
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130179 relation_ref 162179 // <directional composition>
+  from ref 130051 z 3006 to ref 128515
+  role_a_pos 157 221 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130307 relation_ref 164611 // <association>
+  from ref 130051 z 3006 to ref 128643
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

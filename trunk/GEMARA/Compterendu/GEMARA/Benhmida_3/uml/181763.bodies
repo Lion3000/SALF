@@ -1,0 +1,49 @@
+class ButtonController
+!!!135043.cpp!!!	initializeButtons() : void
+	int gpioValues[5] = {13, 15, 16, 18, 29};
+	for(int i = 0; i<5;i++)
+	{
+		this->buttons.push_back(Button(gpioValues[i])); 
+	}
+!!!135171.cpp!!!	readAllButtons() : int
+	int buttonsState[5];
+	int result = 0;
+	
+	for(int i = 0; i < 5; i++) //stocke l'état des 5 boutons dans un tableau
+	{
+		Button tmp = this->buttons.at(i);
+		buttonsState[i] =  tmp.getState();
+	}
+	int i = 0;
+	
+	for(int j = 1; j<=16;j=j*2)
+	{
+		result = result + (j * buttonsState[i]);
+		i++;
+	}
+	return result;
+!!!135939.cpp!!!	ButtonController()
+	initializeButtons();
+!!!136067.cpp!!!	startStop() : void
+	nbAppuiStartStop++;
+	if(nbAppuiStartStop%2==0) {}
+		//launchSequence();
+	//else
+		//stopSequence();
+!!!136195.cpp!!!	manageButtons() : void
+	int buttonCombinaison = readAllButtons();
+	int possibleValues[6] = {16, 8, 4, 2, 1, 6};
+	bool correctValue = false;
+	int i = 0;
+	do
+	{
+		if(buttonCombinaison == possibleValues[i])
+			correctValue = true;
+		i++;
+	}
+	while((i<6)||(!correctValue));
+	if(correctValue)
+	{
+		pfunc function = this->buttonActions.at(buttonCombinaison);
+	}	
+	//function();

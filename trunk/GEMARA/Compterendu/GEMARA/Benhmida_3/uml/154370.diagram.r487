@@ -1,0 +1,80 @@
+format 212
+
+activitynodecanvas 128002 activitynode_ref 134658 // initial_node
+  xyz 336 34 2000
+end
+activityactioncanvas 128130 activityaction_ref 134914 // activity action entrerModeProgrammation
+  
+  show_opaque_action_definition default
+  xyzwh 248 83 2000 197 56
+end
+activityactioncanvas 128258 activityaction_ref 135042 // activity action incrementerSequence
+  
+  show_opaque_action_definition default
+  xyzwh 395 229 2000 169 47
+end
+activityactioncanvas 128386 activityaction_ref 135170 // activity action decrementerSequence
+  
+  show_opaque_action_definition default
+  xyzwh 137 233 2000 169 46
+end
+activitynodecanvas 128642 activitynode_ref 134914 // decision
+  xyz 333 172 2005
+end
+activitynodecanvas 129282 activitynode_ref 135042 // merge
+  xyz 333 303 2000
+end
+activityactioncanvas 129794 activityaction_ref 135298 // activity action sortirModeProgrammation
+  
+  show_opaque_action_definition default
+  xyzwh 255 373 2000 193 50
+end
+activitynodecanvas 130050 activitynode_ref 135170 // activity_final
+  xyz 333 474 2000
+end
+flowcanvas 128770 flow_ref 135042 // <flow>
+  
+  from ref 128130 z 2006 to ref 128642
+   write_horizontally default
+end
+flowcanvas 128898 flow_ref 135170 // <flow>
+  decenter_begin 567
+  
+  from ref 128642 z 2006 to ref 128386
+   write_horizontally default
+end
+flowcanvas 129026 flow_ref 135298 // <flow>
+  decenter_begin 594
+  
+  from ref 128642 z 2006 to ref 128258
+   write_horizontally default
+end
+flowcanvas 129154 flow_ref 135426 // <flow>
+  
+  from ref 128002 z 2001 to ref 128130
+   write_horizontally default
+end
+flowcanvas 129410 flow_ref 135554 // <flow>
+  
+  from ref 128386 z 2001 to ref 129282
+   write_horizontally default
+end
+flowcanvas 129538 flow_ref 135682 // <flow>
+  
+  from ref 128258 z 2001 to ref 129282
+   write_horizontally default
+end
+flowcanvas 129922 flow_ref 135938 // <flow>
+  decenter_begin 520
+  decenter_end 476
+  
+  from ref 129282 z 2001 to ref 129794
+   write_horizontally default
+end
+flowcanvas 130178 flow_ref 136066 // <flow>
+  decenter_begin 471
+  
+  from ref 129794 z 2001 to ref 130050
+   write_horizontally default
+end
+end

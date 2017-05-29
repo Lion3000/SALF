@@ -1,0 +1,44 @@
+format 212
+
+note 128002 ""
+  xyzwh 561 113 2000 113 37
+activityactioncanvas 128003 activityaction_ref 128515 // activity action DemarrerChronometre
+  
+  show_opaque_action_definition default
+  xyzwh 260 116 2000 168 48
+  pins
+    pincanvas 128387 pin_ref 128003 // timer
+      xyzwh 250 122 2002 11 11 label_xy 211 107
+    end
+  end
+end
+activitynodecanvas 128131 activitynode_ref 141955 // initial_node
+  xyz 333 65 2000
+end
+activityactioncanvas 128259 activityaction_ref 128643 // activity action lancerSignalVisuel
+  
+  show_opaque_action_definition default
+  xyzwh 269 226 2000 153 42
+end
+activityactioncanvas 128643 activityaction_ref 128771 // activity action lancerSignalSonore
+  
+  show_opaque_action_definition default
+  xyzwh 270 314 2000 149 44
+end
+flowcanvas 128515 flow_ref 142723 // <flow>
+  
+  from ref 128131 z 2001 to ref 128003
+   write_horizontally default
+end
+flowcanvas 128771 flow_ref 142851 // <flow>
+  decenter_end 490
+  
+  from ref 128003 z 2001 to ref 128259
+   write_horizontally default
+end
+flowcanvas 128899 flow_ref 142979 // <flow>
+  
+  from ref 128259 z 2001 to ref 128643
+   write_horizontally default
+end
+end

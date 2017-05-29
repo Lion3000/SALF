@@ -1,0 +1,35 @@
+format 212
+
+activitynodecanvas 128003 activitynode_ref 148867 // initial_node
+  xyz 328 43 2000
+end
+activityactioncanvas 128131 activityaction_ref 136579 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 289 102 2000 100 60
+end
+activityactioncanvas 128387 activityaction_ref 136707 // activity action doIt
+  
+  show_opaque_action_definition default
+  xyzwh 292 217 2000 100 60
+end
+activitynodecanvas 128643 activitynode_ref 148995 // activity_final
+  xyz 329 325 2000
+end
+flowcanvas 128259 flow_ref 153219 // <flow>
+  
+  from ref 128003 z 2001 to ref 128131
+   write_horizontally default
+end
+flowcanvas 128515 flow_ref 153347 // <flow>
+  decenter_end 460
+  
+  from ref 128131 z 2001 label "[2 appuis start/stop]" xyz 278 179 3000 to ref 128387
+   write_horizontally default
+end
+flowcanvas 128771 flow_ref 153475 // <flow>
+  
+  from ref 128387 z 2001 to ref 128643
+   write_horizontally default
+end
+end

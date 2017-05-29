@@ -1,0 +1,205 @@
+format 212
+
+activitynodecanvas 129795 activitynode_ref 184195 // initial_node
+  xyz 510 8 2000
+end
+activityactioncanvas 130051 activityaction_ref 179587 // activity action allumerLed
+  
+  show_opaque_action_definition default
+  xyzwh 147.5 43 2000 142 46
+  pins
+    pincanvas 130179 pin_ref 151555 // haut
+      xyzwh 137.5 50 2002 11 11 label_xy 102.5 35
+    end
+  end
+end
+activitynodecanvas 130435 activitynode_ref 184323 // decision
+  xyz 509 54 2000
+end
+activitynodecanvas 130947 activitynode_ref 184067 // activity_final
+  xyz 517 620 2000
+end
+activityactioncanvas 131971 activityaction_ref 180739 // activity action allumerLed
+  
+  show_opaque_action_definition default
+  xyzwh 293 129 2000 102 43
+  pins
+    pincanvas 132355 pin_ref 151683 // haut&&milieu
+      xyzwh 283 136 2002 11 11 label_xy 232 114
+    end
+  end
+end
+activityactioncanvas 132099 activityaction_ref 180867 // activity action allumerLed
+  
+  show_opaque_action_definition default
+  xyzwh 473 122 2000 111 42
+  pins
+    pincanvas 133635 pin_ref 151811 // 3leds
+      xyzwh 463 129 2002 11 11 label_xy 440 110
+    end
+  end
+end
+activityactioncanvas 132483 activityaction_ref 181123 // activity action allumerLed
+  
+  show_opaque_action_definition default
+  xyzwh 474 309 2000 111 40
+  pins
+    pincanvas 132611 pin_ref 151939 // rouge
+      xyzwh 464 316 2002 11 11 label_xy 420 301
+    end
+  end
+end
+activityactioncanvas 132867 activityaction_ref 181379 // activity action eteindreLed
+  
+  show_opaque_action_definition default
+  xyzwh 457 432 2000 150 40
+  pins
+    pincanvas 135939 pin_ref 152067 // rouge
+      xyzwh 447 438 2002 11 11 label_xy 402 423
+    end
+  end
+end
+activitynodecanvas 133123 activitynode_ref 183939 // merge
+  xyz 510 184 2000
+end
+activityactioncanvas 133891 activityaction_ref 181251 // activity action attendre
+  
+  show_opaque_action_definition default
+  xyzwh 474 372 2000 115 40
+  pins
+    pincanvas 134403 pin_ref 152195 // 3
+      xyzwh 464 379 2002 11 11 label_xy 450 364
+    end
+  end
+end
+activityactioncanvas 134275 activityaction_ref 181507 // activity action attendre
+  
+  show_opaque_action_definition default
+  xyzwh 471 491 2000 118 40
+  pins
+    pincanvas 134531 pin_ref 152323 // 0.5
+      xyzwh 461 498 2002 11 11 label_xy 435 483
+    end
+  end
+end
+activityactioncanvas 134787 activityaction_ref 180611 // activity action FairedecompteSonore
+  
+  show_opaque_action_definition default
+  xyzwh 444.5 547.5 2000 171 55
+end
+activityactioncanvas 135299 activityaction_ref 181635 // activity action attendre
+  
+  show_opaque_action_definition default
+  xyzwh 478 248 3005 98 40
+  pins
+    pincanvas 135427 pin_ref 152451 // 1
+      xyzwh 468 254 3007 11 11 label_xy 453 239
+    end
+  end
+end
+iconcanvas 136067 activitydiagram_ref 197763 // faireDecompteSonore
+  xyz 442 546 2005
+activityactioncanvas 140675 activityaction_ref 180995 // activity action attendre
+  
+  show_opaque_action_definition default
+  xyzwh 695 33 2000 100 60
+  pins
+    pincanvas 140803 pin_ref 152835 // 5
+      xyzwh 685 39 2002 11 11 label_xy 670 24
+    end
+  end
+end
+activitynodecanvas 141059 activitynode_ref 186883 // activity_final
+  xyz 733 127 2000
+end
+flowcanvas 130691 flow_ref 215427 // <flow>
+  decenter_begin 243
+  
+  from ref 130435 z 2001 label "[course 1]" xyz 304 63 2001 to ref 130051
+   write_horizontally default
+end
+flowcanvas 132227 flow_ref 215555 // <flow>
+  decenter_begin 600
+  
+  from ref 130435 z 2001 label "[Course 2]" xyz 377 89 2001 to ref 131971
+   write_horizontally default
+end
+flowcanvas 132995 flow_ref 215683 // <flow>
+  decenter_begin 560
+  
+  from ref 130435 z 2001 label "[course 3]" xyz 528 95 2001 to ref 132099
+   write_horizontally default
+end
+flowcanvas 133379 flow_ref 215939 // <flow>
+  decenter_end 243
+  
+  from ref 131971 z 2001 to ref 133123
+   write_horizontally default
+end
+flowcanvas 133507 flow_ref 216067 // <flow>
+  decenter_end 621
+  
+  from ref 132099 z 2001 to ref 133123
+   write_horizontally default
+end
+flowcanvas 134019 flow_ref 216195 // <flow>
+  
+  from ref 132483 z 2001 to ref 133891
+   write_horizontally default
+end
+flowcanvas 134147 flow_ref 216579 // <flow>
+  
+  from ref 133891 z 2001 to ref 132867
+   write_horizontally default
+end
+flowcanvas 134659 flow_ref 216323 // <flow>
+  
+  from ref 132867 z 2001 to ref 134275
+   write_horizontally default
+end
+flowcanvas 135171 flow_ref 215171 // <flow>
+  
+  from ref 134787 z 2001 to ref 130947
+   write_horizontally default
+end
+flowcanvas 135555 flow_ref 216451 // <flow>
+  decenter_begin 560
+  
+  from ref 133123 z 3006 to ref 135299
+   write_horizontally default
+end
+flowcanvas 135683 flow_ref 216835 // <flow>
+  
+  from ref 135299 z 3006 to ref 132483
+   write_horizontally default
+end
+flowcanvas 135811 flow_ref 216707 // <flow>
+  
+  from ref 134275 z 2001 to ref 134787
+   write_horizontally default
+end
+flowcanvas 140291 flow_ref 215299 // <flow>
+  
+  from ref 129795 z 2001 to ref 130435
+   write_horizontally default
+end
+flowcanvas 140931 flow_ref 215811 // <flow>
+  decenter_begin 243
+  
+  from ref 130435 z 2001 label "[course à blanc]" xyz 568 65 2001 to ref 140675
+   write_horizontally default
+end
+flowcanvas 141187 flow_ref 221955 // <flow>
+  
+  from ref 140675 z 2001 to ref 141059
+   write_horizontally default
+end
+flowcanvas 144387 flow_ref 215043 // <flow>
+  decenter_begin 260
+  decenter_end 756
+  
+  from ref 130051 z 2001 to point 181 209
+  line 144515 z 2001 to ref 133123
+   write_horizontally default
+end
+end

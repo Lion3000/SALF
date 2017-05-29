@@ -1,0 +1,20 @@
+window_sizes 1855 1056 349 1500 947 56
+cleanlooks_style
+diagrams
+  active  deploymentdiagram_ref 190467 // diagDeploiement
+    1200 757 100 A0 0 0
+  deploymentdiagram_ref 199427 // diagDeploiement
+    1200 757 100 A0 0 0
+end
+show_stereotypes
+marked
+  deploymentnode_ref 141571 // Ampli
+end
+selected deploymentdiagram_ref 199427 // diagDeploiement
+open
+  deploymentview_ref 128002 // vueDeploiement
+  
+  package_ref 141315 // code
+  deploymentdiagram_ref 199427 // diagDeploiement
+end
+end

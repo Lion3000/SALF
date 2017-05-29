@@ -1,0 +1,35 @@
+format 212
+
+activityactioncanvas 128003 activityaction_ref 178435 // activity action lireBoutonsBoitier
+  
+  show_opaque_action_definition default
+  xyzwh 215 90 2000 213 52
+end
+activitynodecanvas 128131 activitynode_ref 184835 // initial_node
+  xyz 312 41 2000
+end
+activityactioncanvas 128387 activityaction_ref 178691 // activity action klaxonner
+  
+  show_opaque_action_definition default
+  xyzwh 270 207 2000 100 60
+end
+activitynodecanvas 128643 activitynode_ref 184963 // activity_final
+  xyz 306 324 2000
+end
+flowcanvas 128259 flow_ref 218115 // <flow>
+  
+  from ref 128131 z 2001 to ref 128003
+   write_horizontally default
+end
+flowcanvas 128515 flow_ref 212483 // <flow>
+  decenter_end 500
+  
+  from ref 128003 z 2001 label "[appui bouton tut]" xyz 263 164 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 128771 flow_ref 218243 // <flow>
+  
+  from ref 128387 z 2001 to ref 128643
+   write_horizontally default
+end
+end

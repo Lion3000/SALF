@@ -1,0 +1,13 @@
+window_sizes 1879 1056 244 1629 997 0
+cleanlooks_style
+diagrams
+  active  classdiagram_ref 147714 // diagClasseDomaine
+    1303 797 100 A4 0 0
+end
+show_stereotypes
+selected 
+package_ref 134530 // Gemara
+open
+  classview_ref 134530 // vueClasse
+end
+end

@@ -1,0 +1,27 @@
+class ClientTCP
+!!!195970.cpp!!!	ClientTCP(in ip : string, in port : uint)
+    struct sockaddr_in serv_addr;
+    struct hostent *server;
+    
+    server = gethostbyname(ip.c_str());
+    this->socketClient = socket(AF_INET, SOCK_STREAM, 0);
+    //vide la variable serv_addr
+    bzero( (char *) &serv_addr, sizeof(serv_addr) );
+    //Désigne une connection inter-réseaux (UDP, TCP, etc)
+    serv_addr.sin_family = AF_INET;
+    //Renseigne l'adresse Ip à la variable serv_addr
+    bcopy( (char *)server->h_addr, (char *)&serv_addr.sin_addr.s_addr, server->h_length);
+    //Renseigne le PORT à la variable serv_addr
+    serv_addr.sin_port = htons(port);
+	//Connexion à hôte distant
+	if(connect(this->socketClient, (struct sockaddr *) &serv_addr, sizeof(serv_addr)) < 0) {
+		perror("ERROR connecting");
+		exit(1);
+	}
+!!!196098.cpp!!!	~ClientTCP()
+	close(this->socketClient);
+!!!196226.cpp!!!	envoyer(in buffer : char) : void
+	send(this->socketClient,buffer,strlen(buffer),0);
+!!!196354.cpp!!!	recevoir(in buffer : char) : void
+	memset(buffer,0,BUFFERSIZE);
+	recv(this->socketClient,buffer,BUFFERSIZE,MSG_WAITALL);

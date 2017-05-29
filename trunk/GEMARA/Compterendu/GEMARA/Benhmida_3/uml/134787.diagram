@@ -1,0 +1,52 @@
+format 212
+
+subject 128259 "Regulateur"
+  xyzwh 353.6 74.4 2000 190 217
+usecasecanvas 128387 usecase_ref 134531 // configurer
+  xyzwh 379 119 3005 121 52 label_xy 406 128
+end
+classcanvas 128515 class_ref 134787 // TechnicienMaintenance
+  simpleclassdiagramsettings end
+  xyz 10.4 108.4 2005
+end
+classcanvas 128643 class_ref 134915 // FichierConfig
+  simpleclassdiagramsettings end
+  xyz 43 282.6 2000
+end
+note 129027 "L'IP de l'automate 
+Le Port de l'automate 
+L'adresse MAC
+IP de la machine
+Login & MDP pour le SSH
+"
+  xyzwh 176.8 315 2000 168 150
+usecasecanvas 129282 usecase_ref 128642 // Reguler
+  xyzwh 393 188 3005 103 46 label_xy 418 197
+end
+classcanvas 129666 class_ref 141443 // SystemeCentrale
+  simpleclassdiagramsettings end
+  xyz 388.2 379.6 2000
+end
+classcanvas 129922 class_ref 128386 // Carrefour
+  simpleclassdiagramsettings end
+  xyz 626.5 307.1 2000
+end
+classcanvas 130562 class_ref 128514 // Temps
+  simpleclassdiagramsettings end
+  xyz 233.7 172.1 2000
+end
+relationcanvas 128771 relation_ref 134531 // <dependency>
+  decenter_end 504
+  from ref 128515 z 2006 to ref 128643
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 128899 ----
+  from ref 128515 z 3006 to ref 128387
+line 129794 ----
+  from ref 129282 z 3006 to ref 129666
+line 130690 ----
+  from ref 130562 z 3006 to ref 129282
+line 129155 -_-_ decenter_end 335
+  from ref 128643 z 2001 to ref 129027
+end

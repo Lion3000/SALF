@@ -1,0 +1,62 @@
+format 212
+
+classcanvas 128131 class_ref 230275 // ComiteCourse
+  simpleclassdiagramsettings end
+  xyz 115 186 2000
+end
+usecasecanvas 128259 usecase_ref 141315 // lancer
+  xyzwh 298 108 3011 113 49 label_xy 335 123
+end
+usecasecanvas 128771 usecase_ref 141571 // testerBoitier
+  xyzwh 356 368 3005 101 47 label_xy 370 379
+end
+usecasecanvas 128899 usecase_ref 141699 // avertir
+  xyzwh 364 249 3005 85 41 label_xy 384 259
+end
+classcanvas 129027 class_ref 230659 // Time
+  simpleclassdiagramsettings end
+  xyz 651 67 3010
+end
+classcanvas 129155 class_ref 229891 // Klaxon
+  simpleclassdiagramsettings class_drawing_mode actor end
+  xyz 660 168 2000
+end
+classcanvas 129283 class_ref 230019 // afficheur
+  simpleclassdiagramsettings class_drawing_mode actor end
+  xyz 652 286 2005
+end
+subject 129411 "SALF"
+  xyzwh 275 59 2000 313 457
+usecasecanvas 129923 usecase_ref 141443 // arreter
+  xyzwh 465 165 3005 99 45 label_xy 496 178
+end
+classcanvas 130435 class_ref 230787 // haut_parleurs
+  simpleclassdiagramsettings class_drawing_mode actor end
+  xyz 630 371 2000
+end
+classcanvas 130947 class_ref 230403 // Bouton
+  simpleclassdiagramsettings class_drawing_mode actor end
+  xyz 634 455 2005
+end
+classcanvas 131075 class_ref 230915 // Leds
+  simpleclassdiagramsettings class_drawing_mode actor end
+  xyz 637 543 2000
+end
+line 129539 ----
+  from ref 128131 z 3012 to ref 128259
+line 129667 ----
+  from ref 128131 z 3006 to ref 128899
+line 129795 ----
+  from ref 128131 z 3006 to ref 128771
+simplerelationcanvas 130179 simplerelation_ref 134531
+  from ref 128259 z 3012 stereotype "<<extend>>" xyz 402 147 3000 to ref 129923
+end
+line 130307 ----
+  from ref 128899 z 3006 to ref 129155
+line 130563 ----
+  from ref 128771 z 3006 to ref 129283
+line 130691 ----
+  from ref 128771 z 3006 to ref 130435
+line 130819 ----
+  from ref 128771 z 3006 to ref 129155
+end

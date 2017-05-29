@@ -1,0 +1,69 @@
+format 212
+
+activityactioncanvas 128003 activityaction_ref 128515 // activity action DemarrerChronometre
+  
+  show_opaque_action_definition default
+  xyzwh 260 52 2000 168 48
+end
+activitynodecanvas 128131 activitynode_ref 141955 // initial_node
+  xyz 333 12 2000
+end
+activityactioncanvas 133891 activityaction_ref 140291 // activity action envoyerCourse
+  
+  show_opaque_action_definition default
+  xyzwh 261 132 2000 152 60
+end
+note 134019 "for i = 0; i<3; i++"
+  xyzwh 18 123 2000 133 37
+activityactioncanvas 134147 activityaction_ref 140419 // activity action eteindreLed
+  
+  show_opaque_action_definition default
+  xyzwh 289 333 2000 100 60
+  pins
+    pincanvas 134275 pin_ref 137731 // toutes
+      xyzwh 279 339 2002 11 11 label_xy 232 324
+    end
+  end
+end
+expansionregioncanvas 134531 expansionregion_ref 128003 // 
+  xyzwh 171 114 1995 315 94
+end
+iconcanvas 134915 activitydiagram_ref 141571 // envoyerCourse
+  xyz 263 134 3010
+activitynodecanvas 135043 activitynode_ref 157699 // activity_final
+  xyz 325 416 2000
+end
+activityactioncanvas 135299 activityaction_ref 149891 // activity action arreterChronometre
+  
+  show_opaque_action_definition default
+  xyzwh 255 232 2000 166 68
+end
+flowcanvas 128515 flow_ref 142723 // <flow>
+  
+  from ref 128131 z 2001 to ref 128003
+   write_horizontally default
+end
+flowcanvas 135427 flow_ref 169603 // <flow>
+  
+  from ref 134147 z 2001 to ref 135043
+   write_horizontally default
+end
+flowcanvas 135683 flow_ref 174467 // <flow>
+  
+  from ref 133891 z 2001 to ref 135299
+   write_horizontally default
+end
+flowcanvas 135811 flow_ref 174595 // <flow>
+  
+  from ref 135299 z 2001 to ref 134147
+   write_horizontally default
+end
+flowcanvas 136195 flow_ref 200067 // <flow>
+  decenter_end 526
+  
+  from ref 128003 z 2001 to ref 133891
+   write_horizontally default
+end
+line 136067 -_-_
+  from ref 134019 z 2001 to ref 134531
+end

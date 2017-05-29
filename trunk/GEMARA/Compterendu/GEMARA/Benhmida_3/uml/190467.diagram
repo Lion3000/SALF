@@ -1,0 +1,87 @@
+format 212
+
+deploymentnodecanvas 131331 deploymentnode_ref 141699 // Speaker
+  xyzwh 647 103.5 2000 100 39
+end
+deploymentnodecanvas 131459 deploymentnode_ref 141443 // Raspberry PI 3
+  xyzwh 298 80.5 2000 231 263
+end
+deploymentnodecanvas 131587 deploymentnode_ref 141955 // Led
+  xyzwh 589 447.5 2000 75 36
+end
+note 131715 "pin 19, 23 et 24"
+  xyzwh 577 343.5 2000 125 37
+deploymentnodecanvas 131843 deploymentnode_ref 141827 // CarteRelais
+  xyzwh 413 389.5 2000 99 39
+end
+fragment 131971 "boitier"
+  color lightyellow xyzwh 264 42.5 1995 287 547
+end
+note 132099 "boutons   pin gpio
+      tut  	      29
+     seq 	      18
+   moins	     16
+     plus	      15
+start/stop    13"
+  xyzwh 280 447.5 2000 143 131
+componentcanvas 132227 component_ref 134531 // librairies
+  
+  xyzwh 316 191.5 2006 189 69
+end
+deploymentnodecanvas 132355 deploymentnode_ref 142211 // buttons
+  xyzwh 315 394.5 2000 70 36
+end
+deploymentnodecanvas 132483 deploymentnode_ref 142083 // Tablet
+  name "SALF-Test"
+  xyzwh 635 171.5 2000 211 111
+end
+note 132611 "5 digits"
+  xyzwh 448 514.5 2000 73 41
+deploymentnodecanvas 132739 deploymentnode_ref 142979 // Klaxon
+  xyzwh 597 392.5 2000 67 36
+end
+componentcanvas 132867 component_ref 134659 // Salf
+  
+  xyzwh 316 260.5 2005 189 69
+end
+deploymentnodecanvas 132995 deploymentnode_ref 142467 // afficheur
+  xyzwh 445 453.5 2000 78 36
+end
+componentcanvas 133123 component_ref 134915 // Android 4+
+  
+  xyzwh 642 205.5 2005 189 75
+end
+note 133251 "sqlite3
+espeak
+portaudio
+wiringPi
+bluetooth
+"
+  xyzwh 163 171.5 2000 85 109
+componentcanvas 133379 component_ref 134787 // raspian
+  
+  xyzwh 315 122.5 2006 189 69
+end
+line 133507 ---- decenter_begin 709
+  from ref 131459 z 2001 stereotype "<<SPI>>" xyz 433 365.5 3000 to ref 131843
+line 133635 ---- decenter_begin 229 decenter_end 500
+  from ref 131459 z 2001 stereotype "<<GPIO>>" xyz 312 360.5 3000 to ref 132355
+line 133763 ---- decenter_begin 505
+  from ref 131843 z 2001 to ref 132995
+line 133891 ---- decenter_begin 555
+  from ref 131459 z 2001 stereotype "<<Bluetooth>>" xyz 536 203.5 3000 to ref 132483
+line 134019 ----
+  from ref 131843 z 2001 to ref 132739
+line 134147 ---- decenter_begin 163
+  from ref 131459 z 2001 stereotype "<<Prise Jack>>" xyz 538 101.5 3000 to ref 131331
+line 134275 ---- decenter_end 333
+  from ref 131843 z 2001 label "4" max_width 255 xyz 573 459.5 2001 to ref 131587
+line 134403 -_-_ decenter_begin 512
+  from ref 132995 z 2001 to ref 132611
+line 134531 -_-_
+  from ref 132355 z 2001 to ref 132099
+line 134659 -_-_
+  from ref 132227 z 2007 to ref 133251
+line 134787 -_-_ decenter_begin 404
+  from ref 133507 z 2002 to ref 131715
+end

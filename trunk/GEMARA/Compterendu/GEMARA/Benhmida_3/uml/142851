@@ -1,0 +1,1052 @@
+format 212
+"ubuntu" // code::AppTestSALF::plugins::cordova-plugin-file::src::ubuntu
+  revision 1
+  modified_by 3 "camelia"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/AppTestSALF/plugins/cordova-plugin-file/src/ubuntu/"
+  cpp_src_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/AppTestSALF/plugins/cordova-plugin-file/src/ubuntu/"
+  classview 141571 "ubuntu"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 198147 "File"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 171651 // <generalisation>
+	relation 171267 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 171651 // <generalisation>
+	  b parent class_ref 198275 // typedef2
+      end
+
+      extra_member 128259 "Q_OBJECT"
+	
+	cpp "  Q_OBJECT" ""
+	java ""
+	php ""
+	python ""
+	idl ""
+	mysql ""
+      end
+
+      operation 152067 "File"
+	preserve_cpp_body_indent public explicit_return_type ""
+	nparams 1
+	  param inout name "cordova" explicit_type "Cordova"
+	cpp_decl "    ${comment}${inline}explicit ${name}${(}${t0} * ${p0}${v0}${)}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${class}::${name}${(}${t0} * ${p0}${)} :
+    CPlugin(cordova),
+    _persistentDir(QString(\"%1/.local/share/%2/persistent\").arg(QDir::homePath()).arg(QCoreApplication::applicationName())) ${throw}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 152195 "fullName"
+	cpp_virtual cpp_override cpp_inline public explicit_return_type "QString"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}const ${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return File::fullID();
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 152323 "shortName"
+	cpp_virtual cpp_override cpp_inline public explicit_return_type "QString"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}const ${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return \"File\";
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 152451 "fullID"
+	class_operation cpp_inline public explicit_return_type "QString"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}const ${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return \"File\";
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 152579 "resolveURI"
+	preserve_cpp_body_indent public explicit_return_type "QPair<bool, QFileInfo>"
+	nparams 1
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 152707 "resolveURI"
+	preserve_cpp_body_indent public explicit_return_type "QPair<bool, QFileInfo>"
+	nparams 2
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 152835 "file2map"
+	preserve_cpp_body_indent public explicit_return_type "QVariantMap"
+	nparams 1
+	  param in name "fileInfo" explicit_type "QFileInfo"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      extra_member 128387 "slots"
+	
+	cpp "  public slots:" ""
+	java ""
+	php ""
+	python ""
+	idl ""
+	mysql ""
+      end
+
+      operation 152963 "requestFileSystem"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 4
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "type" explicit_type "ushort"
+	  param in name "size" explicit_type "unsigned long long"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}, ${t3} ${p3}${v3}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}, ${t3} ${p3}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 153091 "resolveLocalFileSystemURI"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 153219 "getDirectory"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "parentPath" explicit_type "QString"
+	  param in name "rpath" explicit_type "QString"
+	  param in name "options" explicit_type "QVariantMap"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 153347 "getFile"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "parentPath" explicit_type "QString"
+	  param in name "rpath" explicit_type "QString"
+	  param in name "options" explicit_type "QVariantMap"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 153475 "readEntries"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 153603 "getParent"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 153731 "copyTo"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "source" explicit_type "QString"
+	  param in name "destinationDir" explicit_type "QString"
+	  param in name "newName" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 153859 "moveTo"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "source" explicit_type "QString"
+	  param in name "destinationDir" explicit_type "QString"
+	  param in name "newName" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 153987 "getFileMetadata"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 154115 "getMetadata"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 154243 "remove"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 154371 "removeRecursively"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 154499 "write"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 6
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	  param in name "_data" explicit_type "QString"
+	  param in name "position" explicit_type "unsigned long long"
+	  param in name "binary" explicit_type "bool"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, ${t4} ${p4}${v4}, ${t5} ${p5}${v5}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, ${t4} ${p4}, ${t5} ${p5}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 154627 "readAsText"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 6
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	  param in name "encoding" explicit_type "QString"
+	  param in name "sliceStart" explicit_type "int"
+	  param in name "sliceEnd" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, ${t4} ${p4}${v4}, ${t5} ${p5}${v5}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, ${t4} ${p4}, ${t5} ${p5}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 154755 "readAsDataURL"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	  param in name "sliceStart" explicit_type "int"
+	  param in name "sliceEnd" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, ${t3} ${p3}, ${t4} ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 154883 "readAsArrayBuffer"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	  param in name "sliceStart" explicit_type "int"
+	  param in name "sliceEnd" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, ${t3} ${p3}, ${t4} ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 155011 "readAsBinaryString"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	  param in name "sliceStart" explicit_type "int"
+	  param in name "sliceEnd" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, ${t3} ${p3}${v3}, ${t4} ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, ${t3} ${p3}, ${t4} ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 155139 "truncate"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 4
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	  param in name "size" explicit_type "unsigned long long"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, ${t3} ${p3}${v3}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, ${t3} ${p3}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 155267 "_getLocalFilesystemPath"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "uri" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 155395 "moveFile"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "sourceUri" explicit_type "QString"
+	  param in name "destinationUri" explicit_type "QString"
+	  param in name "newName" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 155523 "moveDir"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "sourceUri" explicit_type "QString"
+	  param in name "destinationUri" explicit_type "QString"
+	  param in name "newName" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 155651 "copyFile"
+	preserve_cpp_body_indent private explicit_return_type "bool"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "sourceUri" explicit_type "QString"
+	  param in name "destinationUri" explicit_type "QString"
+	  param in name "newName" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 155779 "copyDir"
+	preserve_cpp_body_indent private explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "sourceUri" explicit_type "QString"
+	  param in name "destinationUri" explicit_type "QString"
+	  param in name "newName" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 155907 "rmDir"
+	preserve_cpp_body_indent private explicit_return_type "bool"
+	nparams 1
+	  param in name "dir" explicit_type "QDir"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 156035 "copyFolder"
+	preserve_cpp_body_indent private explicit_return_type "bool"
+	nparams 2
+	  param in name "sourceFolder" explicit_type "QString"
+	  param in name "destFolder" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}, const ${t1} & ${p1}${v1}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}, const ${t1} & ${p1}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 156163 "GetRelativePath"
+	preserve_cpp_body_indent private explicit_return_type "QPair<QString, QString>"
+	nparams 1
+	  param in name "fileInfo" explicit_type "QFileInfo"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 156291 "dir2map"
+	preserve_cpp_body_indent private explicit_return_type "QVariantMap"
+	nparams 1
+	  param in name "dir" explicit_type "QDir"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} & ${p0}${v0}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}const ${t0} & ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      attribute 154499 "_db"
+	private explicit_type "QMimeDatabase"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 154627 "_persistentDir"
+	const_attribute private explicit_type "QDir"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 154755 "_manager"
+	private explicit_type "QNetworkAccessManager"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 198275 "typedef2"
+      visibility package stereotype "typedef" explicit_base_type "CPlugin"
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 206211 "FileError"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 169731 "kEncodingErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.ENCODING_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 169859 "kTypeMismatchErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.TYPE_MISMATCH_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 169987 "kNotFoundErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.NOT_FOUND_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 170115 "kSecurityErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.SECURITY_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 170243 "kAbortErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.ABORT_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 170371 "kNotReadableErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.NOT_READABLE_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 170499 "kNoModificationAllowedErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.NO_MODIFICATION_ALLOWED_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 170627 "kInvalidStateErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.INVALID_STATE_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 170755 "kSyntaxErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.SYNTAX_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 170883 "kInvalidModificationErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.INVALID_MODIFICATION_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 171011 "kQuotaExceededErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.QUOTA_EXCEEDED_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 171139 "kPathExistsErr"
+	class_attribute const_attribute public explicit_type "QString"
+	init_value "(\"FileError.PATH_EXISTS_ERR\")"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+  end
+
+  deploymentview 141571 "ubuntu"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 164099 "file"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 198275 // typedef2
+	class_ref 198147 // File
+      end
+    end
+
+    artifact 166019 "FileError"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 206211 // FileError
+      end
+    end
+  end
+end

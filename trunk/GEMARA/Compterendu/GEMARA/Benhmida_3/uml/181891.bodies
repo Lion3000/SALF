@@ -1,0 +1,5 @@
+class Database
+!!!136323.cpp!!!	Database()
+	sqlite3_open("Salf.db", this->&db);
+!!!136451.cpp!!!	~Database()
+	sqlite3_close(db);

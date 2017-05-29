@@ -1,0 +1,5 @@
+class Led
+!!!137859.cpp!!!	getActiveLeds() : uint
+	return this->activeLeds;
+!!!137987.cpp!!!	setActiveLeds(in ledColor : LedColor) : void
+	this->activeLeds = ledColor;

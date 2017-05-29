@@ -1,0 +1,123 @@
+format 212
+
+classinstance 128002 class_ref 134787 // TechnicienMaintenance
+  name ""   xyz 7 25 2000 life_line_z 2000
+classinstance 128028 class_ref 174850 // Cycle
+  name ""   xyz 623 12 2000 life_line_z 2000
+iconcanvas 128130 usecasediagram_ref 134787 // dcuRegulateur
+  xyz -131 230 2000
+classinstance 128156 class_ref 188290 // State
+  name ""   xyz 691 12 2000 life_line_z 2000
+iconcanvas 128514 sequencediagram_ref 128130 // dsRegulateur
+  xyz -126 251 2000
+classinstance 129282 class_ref 134915 // FichierConfig
+  name ""   xyz 190 18 2000 life_line_z 2000
+classinstance 129922 class_ref 128386 // Carrefour
+  name ""   xyz 744 17 2000 life_line_z 2000
+classinstance 130050 class_ref 141443 // SystemeCentrale
+  name ""   xyz 462 8 2000 life_line_z 2000
+classinstance 130306 class_ref 135170 // Systeme
+  name ""   xyz 330 4 2005 life_line_z 2000
+durationcanvas 128668 classinstance_ref 130050 // :SystemeCentrale
+  xyzwh 517 107 2010 11 73
+end
+durationcanvas 128796 classinstance_ref 128028 // :Cycle
+  xyzwh 640 108 2010 11 55
+end
+durationcanvas 129180 classinstance_ref 128156 // :State
+  xyzwh 706 63 2010 11 45
+end
+durationcanvas 129308 classinstance_ref 128028 // :Cycle
+  xyzwh 640 63 2010 11 32
+end
+durationcanvas 133250 classinstance_ref 128002 // :TechnicienMaintenance
+  xyzwh 81 82 2010 11 83
+end
+durationcanvas 133378 classinstance_ref 129282 // :FichierConfig
+  xyzwh 231 82 2010 11 83
+end
+durationcanvas 133762 classinstance_ref 128002 // :TechnicienMaintenance
+  xyzwh 81 183 2010 11 25
+end
+durationcanvas 133890 classinstance_ref 130306 // :Systeme
+  xyzwh 361 183 2010 11 26
+end
+durationcanvas 134146 classinstance_ref 130306 // :Systeme
+  xyzwh 361 260 2010 11 112
+end
+durationcanvas 134274 classinstance_ref 130050 // :SystemeCentrale
+  xyzwh 517 259 2010 11 107
+end
+durationcanvas 135042 classinstance_ref 130306 // :Systeme
+  xyzwh 361 451 2010 11 30
+end
+durationcanvas 135170 classinstance_ref 129922 // :Carrefour
+  xyzwh 774 452 2010 11 32
+end
+durationcanvas 135426 classinstance_ref 130306 // :Systeme
+  xyzwh 361 534 2010 11 30
+end
+durationcanvas 135554 classinstance_ref 130050 // :SystemeCentrale
+  xyzwh 517 536 2010 11 30
+end
+msg 128924 asynchronous
+  from durationcanvas_ref 128668
+  to durationcanvas_ref 128796
+  yz 112 2015 explicitmsg "recupereCycle()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 535 89
+msg 129052 return
+  from durationcanvas_ref 128796
+  to durationcanvas_ref 128668
+  yz 145 2015 explicitmsg "cycle"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 567 122
+msg 129436 return
+  from durationcanvas_ref 129180
+  to durationcanvas_ref 129308
+  yz 67 3005 explicitmsg "etats"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 663 44
+msg 133506 asynchronous
+  from durationcanvas_ref 133250
+  to durationcanvas_ref 133378
+  yz 87 2015 explicitmsg "lireConfig()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 147 65
+msg 133634 return
+  from durationcanvas_ref 133378
+  to durationcanvas_ref 133250
+  yz 151 2020 explicitmsg "Configuration"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 120 130
+msg 134018 asynchronous
+  from durationcanvas_ref 133762
+  to durationcanvas_ref 133890
+  yz 188 2020 explicitmsg "configurer()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 195 168
+msg 134402 asynchronous
+  from durationcanvas_ref 134146
+  to durationcanvas_ref 134274
+  yz 263 2015 explicitmsg "demanderCycle()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 392 234
+msg 134914 return
+  from durationcanvas_ref 134274
+  to durationcanvas_ref 134146
+  yz 351 2015 explicitmsg "Cycle"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 445 329
+msg 135298 synchronous
+  from durationcanvas_ref 135042
+  to durationcanvas_ref 135170
+  yz 455 2015 explicitmsg "RegulerCycle()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 495 433
+msg 135682 asynchronous
+  from durationcanvas_ref 135426
+  to durationcanvas_ref 135554
+  yz 550 2015 explicitmsg "envoyerEtat()"
+  show_full_operations_definition default show_class_of_operation default drawing_language default show_context_mode default
+  label_xy 417 519
+end

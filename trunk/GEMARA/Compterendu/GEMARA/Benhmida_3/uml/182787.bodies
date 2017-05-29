@@ -1,0 +1,15 @@
+class SpiComBny
+!!!140803.cpp!!!	SpiComBny()
+
+!!!140931.cpp!!!	~SpiComBny()
+	this->close();
+!!!141059.cpp!!!	write(in buffer : string) : void
+	this<<buffer.c_str(), strlen(buffer.c_str());
+!!!141187.cpp!!!	inverseDigits(in nb : int) : int
+	long result=0;
+	while(nb)
+	{
+		result=result*10+nb%10;
+		nb=nb/10;
+	}
+	return result;

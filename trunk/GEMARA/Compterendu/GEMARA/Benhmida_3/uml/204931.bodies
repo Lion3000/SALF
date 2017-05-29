@@ -1,0 +1,9 @@
+class Speaker
+!!!164611.cpp!!!	play(in textToPlay : string) : void
+	printf("textToPlay %s\n", textToPlay.c_str());
+	espeak_Synth(textToPlay.c_str(), strlen(textToPlay.c_str()), 0, POS_CHARACTER, textToPlay.length(), 0, 0, NULL);
+	//~ espeak_Synth(textToPlay.c_str(), textToPlay.length(), 0, POS_CHARACTER, textToPlay.length(), 0, 0, NULL);
+	//~ espeak_Synth(truc, textToPlay.length(), 0, POS_CHARACTER, 0, 0, 0, NULL);
+	espeak_Synchronize();
+!!!164739.cpp!!!	isPlaying() : bool
+	return (espeak_IsPlaying() == 1) ? true:false ;

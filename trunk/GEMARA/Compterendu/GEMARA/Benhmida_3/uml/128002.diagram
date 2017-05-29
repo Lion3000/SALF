@@ -1,0 +1,48 @@
+format 212
+
+subject 128002 "SystemCentral"
+  xyzwh 327.8 157 2000 178 127
+classcanvas 128130 class_ref 128130 // Regulateur
+  simpleclassdiagramsettings end
+  xyz 54.6 227.8 2000
+end
+classcanvas 128258 class_ref 128258 // BaseDeDonnees
+  simpleclassdiagramsettings end
+  xyz 622.6 195.6 2000
+end
+note 130178 "Date heure Etat du regulateur et son ID"
+  xyzwh 158 285.2 2000 125 79
+classcanvas 131458 class_ref 128386 // Carrefour
+  simpleclassdiagramsettings end
+  xyz 68.5 427.3 2000
+end
+classcanvas 131586 class_ref 128514 // Temps
+  simpleclassdiagramsettings end
+  xyz 78.2 39.8 2000
+end
+usecasecanvas 131714 usecase_ref 128770 // Centraliser
+  xyzwh 366 204.6 3005 111 47 label_xy 384 214
+end
+relationcanvas 128028 relation_ref 128130 // <dependency>
+  from ref 131586 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 128156 relation_ref 135836 // <dependency>
+  from ref 131458 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 131842 ----
+  from ref 128130 z 3006 to ref 131714
+line 131970 ----
+  from ref 131714 z 3006 to ref 128258
+relationcanvas 133634 relation_ref 128258 // <dependency>
+  decenter_begin 504
+  from ref 128130 z 2001 to ref 131586
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+line 133890 -_-_
+  from ref 130178 z 2001 to ref 128130
+end

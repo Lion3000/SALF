@@ -1,0 +1,170 @@
+class Flight
+!!!159363.cpp!!!	Flight()
+	isActive = false; 
+	stopNow = false;  
+	speaker = new Speaker();
+	completeSequence[Race::FIRST] = '1';
+	completeSequence[Race::SECOND] = '2';
+	completeSequence[Race::THIRD] = '3';	
+	currentRace = '0';
+	initializeMapRaceLeds();	
+!!!159619.cpp!!!	initializeMapRaceLeds() : void
+	mapRaceLeds.insert(std::make_pair('0', LedColor::ALL_LEDS_OFF));	
+	mapRaceLeds.insert(std::make_pair('1', LedColor::TOP_LED));
+	mapRaceLeds.insert(std::make_pair('2', LedColor::TOP_MIDDLE));
+	mapRaceLeds.insert(std::make_pair('3', LedColor::ALL_3_LEDS));
+	
+	mapLedsReds.insert(std::make_pair(LedColor::TOP_LED, LedColor::TOP_AND_RED));
+	mapLedsReds.insert(std::make_pair(LedColor::TOP_MIDDLE, LedColor::TOP_MIDDLE_AND_RED));
+	mapLedsReds.insert(std::make_pair(LedColor::ALL_3_LEDS, LedColor::ALL_LEDS_ON));
+	mapLedsReds.insert(std::make_pair(LedColor::ALL_LEDS_OFF, LedColor::ALL_LEDS_OFF));
+!!!159747.cpp!!!	start() : void
+	
+	puts("Flight lancé\n");
+	printf(" sequence du flight %c : %c : %c\n",this->completeSequence[Race::FIRST], this->completeSequence[Race::SECOND], this->completeSequence[Race::THIRD]);	
+	isActive = true;
+	char car;
+	
+	while (this->isActive)
+	{
+		while((this->minuts >= 0) && (!this->stopNow))
+		{
+			if(this->seconds == 0) SalfBoxIhm::setCompteur(this->minuts, this->seconds);
+			while((this->seconds > 0) && (!this->stopNow))
+			{
+				if((this->seconds < 31) && ((this->minuts == 15) || (this->minuts == 10) || (this->minuts == 5))) {	
+					pthread_t threadLaunch;
+					pthread_create(&threadLaunch, NULL, Flight::executePlaySeconds,this);					
+				}
+				this->seconds--;				
+				SalfBoxIhm::setCompteur(this->minuts, this->seconds);
+				printf("%d:%d\n",minuts, seconds);
+				//~ car = getchar();
+				std::this_thread::sleep_for(std::chrono::seconds(1));				
+			}
+			checkMinuts(this->minuts);
+			this->seconds = 60;
+			this->minuts--;
+		}
+		SalfBoxIhm::clearIoExtender();
+		this->isActive = false;
+	}
+	puts (stopNow ? "Flight arrêté" : "Flight terminé");
+	this->stopNow = false;
+!!!159875.cpp!!!	stop() : void
+	this->stopNow = true;
+	printf("arrêt demandé\n");
+!!!160003.cpp!!!	playSeconds() : void
+	if(this->seconds <= 10|| this->seconds == 20 || this->seconds == 30){
+		puts("condition ");	
+		speaker->play(std::to_string(this->seconds));		
+	}
+!!!160131.cpp!!!	executeStart(inout context : void) : void
+	return ((Flight *)context)->start();
+!!!160259.cpp!!!	executePlaySeconds(inout context : void) : void
+	
+	return ((Flight *)context)->playSeconds();
+!!!160387.cpp!!!	setSeconds(in seconds : int) : void
+	this->seconds = seconds; 
+	printf("seconds = %d\n",this->seconds);
+!!!160515.cpp!!!	getIsActive() : bool
+	return this->isActive;
+	
+!!!160643.cpp!!!	setMinuts(in minuts : int) : void
+	this->minuts = minuts; 
+	printf("minuts = %d\n",this->minuts);
+!!!160771.cpp!!!	setCompleteSequence(in first : char, in second : char, in third : char) : void
+	this->completeSequence[Race::FIRST] = first;
+	this->completeSequence[Race::SECOND] = second;
+	this->completeSequence[Race::THIRD] = third;
+!!!161027.cpp!!!	checkMinuts(in m : int) : void
+	if(m <= 15 && m > 10) doFirstRace(m);
+	if(m <= 10 && m > 5) doSecondRace(m);
+	if(m <= 5 && m >= 0) doThirdRace(m);
+!!!161155.cpp!!!	doFirstRace(in m : int) : void
+	if(m == 15)
+	{
+		this->currentRace = this->completeSequence[Race::FIRST];
+		SalfBoxIhm::setSequence(currentRace);
+		SalfBoxIhm::setLeds(mapRaceLeds.at(currentRace)); // lancement course 1
+	}
+	if(currentRace != '0') 
+	{		
+		switch(m)
+		{
+			case 14:
+				SalfBoxIhm::setLeds(mapLedsReds.at(mapRaceLeds.at(currentRace)));
+				break;
+				
+			case 11:
+				SalfBoxIhm::setLeds(mapRaceLeds.at(currentRace));
+				break;
+		}
+	}
+!!!161283.cpp!!!	doSecondRace(in m : int) : void
+	if(m == 10)
+	{
+		currentRace = completeSequence[Race::SECOND];
+		SalfBoxIhm::setSequence(currentRace);
+		SalfBoxIhm::setLeds(mapRaceLeds.at(currentRace)); // lancement course 2
+	}
+	if(currentRace != '0') 
+	{
+		switch(m)
+		{
+			case 9:
+				SalfBoxIhm::setLeds(mapLedsReds.at(mapRaceLeds.at(currentRace)));
+				break;
+			case 6:
+				SalfBoxIhm::setLeds(mapRaceLeds.at(currentRace));
+				break;
+			default: 
+				break;
+		}
+	}
+!!!161411.cpp!!!	doThirdRace(in m : int) : void
+	
+	if(m == 5)
+	{
+		currentRace = completeSequence[Race::THIRD];
+		SalfBoxIhm::setSequence(currentRace);
+		SalfBoxIhm::setLeds(mapRaceLeds.at(currentRace)); // lancement course 3
+	}
+	switch(m)
+	{
+		case 4:
+			SalfBoxIhm::setLeds(mapLedsReds.at(mapRaceLeds.at(currentRace)));
+			break;
+		case 1:
+			SalfBoxIhm::setLeds(mapRaceLeds.at(currentRace));
+			break;
+		default: 
+			break;
+	}
+!!!161539.cpp!!!	getSequenceFromDb(in sequence : string) : void
+	std::vector<std::vector<std::string> > resultats; 
+	std::vector<std::vector<std::string> >::iterator row;
+	std::vector<std::string>::iterator col;	
+	
+	database.executeRequest("SELECT firstRace, secondRace, thirdRace FROM racesSequence ORDER BY id DESC LIMIT 1", true, &resultats);	
+	int i = 0;	
+	row = resultats.begin();
+	for (col = row->begin(); col != row->end(); col++) {
+		sequence[i] = *col;
+		i++;
+	}
+!!!161667.cpp!!!	getTimerFromDb() : int
+	std::vector<std::vector<std::string> > resultats; 
+	std::vector<std::vector<std::string> >::iterator row;
+	std::vector<std::string>::iterator col;	
+	
+	database.executeRequest("SELECT minuts, seconds FROM timer ORDER BY id DESC LIMIT 1", true, &resultats);	
+	int * timer; 
+	int i = 0;	
+	timer = (int*) malloc (sizeof(int) * 2);
+	row = resultats.begin();
+	for (col = row->begin(); col != row->end(); col++) {
+		timer[i] =  std::stoi(*col);
+		i++;
+	}
+	return timer;

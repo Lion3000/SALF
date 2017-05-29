@@ -1,0 +1,169 @@
+format 212
+
+note 128002 "appui long sur seq"
+  xyzwh 647 490 2000 143 43
+note 128258 "appui seq"
+  xyzwh 515 280 2000 89 41
+note 128386 "appui tut"
+  xyzwh 496 17 2013 83 41
+activityactioncanvas 128387 activityaction_ref 128003 // activity action lancerSequence
+  
+  show_opaque_action_definition default
+  xyzwh 341 137 2000 131 40
+end
+note 128514 "appui + ou -"
+  xyzwh 111 371 2000 109 37
+activityactioncanvas 128515 activityaction_ref 128131 // activity action modifierOrdreSequence
+  
+  show_opaque_action_definition default
+  xyzwh 469 372 2000 179 42
+end
+note 128642 "appui startStop"
+  xyzwh 159 101 2000 127 39
+activityactioncanvas 128643 activityaction_ref 128259 // activity action modifierMinuteur
+  
+  show_opaque_action_definition default
+  xyzwh 242 376 2000 126 41
+end
+note 128770 "appui startStop"
+  xyzwh 546 173 2000 123 41
+activityactioncanvas 128771 activityaction_ref 128387 // activity action arreterSequence
+  
+  show_opaque_action_definition default
+  xyzwh 339 231 2000 134 48
+end
+activitynodecanvas 128899 activitynode_ref 141443 // decision
+  xyz 391 305 2000
+end
+activitynodecanvas 129155 activitynode_ref 141571 // initial_node
+  xyz 395 8 2000
+end
+activitynodecanvas 130307 activitynode_ref 141699 // decision
+  xyz 293 444 2000
+end
+activitynodecanvas 130691 activitynode_ref 141827 // decision
+  xyz 544 447 2000
+end
+activitynodecanvas 131971 activitynode_ref 142083 // fork
+  horizontal  xyzwh 362 45 2005 87 15
+end
+activityactioncanvas 132355 activityaction_ref 128899 // activity action attenteTut
+  
+  show_opaque_action_definition default
+  xyzwh 465 73 2006 100 40
+end
+activityactioncanvas 132483 activityaction_ref 128771 // activity action lancerSignalSonore
+  
+  show_opaque_action_definition default
+  xyzwh 657 70 2007 149 41
+end
+flowcanvas 129411 flow_ref 141315 // <flow>
+  
+  from ref 128387 z 2001 to ref 128771
+   write_horizontally default
+end
+flowcanvas 129539 flow_ref 141443 // <flow>
+  
+  from ref 128771 z 2001 to ref 128899
+   write_horizontally default
+end
+flowcanvas 129667 flow_ref 141571 // <flow>
+  decenter_begin 486
+  
+  from ref 128899 z 2001 to point 182 322
+  line 129923 z 2001 to point 182 153
+  line 129795 z 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 130051 flow_ref 141699 // <flow>
+  
+  from ref 128899 z 2001 to ref 128643
+   write_horizontally default
+end
+flowcanvas 130179 flow_ref 141827 // <flow>
+  
+  from ref 128899 z 2001 to ref 128515
+   write_horizontally default
+end
+flowcanvas 130435 flow_ref 141955 // <flow>
+  
+  from ref 128643 z 2001 to ref 130307
+   write_horizontally default
+end
+flowcanvas 130563 flow_ref 142083 // <flow>
+  decenter_begin 351
+  
+  from ref 130307 z 2001 to ref 128515
+   write_horizontally default
+end
+flowcanvas 130819 flow_ref 142211 // <flow>
+  
+  from ref 128515 z 2001 to ref 130691
+   write_horizontally default
+end
+flowcanvas 130947 flow_ref 142339 // <flow>
+  
+  from ref 130691 z 2001 to ref 128643
+   write_horizontally default
+end
+flowcanvas 131075 flow_ref 142467 // <flow>
+  decenter_begin 567
+  
+  from ref 130691 z 2001 to point 750 464
+  line 131203 z 2001 to point 747 150
+  line 131331 z 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 131459 flow_ref 142595 // <flow>
+  decenter_begin 459
+  
+  from ref 130307 z 2001 to point 63 460
+  line 131587 z 2001 to point 62 30
+  line 131715 z 2001 to point 203 28
+  line 131843 z 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 132099 flow_ref 143107 // <flow>
+  
+  from ref 129155 z 2006 to ref 131971
+   write_horizontally default
+end
+flowcanvas 132227 flow_ref 143235 // <flow>
+  
+  from ref 131971 z 2006 to ref 128387
+   write_horizontally default
+end
+flowcanvas 132611 flow_ref 143363 // <flow>
+  decenter_begin 225
+  decenter_end 268
+  
+  from ref 132355 z 2008 to ref 132483
+   write_horizontally default
+end
+flowcanvas 132995 flow_ref 143491 // <flow>
+  decenter_begin 780
+  decenter_end 725
+  
+  from ref 132483 z 2008 to ref 132355
+   write_horizontally default
+end
+flowcanvas 133123 flow_ref 143619 // <flow>
+  
+  from ref 131971 z 2007 to ref 132355
+   write_horizontally default
+end
+line 128130 -_-_
+  from ref 128002 z 2002 to ref 130819
+line 128898 -_-_
+  from ref 128386 z 2014 to ref 132355
+line 129154 -_-_
+  from ref 128770 z 2001 to ref 128387
+line 129282 -_-_
+  from ref 131331 z 2002 to ref 128770
+line 129410 -_-_
+  from ref 128642 z 2001 to ref 128387
+line 129538 -_-_
+  from ref 128514 z 2001 to ref 128643
+line 129666 -_-_
+  from ref 128258 z 2001 to ref 128515
+end

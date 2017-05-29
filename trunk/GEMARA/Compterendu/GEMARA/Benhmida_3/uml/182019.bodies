@@ -1,0 +1,23 @@
+class Flight
+!!!136963.cpp!!!	start() : void
+	puts("Compte à rebours lancé\n");
+	isActive = true;
+	while(this->isActive)
+	{
+		while((this->minuts >= 0) && !(this->stopNow))
+		{
+			while((this->seconds > 0) && !(this->stopNow))
+			{
+				this->seconds--;
+				std::this_thread::sleep_for(std::chrono::seconds(1));
+				printf("%02d:%02d\n", this->minuts,this->seconds);
+			}
+			this->seconds = 60;
+			this->minuts--;
+		}
+		this->isActive = false;
+	}
+	printf("Fin du Compte à rebours\n");
+!!!137091.cpp!!!	stop() : void
+	this->stopNow = true;
+	printf("Compte à rebours arrêté\n");

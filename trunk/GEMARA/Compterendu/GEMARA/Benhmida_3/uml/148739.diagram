@@ -1,0 +1,39 @@
+format 212
+
+activityactioncanvas 128003 activityaction_ref 149123 // activity action allumerLeds
+  
+  show_opaque_action_definition default
+  xyzwh 345 158.5 2000 101 61
+  pins
+    pincanvas 128131 pin_ref 144387 // toutes
+      xyzwh 335 164.5 2002 11 11 label_xy 289 149.5
+    end
+  end
+end
+activitynodecanvas 128259 activitynode_ref 158723 // activity_final
+  xyz 384 360.5 2000
+end
+activityactioncanvas 128387 activityaction_ref 149251 // activity action indiquerFinTest
+  
+  show_opaque_action_definition default
+  xyzwh 329 267.5 2000 133 61
+end
+activitynodecanvas 128771 activitynode_ref 159107 // initial_node
+  xyz 386 76 2000
+end
+flowcanvas 128515 flow_ref 172035 // <flow>
+  
+  from ref 128003 z 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 128643 flow_ref 172163 // <flow>
+  
+  from ref 128387 z 2001 to ref 128259
+   write_horizontally default
+end
+flowcanvas 128899 flow_ref 172675 // <flow>
+  
+  from ref 128771 z 2001 to ref 128003
+   write_horizontally default
+end
+end

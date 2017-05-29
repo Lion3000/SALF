@@ -1,0 +1,5 @@
+class Sequence
+!!!140163.cpp!!!	getCurrentSequence() : char
+	return this->currentSequence;
+!!!140291.cpp!!!	setCurrentSequence(in position : int) : void
+	this->currentSequence = sequenceList[position];

@@ -1,0 +1,78 @@
+format 212
+
+deploymentnodecanvas 129282 deploymentnode_ref 141315 // Automate
+  xyzwh 402 343 2000 85 39
+end
+deploymentnodecanvas 132994 deploymentnode_ref 128642 // LED
+  name "Rouge"
+  xyzwh 159 195 2000 94 39
+end
+deploymentnodecanvas 133122 deploymentnode_ref 128642 // LED
+  name "Rouge"
+  xyzwh 632 195.5 2000 94 39
+end
+deploymentnodecanvas 133250 deploymentnode_ref 128642 // LED
+  name "Rouge"
+  xyzwh 166 447.5 2000 94 39
+end
+deploymentnodecanvas 133378 deploymentnode_ref 128642 // LED
+  name "Rouge"
+  xyzwh 625 455.5 2000 94 39
+end
+deploymentnodecanvas 133634 deploymentnode_ref 128642 // LED
+  name "Vert"
+  xyzwh 163 499.5 2006 94 39
+end
+deploymentnodecanvas 133762 deploymentnode_ref 128642 // LED
+  name "Vert"
+  xyzwh 624 508.5 2000 94 39
+end
+deploymentnodecanvas 133890 deploymentnode_ref 128642 // LED
+  name "Vert"
+  xyzwh 159 240.5 2000 94 39
+end
+deploymentnodecanvas 134018 deploymentnode_ref 128642 // LED
+  name "Vert"
+  xyzwh 632 245.5 2000 94 39
+end
+deploymentnodecanvas 134146 deploymentnode_ref 128642 // LED
+  name "Orange"
+  xyzwh 619 555.5 2000 100 39
+end
+deploymentnodecanvas 134274 deploymentnode_ref 128642 // LED
+  name "Orange"
+  xyzwh 160 550.5 2000 100 39
+end
+fragment 134402 "PietonA"
+  color midmagenta xyzwh 130 131 2000 151 185
+end
+fragment 134530 "PietonB"
+  color midmagenta xyzwh 604.5 131.5 2000 151 185
+end
+fragment 134658 "TricoloreB"
+  color red xyzwh 593 411 2000 157 203
+end
+fragment 134786 "TricoloreA"
+  color red xyzwh 135.5 404.5 2000 157 203
+end
+line 134914 ----
+  from ref 133890 z 2001 to ref 129282
+line 135042 ----
+  from ref 132994 z 2001 to ref 129282
+line 135170 ----
+  from ref 133122 z 2001 to ref 129282
+line 135298 ----
+  from ref 134018 z 2001 to ref 129282
+line 135426 ----
+  from ref 133250 z 2001 to ref 129282
+line 135554 ----
+  from ref 134274 z 2001 to ref 129282
+line 135682 ----
+  from ref 133634 z 2007 to ref 129282
+line 135810 ----
+  from ref 129282 z 2001 to ref 134146
+line 135938 ----
+  from ref 129282 z 2001 to ref 133762
+line 136066 ----
+  from ref 129282 z 2001 to ref 133378
+end

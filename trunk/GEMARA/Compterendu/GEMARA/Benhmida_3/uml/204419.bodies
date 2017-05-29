@@ -1,0 +1,225 @@
+class ButtonController
+!!!156419.cpp!!!	executeIncrementDecrement(inout context : void) : void
+	return ((ButtonController *)context)->incrementDecrement();
+!!!156547.cpp!!!	executeSetUpSequence(inout context : void) : void
+	return ((ButtonController *)context)->setUpSequence();
+!!!156675.cpp!!!	executeStartStopFlightLaunch(inout context : void) : void
+	return ((ButtonController *)context)->startStopFlightLaunch();
+!!!156803.cpp!!!	executeTut(inout context : void) : void
+	return ((ButtonController *)context)->tut();
+!!!156931.cpp!!!	startStopFlightLaunch() : void
+	
+	//paramétrage du timer
+	int * timer = flight->getTimerFromDb();
+	flight->setMinuts(timer[0]);
+	flight->setSeconds(timer[1]);
+	free(timer);
+	
+	//paramétrage de la séquence
+	std::string sequenceList[3];
+	flight->getSequenceFromDb(sequenceList);
+	char seqTotal[3];
+	seqTotal[0] = sequenceList[0][0];
+	seqTotal[1] = sequenceList[1][0];
+	seqTotal[2] = sequenceList[2][0];	
+	flight->setCompleteSequence(seqTotal[0], seqTotal[1], seqTotal[2]);			
+	
+	//lancement
+	pthread_t threadLaunch;
+	pthread_create(&threadLaunch, NULL, &Flight::executeStart,flight);
+	pthread_join(threadLaunch, NULL);
+!!!157059.cpp!!!	incrementDecrement() : void
+	if(buttonCombinaison == (int)Button::PLUS) this->minuts++ ;
+	else if(buttonCombinaison == (int)Button::MINUS) this->minuts--;			
+	if(this->minuts>=59) this->minuts = 0; // si +
+	if(this->minuts<=0) this->minuts = 59; // si -
+	SalfBoxIhm::setCompteur(this->minuts,0);							
+	std::this_thread::sleep_for(std::chrono::seconds(2));
+	while(this->onPress)
+	{			
+		if(buttonCombinaison == (int)Button::PLUS) this->minuts++;
+		else if(buttonCombinaison == (int)Button::MINUS) this->minuts--;
+		if(this->minuts>=59) this->minuts = 0; // si +
+		else if(this->minuts<=0) this->minuts = 59; // si -		
+		SalfBoxIhm::setCompteur(this->minuts,0);
+		std::this_thread::sleep_for(std::chrono::milliseconds(250));
+	}			
+!!!157187.cpp!!!	setUpSequence() : void
+	
+	this->nbAppuiSeq++;	
+	currentRace = nbAppuiSeq;
+	
+	if(nbAppuiSeq == 1) sequenceConfiguring = true;
+	else if(nbAppuiSeq == 3) nbAppuiSeq = 0;	
+	if(seqModified)
+	{
+		sequence[currentRace-2] = selectedSymbol;				 
+		symbols.erase(symbols.begin()+(symbolPosition)); 
+		getAvailableSymbol();								
+		seqModified = false;
+	}
+	SalfBoxIhm::setSequence(sequence[currentRace-1]);
+	printf("Sequence entière = %c - %c - %c\n", this->sequence[0], this->sequence[1], this->sequence[2]);	
+	if(checkSequenceConfiguration() == true){
+		
+		std::this_thread::sleep_for(std::chrono::seconds(2));
+				
+		if(onPress && (buttonCombinaison == (int)Button::SEQ))				
+		{			
+			std::string sql = "INSERT INTO racesSequence(firstRace, secondRace, thirdRace) VALUES(" + std::string(1,this->sequence[0]) + "," + std::string(1,this->sequence[1]) + "," + std::string(1,this->sequence[2]) + ");";
+			database.executeRequest(sql);
+			resetSymbols();
+			sequenceConfiguring = false;
+			resetSymbols();
+			puts("SEQUENCE CONFIGUREE ET ENREGISTREE\n");
+		}
+	}	
+!!!157315.cpp!!!	tut() : void
+	if(this->onPress){
+		SalfBoxIhm::setLeds((LedColor)( (int)LedColor::TUT_CONTACTEUR|SalfBoxIhm::getEtatLed()));
+		std::this_thread::sleep_for(std::chrono::seconds(2));
+		
+		int truc = (SalfBoxIhm::etatLed-(int)LedColor::TUT_CONTACTEUR);
+		if(truc < 0)
+			truc = 0;
+		SalfBoxIhm::setLeds((LedColor)truc, true);
+	}
+!!!157443.cpp!!!	resetSymbols() : void
+	this->symbols.clear();
+	this->symbols.push_back('1');
+	this->symbols.push_back('2');
+	this->symbols.push_back('3');
+	this->symbols.push_back('0');
+!!!157571.cpp!!!	seq() : void
+	if(this->onPress && !this->started){	
+		pthread_t threadSeq;
+		pthread_create(&threadSeq, NULL, &ButtonController::executeSetUpSequence, this);	
+	}		
+!!!157699.cpp!!!	plusMinus() : void
+		
+	if(this->onPress && !this->started){
+		if(this->sequenceConfiguring)
+		{	
+			seqModified = true;
+			if(buttonCombinaison == (int)Button::PLUS) symbolPosition++; 
+			else if(buttonCombinaison == (int)Button::MINUS) symbolPosition--;				
+			if((buttonCombinaison == (int)Button::PLUS) && (symbolPosition == symbols.size())){
+				symbolPosition = 0; //si +
+			}	
+			else if((buttonCombinaison == (int)Button::MINUS) && (symbolPosition < 0)){
+				symbolPosition = symbols.size()-1; //si -
+			}
+			selectedSymbol = symbols.at(symbolPosition);
+			SalfBoxIhm::setSequence(selectedSymbol);
+		}
+		else if(!this->sequenceConfiguring)
+		{
+			this->timerConfiguring = true;			
+			pthread_t thread;
+			pthread_create(&thread, NULL, &ButtonController::executeIncrementDecrement, this);				
+		}	
+	}	
+!!!157827.cpp!!!	startStop() : void
+	
+	if(this->onPress)
+	{		
+		if(this->started)
+		{
+			if(this->flight->getIsActive()){
+				this->flight->stop();
+				SalfBoxIhm::clearIoExtender();
+				this->started = false;
+			}				
+		}	
+		
+		else if(!this->started){
+			if(timerConfiguring){
+				timerConfiguring = false;
+				std::string sql = std::string("INSERT INTO timer(minuts, seconds) VALUES(") + std::to_string(this->minuts) + std::string(",") + std::to_string(this->seconds) + std::string(");");
+				database.executeRequest(sql);	
+				puts("Timer enregistré\n");		
+			}
+			else{
+				if(!this->flight->getIsActive()){
+				pthread_t threadLaunch;
+				pthread_create(&threadLaunch, NULL, &ButtonController::executeStartStopFlightLaunch,this);
+				puts("LANCEMENT\n");
+				this->started = true;
+				}
+			}
+		}	
+	}	
+!!!157955.cpp!!!	clearTimer() : void
+	if(this->onPress){
+		SalfBoxIhm::setCompteur(0,0);
+		this->minuts = 0;
+		this->seconds = 0;
+	}
+!!!158083.cpp!!!	manageButtons() : void
+	switch(buttonCombinaison){
+		
+		case (int)Button::START_STOP :
+			startStop();
+			break;
+			
+		case (int)Button::SEQ :
+			seq();
+			break;
+		
+		case (int)Button::PLUS :
+			plusMinus();
+			break;
+		
+		case (int)Button::MINUS :			
+			plusMinus();
+			break;
+		
+		case (int)Button::TUT :
+			tut();
+			break;
+			
+		case (int)Button::CLEAR :
+			clearTimer();
+			break;
+			
+		default:
+			break;
+	}
+!!!158211.cpp!!!	getAvailableSymbol() : void
+	std::vector<char>::iterator it;
+	it = find(symbols.begin(), symbols.end(), this->sequence[currentRace-1]);
+	if(it == symbols.end()){
+		sequence[currentRace-1] = symbols.at(0);	
+	}
+!!!158339.cpp!!!	checkSequenceConfiguration() : bool
+	if((this->sequence[0] != this->sequence[1]) && (this->sequence[0] != this->sequence[2]))
+	{
+		if(this->sequence[1] != this->sequence[2])
+		{
+			return true;
+		}
+	}
+	else
+		return false;	
+!!!158467.cpp!!!	ButtonController(in idFileButtons : int)
+	
+	this->timerConfiguring = false; 
+	this->sequenceConfiguring = false; 
+	this->idFileButtons = idFileButtons;
+	this->seqModified = false; 
+	this->started = false; 
+	this->nbAppuiSeq = 0; 
+	this->buttonCombinaison = 0;
+	this->symbolPosition = 0;
+	this->minuts = 0;
+	this->seconds = 0;	
+	this->selectedSymbol = ' ';	
+	this->sequence[0] = '1' ; this->sequence[1] = '2' ; this->sequence[2] = '3'; 
+	this->flight= new Flight();
+	resetSymbols();
+!!!158723.cpp!!!	getButtonsState() : void
+	ButtonController::RequestGet msg;
+	msgrcv(idFileButtons, &msg, sizeof(int), 0, 0);
+	this->buttonCombinaison = msg.data[0];	
+	this->onPress = (msg.type==PRESS) ? true : false;
+	manageButtons();				

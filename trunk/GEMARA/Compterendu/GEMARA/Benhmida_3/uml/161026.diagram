@@ -1,0 +1,73 @@
+format 212
+
+classcanvas 128002 class_ref 141954 // SystemeCentral
+  classdiagramsettings member_max_width 0 end
+  xyz 124.6 335.6 2000
+end
+classcanvas 128130 class_ref 148482 // BaseDeDonnees
+  classdiagramsettings member_max_width 0 end
+  xyzwh 112 499.6 2000 158 201
+end
+classcanvas 128770 class_ref 155010 // ServeurTcp
+  classdiagramsettings member_max_width 0 end
+  xyz 58.4 46.2 2000
+end
+classcanvas 129282 class_ref 161666 // RecepteurUdp
+  classdiagramsettings member_max_width 0 end
+  xyz 328.6 37 2000
+end
+classcanvas 130306 class_ref 181762 // Regulateur
+  classdiagramsettings member_max_width 0 end
+  xyz 258 250 2006
+end
+classcanvas 131714 class_ref 201474 // Cycle
+  classdiagramsettings member_max_width 0 end
+  xyz 536.6 235 2000
+end
+classcanvas 131842 class_ref 201602 // Action
+  classdiagramsettings member_max_width 0 end
+  xyz 895.6 293 2005
+end
+classcanvas 131970 class_ref 201730 // State
+  classdiagramsettings member_max_width 0 end
+  xyz 745 36.6 2010
+end
+relationcanvas 128258 relation_ref 147970 // <composition>
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130946 relation_ref 196738 // <directional composition>
+  decenter_end 447
+  from ref 128002 z 2007 to ref 130306
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131074 relation_ref 196866 // <generalisation>
+  decenter_begin 447
+  from ref 130306 z 2007 to ref 129282
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 131586 relation_ref 210050 // <generalisation>
+  from ref 130306 z 2007 to ref 128770
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132098 relation_ref 249858 // <directional composition>
+  from ref 131714 z 2011 to ref 131970
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132226 relation_ref 249986 // <unidirectional association>
+  decenter_end 478
+  from ref 131970 z 2011 to ref 131842
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132610 relation_ref 250114 // <directional composition>
+  from ref 130306 z 2007 to ref 131714
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

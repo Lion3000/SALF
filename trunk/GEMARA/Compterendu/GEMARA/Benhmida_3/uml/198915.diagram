@@ -1,0 +1,45 @@
+format 212
+
+classinstancecanvas 128131 classinstance_ref 147843 // 
+  xyz 293 36 2000
+end
+classinstancecanvas 128259 classinstance_ref 147971 // 
+  xyz 462 55 2000
+end
+classinstancecanvas 128387 classinstance_ref 134659 // 
+  xyz 109 175 2006
+end
+classinstancecanvas 128643 classinstance_ref 148483 // led
+  xyz 155 234 2000
+end
+classinstancecanvas 128899 classinstance_ref 148611 // timer
+  xyz 308 275 2000
+end
+classinstancecanvas 129027 classinstance_ref 148099 // 
+  xyz 107 121 2000
+end
+classinstancecanvas 129155 classinstance_ref 148227 // 
+  xyz 157 49 2000
+end
+classinstancecanvas 129283 classinstance_ref 148355 // 
+  xyz 326 177 2000
+end
+objectlinkcanvas 129923 norel
+  from ref 129283 z 2001 to ref 128643
+  no_role_a no_role_b
+objectlinkcanvas 130051 norel
+  from ref 129283 z 2001 to ref 128899
+  no_role_a no_role_b
+objectlinkcanvas 130179 norel
+  from ref 128387 z 2007 to ref 129283
+  no_role_a no_role_b
+objectlinkcanvas 130307 norel
+  from ref 129283 z 2006 to ref 128131
+  no_role_a no_role_b
+objectlinkcanvas 130435 norel
+  from ref 129283 z 2001 to ref 128259
+  no_role_a no_role_b
+objectlinkcanvas 130691 norel
+  from ref 129155 z 2001 to ref 129283
+  no_role_a no_role_b
+end

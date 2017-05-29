@@ -1,0 +1,49 @@
+format 212
+
+classcanvas 128003 class_ref 227203 // RemoteDisplay
+  classdiagramsettings member_max_width 0 end
+  xyz 208 76 2000
+end
+classcanvas 128131 class_ref 226947 // LocalDisplay
+  classdiagramsettings member_max_width 0 end
+  xyz 374 76 2000
+end
+classcanvas 128259 class_ref 227075 // Display
+  classdiagramsettings member_max_width 0 end
+  xyz 300 12 2000
+end
+classcanvas 128387 class_ref 227715 // Signals
+  classdiagramsettings member_max_width 0 end
+  xyz 361 484 2000
+end
+classcanvas 128771 class_ref 228355 // spiBny
+  classdiagramsettings member_max_width 0 end
+  xyz 712 329 2000
+end
+classcanvas 129283 class_ref 228483 // BaseDeDonnees
+  classdiagramsettings member_max_width 0 end
+  xyz 439 207 2000
+end
+classcanvas 129667 class_ref 227843 // Speakers
+  classdiagramsettings member_max_width 0 end
+  xyz 37 48 2000
+end
+classcanvas 129795 class_ref 227971 // Chonometer
+  classdiagramsettings member_max_width 0 end
+  xyz 39 508 2005
+end
+classcanvas 129923 class_ref 228099 // ucLaunch
+  classdiagramsettings member_max_width 0 end
+  xyzwh 554 395 2000 93 63
+end
+relationcanvas 130051 relation_ref 193027 // <generalisation>
+  from ref 128003 z 2001 to ref 128259
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130179 relation_ref 192899 // <generalisation>
+  from ref 128131 z 2001 to ref 128259
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

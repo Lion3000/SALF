@@ -1,0 +1,140 @@
+class SalfBoxIhm
+!!!161795.cpp!!!	initializeButtonsMap() : void
+	SalfBoxIhm::gpioMasques.insert(std::make_pair(ButtonGpio::START_STOP_PIN, Button::START_STOP));
+	SalfBoxIhm::gpioMasques.insert(std::make_pair(ButtonGpio::SEQ_PIN, Button::SEQ));
+	SalfBoxIhm::gpioMasques.insert(std::make_pair(ButtonGpio::PLUS_PIN, Button::PLUS));
+	SalfBoxIhm::gpioMasques.insert(std::make_pair(ButtonGpio::MINUS_PIN, Button::MINUS));
+	SalfBoxIhm::gpioMasques.insert(std::make_pair(ButtonGpio::TUT_PIN, Button::TUT));	
+!!!161923.cpp!!!	inverseDigits(in nb : uint8_t) : uint8_t
+	uint8_t d = nb/10;
+	uint8_t u = nb%10;
+	return (u<<4) + d;
+!!!162051.cpp!!!	inverseDigitsBack(in nb : uint8_t) : uint8_t
+	uint8_t d = nb<<4;
+	d = d>>4;
+	uint8_t u = nb>>4;
+	return (d*10) + u;
+!!!162179.cpp!!!	buttonTest(in pin : ButtonGpio) : void
+	std::string pinStopIsr = std::string("/usr/bin/gpio edge ") + std::to_string((int)pin) + std::string(" none");
+	system(pinStopIsr.c_str()) ;
+	std::this_thread::sleep_for(std::chrono::milliseconds(TIME_ANTIREBOUND));
+	SalfBoxIhm::RequestGet msg;
+	
+	if(digitalRead(pin) == 0) 
+	{
+		msg.mtype = (long)PRESS; 		
+		SalfBoxIhm::buttonState = SalfBoxIhm::buttonState | (int)gpioMasques.at(pin);		
+	}
+	else
+	{
+		msg.mtype = (long)RELEASED;	
+		SalfBoxIhm::buttonState = SalfBoxIhm::buttonState | (int)gpioMasques.at(pin);					
+	}	
+	pinStopIsr = std::string("/usr/bin/gpio edge ") + std::to_string((int)pin) + std::string(" both");	
+	system(pinStopIsr.c_str()) ;
+	msg.data[0] = SalfBoxIhm::buttonState;	
+	msgsnd(ioExtenderFileGet, &msg, sizeof(int), 0);	
+	SalfBoxIhm::buttonState = 0;	
+!!!162307.cpp!!!	init() : void
+	wiringPiSetupPhys();
+	wiringPiISR(ButtonGpio::MINUS_PIN, INT_EDGE_BOTH, doMinus);
+	wiringPiISR(ButtonGpio::PLUS_PIN, INT_EDGE_BOTH, doPlus);
+	wiringPiISR(ButtonGpio::SEQ_PIN, INT_EDGE_BOTH, doSeq);
+	wiringPiISR(ButtonGpio::START_STOP_PIN, INT_EDGE_BOTH, doStartStop);
+	wiringPiISR(ButtonGpio::TUT_PIN, INT_EDGE_BOTH, doTut);
+	
+	spi.open("/dev/spidev0.0");
+	keySetBox = ftok("/tmp",1);
+	keyGetBox = ftok("/tmp",2);
+	buttonState = 0;	
+	etatLed = 0;	
+	ioExtenderFileId = msgget(SalfBoxIhm::keySetBox, 0666 | IPC_CREAT);
+	ioExtenderFileGet = msgget(SalfBoxIhm::keyGetBox, 0666 | IPC_CREAT);
+	SalfBoxIhm::initializeButtonsMap();
+	ioExtender[IoExtender::LEDS]= 0x0; 
+	ioExtender[IoExtender::SEQUENCE]= 0x0; 
+	ioExtender[IoExtender::SECONDS]= 0x0; 
+	ioExtender[IoExtender::MINUTS]= 0x0;
+	ioExtender[4]= 0x0;
+	puts("init OK");
+!!!162435.cpp!!!	updateIoExtender() : void
+	
+	SalfBoxIhm::Request msg;
+	msgrcv(ioExtenderFileId, &msg, IO_EXTENDER_SIZE, 0, 0);
+	
+	switch(msg.mtype) 
+	{
+		case SalfBoxIhm::COMPTEUR:
+			SalfBoxIhm::ioExtender[IoExtender::MINUTS] = msg.ioExtender[IoExtender::MINUTS];	// minuts
+			SalfBoxIhm::ioExtender[IoExtender::SECONDS] = msg.ioExtender[IoExtender::SECONDS];	// seconds
+			break;
+
+		case SalfBoxIhm::SEQUENCE:
+			SalfBoxIhm::ioExtender[IoExtender::SEQUENCE] = msg.ioExtender[IoExtender::SEQUENCE];	// sequence	
+			break;
+
+		case SalfBoxIhm::LEDS:
+			SalfBoxIhm::ioExtender[IoExtender::LEDS] = msg.ioExtender[IoExtender::LEDS];	// leds	
+			break;
+
+		default:
+			break;
+	}
+	#ifdef _UBUNTU_
+		std::cout<< SalfBoxIhm::ioExtender<<std::endl;
+	#else
+		
+		spi.write(SalfBoxIhm::ioExtender, SalfBoxIhm::IO_EXTENDER_SIZE);
+		spi.flush();
+						
+	#endif
+!!!162691.cpp!!!	clearIoExtender() : void
+	SalfBoxIhm::setLeds(ALL_LEDS_OFF);
+	SalfBoxIhm::setCompteur(0,0);
+	SalfBoxIhm::setSequence(0);	
+!!!162819.cpp!!!	getIoExtenderFileGet() : int
+	return SalfBoxIhm::ioExtenderFileGet;
+!!!162947.cpp!!!	setCompteur(in minuts : uint8_t, in seconds : uint8_t) : void
+
+	SalfBoxIhm::Request msg;
+	msg.mtype = SalfBoxIhm::COMPTEUR;
+	msg.ioExtender[IoExtender::MINUTS] = inverseDigits(minuts);
+	msg.ioExtender[IoExtender::SECONDS] = inverseDigits(seconds);
+	msgsnd(ioExtenderFileId, &msg, IO_EXTENDER_SIZE, 0);
+!!!163075.cpp!!!	setSequence(in sequence : uint8_t) : void
+	
+	SalfBoxIhm::Request msg;
+	msg.mtype = SalfBoxIhm::SEQUENCE;
+	msg.ioExtender[IoExtender::SEQUENCE] = sequence;
+	msgsnd(ioExtenderFileId, &msg, IO_EXTENDER_SIZE, 0);
+!!!163203.cpp!!!	setLeds(in positionLed : LedColor, in tutEnd : bool = false) : void
+	if((int)SalfBoxIhm::getLeds()&(int)LedColor::TUT_CONTACTEUR == (int)LedColor::TUT_CONTACTEUR){
+		if(!tutEnd)
+			positionLed = (LedColor)((int)positionLed|(int)LedColor::TUT_CONTACTEUR);
+	}
+	SalfBoxIhm::Request msg;
+	msg.mtype = SalfBoxIhm::LEDS;
+	msg.ioExtender[IoExtender::LEDS] = (char)positionLed ;
+	msgsnd(ioExtenderFileId, &msg, IO_EXTENDER_SIZE, 0);
+	SalfBoxIhm::etatLed = (int)positionLed;
+!!!163331.cpp!!!	getSeconds() : char
+
+	return inverseDigitsBack(SalfBoxIhm::ioExtender[IoExtender::SECONDS]);
+!!!163459.cpp!!!	getMinuts() : char
+	
+	return inverseDigitsBack(SalfBoxIhm::ioExtender[IoExtender::MINUTS]);
+!!!163587.cpp!!!	getEtatLed() : int
+	return SalfBoxIhm::etatLed;
+!!!163715.cpp!!!	getSequence() : char
+
+	return SalfBoxIhm::ioExtender[IoExtender::SEQUENCE];
+!!!163843.cpp!!!	doTut() : void
+	buttonTest(ButtonGpio::TUT_PIN);
+!!!163971.cpp!!!	doSeq() : void
+	buttonTest(ButtonGpio::SEQ_PIN);
+!!!164099.cpp!!!	doMinus() : void
+	buttonTest(ButtonGpio::MINUS_PIN);
+!!!164227.cpp!!!	doPlus() : void
+	buttonTest(ButtonGpio::PLUS_PIN);	
+!!!164355.cpp!!!	doStartStop() : void
+	buttonTest(ButtonGpio::START_STOP_PIN);

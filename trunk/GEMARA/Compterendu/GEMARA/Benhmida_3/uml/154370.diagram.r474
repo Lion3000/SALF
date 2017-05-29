@@ -1,0 +1,42 @@
+format 212
+
+classinstancecanvas 128002 classinstance_ref 128002 // regulateur
+  xyz 352 331 2000
+end
+classinstancecanvas 128130 classinstance_ref 128130 // carrefour
+  xyz 335 410 2000
+end
+classinstancecanvas 128258 classinstance_ref 128258 // etat3
+  xyz 162 287 2000
+end
+classinstancecanvas 128386 classinstance_ref 128386 // cycle
+  xyz 243 196 2000
+end
+classinstancecanvas 128514 classinstance_ref 128514 // etat2
+  xyz 83 221 2005
+end
+classinstancecanvas 128642 classinstance_ref 128642 // etat1
+  xyz 94 145 2010
+end
+classinstancecanvas 129154 classinstance_ref 128770 // systemeCentral
+  xyz 320 244 2000
+end
+objectlinkcanvas 128770 norel
+  from ref 128642 z 2011 to ref 128386
+  no_role_a no_role_b
+objectlinkcanvas 128898 norel
+  from ref 128514 z 2006 to ref 128386
+  no_role_a no_role_b
+objectlinkcanvas 129026 norel
+  from ref 128258 z 2001 to ref 128386
+  no_role_a no_role_b
+objectlinkcanvas 129410 norel
+  from ref 128386 z 2001 to ref 129154
+  no_role_a no_role_b
+objectlinkcanvas 129538 norel
+  from ref 129154 z 2001 to ref 128002
+  no_role_a no_role_b
+objectlinkcanvas 129666 norel
+  from ref 128002 z 2001 to ref 128130
+  no_role_a no_role_b
+end

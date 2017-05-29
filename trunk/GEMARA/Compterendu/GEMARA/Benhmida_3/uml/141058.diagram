@@ -1,0 +1,134 @@
+format 212
+
+classcanvas 129411 class_ref 212739 // Afficheur
+  classdiagramsettings member_max_width 0 end
+  xyz 229 317 2000
+end
+classcanvas 129539 class_ref 167939 // Led
+  classdiagramsettings member_max_width 0 end
+  xyz 159 367 2000
+end
+classcanvas 129667 class_ref 212867 // Speaker
+  classdiagramsettings member_max_width 0 end
+  xyz 493 490 2000
+end
+classcanvas 129795 class_ref 212995 // Klaxon
+  classdiagramsettings member_max_width 0 end
+  xyzwh 136 454 2000 85 41
+end
+classcanvas 129923 class_ref 213123 // Digit
+  classdiagramsettings member_max_width 0 end
+  xyz 244 218 2000
+end
+classcanvas 130307 class_ref 148227 // SpiBny
+  classdiagramsettings member_max_width 0 end
+  xyz 335 393 2000
+end
+classcanvas 130435 class_ref 213251 // RaspberryPi
+  classdiagramsettings member_max_width 0 end
+  xyz 479 392 2000
+end
+classcanvas 131075 class_ref 213379 // Minut
+  classdiagramsettings member_max_width 0 end
+  xyz 272 85 2000
+end
+classcanvas 131203 class_ref 213507 // Second
+  classdiagramsettings member_max_width 0 end
+  xyz 394 149 2000
+end
+classcanvas 131331 class_ref 213635 // Sequence
+  classdiagramsettings member_max_width 0 end
+  xyz 473 218 2000
+end
+classcanvas 132739 class_ref 157698 // Flight
+  classdiagramsettings member_max_width 0 end
+  xyz 486 44 2000
+end
+classcanvas 134275 class_ref 157442 // Button
+  classdiagramsettings member_max_width 0 end
+  xyz 647 391 2000
+end
+classcanvas 134531 class_ref 213763 // MachineAndroid
+  classdiagramsettings member_max_width 0 end
+  xyz 747 304 2000
+end
+classcanvas 134659 class_ref 213891 // BluetoothBny
+  classdiagramsettings member_max_width 0 end
+  xyz 592 305 2000
+end
+relationcanvas 130563 relation_ref 183555 // <association>
+  from ref 130435 z 2001 to ref 130307
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 130691 relation_ref 183683 // <association>
+  from ref 129411 z 2001 to ref 130307
+  no_role_a no_role_b
+  no_multiplicity_a multiplicity_b_pos 301 373 3000
+end
+relationcanvas 130819 relation_ref 183811 // <association>
+  from ref 130307 z 2001 to ref 129539
+  no_role_a no_role_b
+  multiplicity_a_pos 209 399 3000 no_multiplicity_b
+end
+relationcanvas 130947 relation_ref 183939 // <association>
+  from ref 130307 z 2001 to ref 129795
+  no_role_a no_role_b
+  multiplicity_a_pos 230 464 3000 no_multiplicity_b
+end
+relationcanvas 132867 relation_ref 184963 // <composition>
+  from ref 132739 z 2001 to ref 131331
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 132995 relation_ref 185091 // <composition>
+  from ref 132739 z 2001 to ref 131203
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133123 relation_ref 185219 // <composition>
+  from ref 132739 z 2001 to ref 131075
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 133251 relation_ref 185347 // <composition>
+  from ref 129411 z 2001 to ref 129923
+  no_role_a no_role_b
+  multiplicity_a_pos 246 267 3000 no_multiplicity_b
+end
+relationcanvas 133379 relation_ref 185475 // <composition>
+  from ref 131075 z 2001 to ref 129923
+  no_role_a no_role_b
+  multiplicity_a_pos 251 192 3000 no_multiplicity_b
+end
+relationcanvas 133507 relation_ref 185603 // <composition>
+  from ref 131203 z 2001 to ref 129923
+  no_role_a no_role_b
+  multiplicity_a_pos 294 232 3000 no_multiplicity_b
+end
+relationcanvas 133635 relation_ref 185731 // <composition>
+  from ref 131331 z 2007 to ref 129923
+  no_role_a no_role_b
+  multiplicity_a_pos 294 247 3000 no_multiplicity_b
+end
+relationcanvas 134147 relation_ref 185987 // <association>
+  from ref 130435 z 2001 to ref 129667
+  no_role_a no_role_b
+  multiplicity_a_pos 507 464 3000 no_multiplicity_b
+end
+relationcanvas 134403 relation_ref 186115 // <association>
+  from ref 130435 z 2001 to ref 134275
+  no_role_a no_role_b
+  multiplicity_a_pos 628 420 3000 no_multiplicity_b
+end
+relationcanvas 134787 relation_ref 186243 // <composition>
+  from ref 130435 z 2001 to ref 134659
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 134915 relation_ref 186371 // <association>
+  from ref 134659 z 2001 to ref 134531
+  no_role_a no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

@@ -1,0 +1,89 @@
+format 212
+
+activitynodecanvas 128003 activitynode_ref 157827 // initial_node
+  xyz 331 28 2000
+end
+activityactioncanvas 128131 activityaction_ref 147715 // activity action lireBoutonIhmTest
+  
+  show_opaque_action_definition default
+  xyzwh 271 74 2000 145 61
+end
+activityactioncanvas 128387 activityaction_ref 148227 // activity action teserBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 68 168 2000 123 48
+end
+activitynodecanvas 128515 activitynode_ref 158211 // decision
+  xyz 333 172 2005
+end
+activityactioncanvas 128771 activityaction_ref 148355 // activity action testerSignalSonore
+  
+  show_opaque_action_definition default
+  xyzwh 15 315 2000 150 44
+end
+activityactioncanvas 128899 activityaction_ref 148483 // activity action testerHautParleur
+  
+  show_opaque_action_definition default
+  xyzwh 341 320 2000 134 40
+end
+activityactioncanvas 129027 activityaction_ref 148611 // activity action testerAfficheur
+  
+  show_opaque_action_definition default
+  xyzwh 499 168 2000 139 49
+end
+activityactioncanvas 129155 activityaction_ref 148739 // activity action testerSignauxVisuel
+  
+  show_opaque_action_definition default
+  xyzwh 177 322 2000 150 41
+end
+expansionregioncanvas 130051 expansionregion_ref 134915 // 
+  xyzwh 10 56 1995 667 323
+end
+activityactioncanvas 130819 activityaction_ref 156547 // activity action visualiserNiveauBatterie
+  
+  show_opaque_action_definition default
+  xyzwh 494 324 2000 175 40
+end
+flowcanvas 128259 flow_ref 170243 // <flow>
+  
+  from ref 128003 z 2001 to ref 128131
+   write_horizontally default
+end
+flowcanvas 128643 flow_ref 170371 // <flow>
+  
+  from ref 128131 z 2006 to ref 128515
+   write_horizontally default
+end
+flowcanvas 129411 flow_ref 170627 // <flow>
+  
+  from ref 128515 z 2006 label "[appui testBouton]" xyz 202 171 2006 to ref 128387
+   write_horizontally default
+end
+flowcanvas 129667 flow_ref 170883 // <flow>
+  
+  from ref 128515 z 2006 label "[appui testTut]" xyz 70 287 2006 to ref 128771
+   write_horizontally default
+end
+flowcanvas 129795 flow_ref 171011 // <flow>
+  decenter_begin 640
+  
+  from ref 128515 z 2006 label "[appui testHautParleur]" xyz 340 292 2006 to ref 128899
+   write_horizontally default
+end
+flowcanvas 129923 flow_ref 171139 // <flow>
+  decenter_begin 360
+  
+  from ref 128515 z 2006 label "[appui testLeds]" xyz 200 292 2006 to ref 129155
+   write_horizontally default
+end
+flowcanvas 131331 flow_ref 183811 // <flow>
+  
+  from ref 128515 z 2006 label "[appui testAchiffeur]" xyz 362 169 2006 to ref 129027
+   write_horizontally default
+end
+flowcanvas 131715 flow_ref 183939 // <flow>
+  
+  from ref 128515 z 2006 label "[appui testBatterie]" xyz 520 290 2006 to ref 130819
+   write_horizontally default
+end
+end

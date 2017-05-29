@@ -1,0 +1,44 @@
+format 212
+
+classcanvas 128003 class_ref 204419 // ButtonController
+  classdiagramsettings member_max_width 0 end
+  xyz 1052 223 2000
+end
+classcanvas 128131 class_ref 204547 // Database
+  classdiagramsettings member_max_width 0 end
+  xyz 557 10 3005
+end
+classcanvas 128387 class_ref 204931 // Speaker
+  classdiagramsettings member_max_width 0 end
+  xyz 245 10 2000
+end
+classcanvas 128515 class_ref 205443 // SalfBoxIhm
+  classdiagramsettings member_max_width 0 end
+  xyzwh 11 143 2000 447 755
+end
+classcanvas 128899 class_ref 204675 // Flight
+  classdiagramsettings member_max_width 0 end
+  xyz 497 232 3011
+end
+relationcanvas 128259 relation_ref 175619 // <directional composition>
+  from ref 128003 z 3006 to ref 128131
+  role_a_pos 1067 201 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129027 relation_ref 176131 // <directional composition>
+  from ref 128899 z 3012 to ref 128131
+  role_a_pos 955 201 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129155 relation_ref 176259 // <unidirectional association>
+  decenter_end 749
+  from ref 128899 z 3012 to ref 128387
+  role_a_pos 480 135 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+relationcanvas 129283 relation_ref 175747 // <unidirectional association>
+  from ref 128003 z 3012 to ref 128899
+  role_a_pos 1013 541 3000 no_role_b
+  no_multiplicity_a no_multiplicity_b
+end
+end

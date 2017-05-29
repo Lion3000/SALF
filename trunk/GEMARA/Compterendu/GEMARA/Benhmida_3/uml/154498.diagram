@@ -1,0 +1,62 @@
+format 212
+
+activitynodecanvas 128003 activitynode_ref 173571 // initial_node
+  xyz 385 19 2000
+end
+activityactioncanvas 128131 activityaction_ref 135683 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 349 71 2000 100 60
+end
+activitynodecanvas 128387 activitynode_ref 173827 // decision
+  xyz 386 162 2000
+end
+activityactioncanvas 128515 activityaction_ref 135426 // activity action incrementerMinutes
+  
+  show_opaque_action_definition default
+  xyzwh 161 162 2000 154 42
+end
+activityactioncanvas 128643 activityaction_ref 135554 // activity action decrementerMinutes
+  
+  show_opaque_action_definition default
+  xyzwh 476 160 2000 168 42
+end
+activityactioncanvas 128771 activityaction_ref 169731 // activity action enregistrerTemps
+  
+  show_opaque_action_definition default
+  xyzwh 325 254 2000 150 40
+end
+activitynodecanvas 129411 activitynode_ref 173955 // activity_final
+  xyz 388 325 2000
+end
+flowcanvas 128259 flow_ref 200195 // <flow>
+  
+  from ref 128003 z 2001 to ref 128131
+   write_horizontally default
+end
+flowcanvas 128899 flow_ref 200323 // <flow>
+  
+  from ref 128131 z 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 129027 flow_ref 200451 // <flow>
+  
+  from ref 128387 z 2001 label "[appui +]" xyz 329 158 3000 to ref 128515
+   write_horizontally default
+end
+flowcanvas 129155 flow_ref 200579 // <flow>
+  
+  from ref 128387 z 2001 label "[appui -]" xyz 415 158 3000 to ref 128643
+   write_horizontally default
+end
+flowcanvas 129283 flow_ref 200707 // <flow>
+  
+  from ref 128387 z 2001 label "[appui start/stop]" xyz 343 216.5 3000 to ref 128771
+   write_horizontally default
+end
+flowcanvas 129539 flow_ref 200835 // <flow>
+  
+  from ref 128771 z 2001 to ref 129411
+   write_horizontally default
+end
+end

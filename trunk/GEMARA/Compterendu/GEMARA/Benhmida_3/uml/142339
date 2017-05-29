@@ -1,0 +1,360 @@
+format 212
+"ubuntu" // code::AppTestSALF::plugins::cordova-plugin-dialogs::src::ubuntu
+  revision 1
+  modified_by 3 "camelia"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  cpp_h_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/AppTestSALF/plugins/cordova-plugin-dialogs/src/ubuntu/"
+  cpp_src_dir "/home/camelia/workspace/Compterendu/GEMARA/Benhmida/code/AppTestSALF/plugins/cordova-plugin-dialogs/src/ubuntu/"
+  classview 141315 "ubuntu"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    class 197763 "Dialogs"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 171523 // <generalisation>
+	relation 171139 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 171523 // <generalisation>
+	  b parent class_ref 197891 // typedef1
+      end
+
+      extra_member 128003 "Q_OBJECT"
+	
+	cpp "  Q_OBJECT" ""
+	java ""
+	php ""
+	python ""
+	idl ""
+	mysql ""
+      end
+
+      operation 150915 "Dialogs"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param inout name "cordova" explicit_type "Cordova"
+	cpp_decl "    ${comment}${inline}explicit ${name}${(}${t0} * ${p0}${v0}${)}${volatile}${throw}${abstract} : CPlugin(cordova), _alertCallback(0) {
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 151043 "fullName"
+	cpp_virtual cpp_override cpp_inline public explicit_return_type "QString"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}const ${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return Dialogs::fullID();
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 151171 "shortName"
+	cpp_virtual cpp_override cpp_inline public explicit_return_type "QString"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}const ${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return \"Notification\";
+    };
+"
+	
+	
+	
+	
+      end
+
+      operation 151299 "fullID"
+	class_operation cpp_inline public explicit_return_type "QString"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}const ${type} ${name}${(}${)}${const}${volatile}${throw}${abstract} {
+        return \"Notification\";
+    };
+"
+	
+	
+	
+	
+      end
+
+      extra_member 128131 "slots"
+	
+	cpp "  public slots:" ""
+	java ""
+	php ""
+	python ""
+	idl ""
+	mysql ""
+      end
+
+      operation 151427 "beep"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 3
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "times" explicit_type "int"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, ${t2} ${p2}${v2}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, ${t2} ${p2}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 151555 "alert"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "message" explicit_type "QString"
+	  param in name "title" explicit_type "QString"
+	  param in name "buttonLabel" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 151683 "confirm"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 5
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "message" explicit_type "QString"
+	  param in name "title" explicit_type "QString"
+	  param in name "buttonLabels" explicit_type "QStringList"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 151811 "prompt"
+	preserve_cpp_body_indent public explicit_return_type "void"
+	nparams 6
+	  param in name "scId" explicit_type "int"
+	  param in name "ecId" explicit_type "int"
+	  param in name "message" explicit_type "QString"
+	  param in name "title" explicit_type "QString"
+	  param in name "buttonLabels" explicit_type "QStringList"
+	  param in name "defaultText" explicit_type "QString"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, ${t1} ${p1}${v1}, const ${t2} & ${p2}${v2}, const ${t3} & ${p3}${v3}, const ${t4} & ${p4}${v4}, const ${t5} & ${p5}${v5}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${t0} ${p0}, ${t1} ${p1}, const ${t2} & ${p2}, const ${t3} & ${p3}, const ${t4} & ${p4}, const ${t5} & ${p5}${)}${const}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+
+      operation 151939 "notificationDialogButtonPressed"
+	cpp_inline public explicit_return_type "void"
+	nparams 3
+	  param in name "buttonId" explicit_type "int"
+	  param in name "text" explicit_type "QString"
+	  param in name "prompt" explicit_type "bool"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${t0} ${p0}${v0}, const ${t1} & ${p1}${v1}, ${t2} ${p2}${v2}${)}${const}${volatile}${throw}${abstract} {
+        if (prompt) {
+            QVariantMap res;
+            res.insert(\"buttonIndex\", buttonId);
+            res.insert(\"input1\", text);
+            this->cb(_alertCallback, res);
+        } else {
+            this->cb(_alertCallback, buttonId);
+        }
+        _alertCallback = 0;
+    };
+"
+	
+	
+	
+	
+      end
+
+      attribute 152579 "_alertCallback"
+	private explicit_type "int"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+
+      attribute 152707 "_player"
+	private explicit_type "QMediaPlayer"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 197891 "typedef1"
+      visibility package stereotype "typedef" explicit_base_type "CPlugin"
+      cpp_decl "${comment}typedef ${type} ${name};
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+
+  deploymentview 141315 "ubuntu"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 163843 "notification"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 197891 // typedef1
+	class_ref 197763 // Dialogs
+      end
+    end
+  end
+end

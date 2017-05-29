@@ -1,0 +1,119 @@
+format 212
+
+activitynodecanvas 128002 activitynode_ref 134658 // initial_node
+  xyz 336 34 2000
+end
+activityactioncanvas 128258 activityaction_ref 135042 // activity action incrementerSequence
+  
+  show_opaque_action_definition default
+  xyzwh 442 401 2000 169 47
+end
+activityactioncanvas 128386 activityaction_ref 135170 // activity action decrementerSequence
+  
+  show_opaque_action_definition default
+  xyzwh 77 390 2000 169 46
+end
+activityactioncanvas 128387 activityaction_ref 135939 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 293 79 2000 100 60
+end
+activitynodecanvas 128642 activitynode_ref 134914 // decision
+  xyz 328 409 2005
+end
+activityactioncanvas 128771 activityaction_ref 136067 // activity action enregistrerSequence
+  
+  show_opaque_action_definition default
+  xyzwh 268 568 2000 167 54
+end
+activitynodecanvas 129282 activitynode_ref 135042 // merge
+  xyz 330 491 2000
+end
+activityactioncanvas 129795 activityaction_ref 136323 // activity action entrerModeProgrammationSequence
+  
+  show_opaque_action_definition default
+  xyzwh 220 187 2000 259 57
+end
+activitynodecanvas 130050 activitynode_ref 135170 // activity_final
+  xyz 331 654 2000
+end
+activityactioncanvas 130051 activityaction_ref 136451 // activity action lireBoutons
+  
+  show_opaque_action_definition default
+  xyzwh 288 271 2000 100 60
+end
+expansionregioncanvas 131715 expansionregion_ref 134659 // 
+  xyzwh 70 261 1995 546 273
+end
+flowcanvas 128898 flow_ref 135170 // <flow>
+  decenter_begin 540
+  decenter_end 840
+  
+  from ref 128642 z 2006 label "[appui -]" xyz 262 427 2006 to ref 128386
+   write_horizontally default
+end
+flowcanvas 128899 flow_ref 152195 // <flow>
+  decenter_end 461
+  
+  from ref 129282 z 2001 label "[appui seq]" xyz 307 538 2001 to ref 128771
+   write_horizontally default
+end
+flowcanvas 129026 flow_ref 135298 // <flow>
+  decenter_begin 540
+  decenter_end 595
+  
+  from ref 128642 z 2006 label "[appui +]" xyz 366 428 2006 to ref 128258
+   write_horizontally default
+end
+flowcanvas 129410 flow_ref 135554 // <flow>
+  decenter_begin 822
+  
+  from ref 128386 z 2001 to ref 129282
+   write_horizontally default
+end
+flowcanvas 129538 flow_ref 135682 // <flow>
+  
+  from ref 128258 z 2001 to ref 129282
+   write_horizontally default
+end
+flowcanvas 129923 flow_ref 152707 // <flow>
+  decenter_end 478
+  
+  from ref 128387 z 2001 label "[appui seq]" xyz 307 152 2001 to ref 129795
+   write_horizontally default
+end
+flowcanvas 130179 flow_ref 152835 // <flow>
+  decenter_begin 471
+  decenter_end 520
+  
+  from ref 129795 z 2001 to ref 130051
+   write_horizontally default
+end
+flowcanvas 130563 flow_ref 152963 // <flow>
+  
+  from ref 130051 z 2006 to ref 128642
+   write_horizontally default
+end
+flowcanvas 131075 flow_ref 153091 // <flow>
+  decenter_begin 455
+  
+  from ref 128771 z 2001 to ref 130050
+   write_horizontally default
+end
+flowcanvas 131587 flow_ref 155651 // <flow>
+  decenter_begin 526
+  decenter_end 520
+  
+  from ref 128002 z 2001 to ref 128387
+   write_horizontally default
+end
+flowcanvas 131971 flow_ref 177283 // <flow>
+  decenter_end 250
+  
+  from ref 128642 z 2006 label "[pas d'appui (2s)]" xyz 357 365 3000 to point 394 349
+  line 132355 z 2006 to point 512 346
+  line 132227 z 2006 to point 512 93
+  line 132099 z 2006 to ref 128387
+   write_horizontally default
+end
+end

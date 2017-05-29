@@ -1,0 +1,39 @@
+format 212
+
+activityactioncanvas 128003 activityaction_ref 149251 // activity action indiquerFinTest
+  
+  show_opaque_action_definition default
+  xyzwh 336 250.5 2000 149 63
+end
+activitynodecanvas 128131 activitynode_ref 158979 // activity_final
+  xyz 399 344.5 2000
+end
+activitynodecanvas 128515 activitynode_ref 158851 // initial_node
+  xyz 402 78.5 2000
+end
+activityactioncanvas 129027 activityaction_ref 149763 // activity action diffuser
+  
+  show_opaque_action_definition default
+  xyzwh 361 143 2000 100 60
+  pins
+    pincanvas 129155 pin_ref 144643 // "Test des hauts parleurs"
+      xyzwh 351 149 2002 11 11 label_xy 232 122
+    end
+  end
+end
+flowcanvas 128643 flow_ref 172547 // <flow>
+  
+  from ref 128003 z 2001 to ref 128131
+   write_horizontally default
+end
+flowcanvas 129283 flow_ref 174211 // <flow>
+  
+  from ref 128515 z 2001 to ref 129027
+   write_horizontally default
+end
+flowcanvas 129411 flow_ref 174339 // <flow>
+  
+  from ref 129027 z 2001 to ref 128003
+   write_horizontally default
+end
+end

@@ -1,0 +1,18 @@
+class Button
+!!!134659.cpp!!!	Button(in pin : uint)
+	wiringPiSetupPhys();
+	initializeActionMap();
+	wiringPiISR(this->pin, INT_EDGE_BOTH, setState);
+!!!134787.cpp!!!	getState() : int
+	this->state = digitalRead(this->pin);
+	return this->state;
+	
+	if(digitalRead(this->pin) == 1);
+	{
+		//usleep(40); 
+		std::this_thread::sleep_for(std::chrono::milliseconds(40));
+	}	
+	this->state = digitalRead(this->pin);
+	return this->state;
+!!!134915.cpp!!!	setState() : void
+	pfunc function = this->buttonActions.at(buttonCombinaison);

@@ -1,0 +1,5 @@
+class Speaker
+!!!140547.cpp!!!	play() : void
+	espeak_Synth(this->textToPlay.c_str(), strlen(textToPlay), 0, POS_CHARACTER, 0, 0, 0, NULL);
+	//espeak_Synth($text, $size, $position, $position_type, $end_position, $flags, $unique_identifier, $user_data) // si ok, return EE_OK
+    espeak_Synchronize(); // si ok, return EE_OK

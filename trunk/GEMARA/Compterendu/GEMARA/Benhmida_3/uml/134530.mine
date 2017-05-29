@@ -1,0 +1,4131 @@
+format 212
+"Gemara" // Gemara
+  revision 22
+  modified_by 3 "camelia"
+  // class settings
+  
+  classdiagramsettings member_max_width 0 end
+  
+  usecasediagramsettings end
+  
+  sequencediagramsettings end
+  
+  collaborationdiagramsettings end
+  
+  objectdiagramsettings end
+  
+  componentdiagramsettings
+   end
+  
+  deploymentdiagramsettings
+   end
+  
+  statediagramsettings
+   end
+  
+  activitydiagramsettings
+   end
+  
+  classview 134530 "vueClasse"
+    
+    classdiagramsettings member_max_width 0 end
+    
+    collaborationdiagramsettings end
+    
+    objectdiagramsettings end
+    
+    sequencediagramsettings end
+    
+    statediagramsettings
+     end
+    
+    
+    activitydiagramsettings
+     end
+    associated_deployment_view deploymentview_ref 134530 // vueClasse
+    activity 134531 "Activite"
+      activitydiagram 154242 "lancer"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 141187 "entrerModeProgrammation"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 141315 "sortirModeProgrammation"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 128131 "lancerSequence"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 154370 "reglerSequence"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 154498 "reglerChronometre"
+	activitydiagramsettings draw_all_relations no
+	 end
+	size A0
+      end
+
+      activitydiagram 141443 "faireDecompteSonore"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 141571 "envoyerCourse"
+	activitydiagramsettings
+	 end
+	size A0
+      end
+
+      activitydiagram 148099 "avertir"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 148227 "tester"
+	activitydiagramsettings draw_all_relations no
+	 end
+	size A4
+      end
+
+      activitydiagram 148355 "testerBoutons"
+	activitydiagramsettings
+	 end
+	size A0
+      end
+
+      activitydiagram 148483 "testerAfficheur"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 148611 "testerSignalSonore"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 148739 "testerSignauxVisuels"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitydiagram 148867 "testerHautParleur"
+	activitydiagramsettings
+	 end
+	size A4
+      end
+
+      activitynode 134531 initial_node ""
+      end
+
+      activitynode 134915 decision ""
+	flow 134531 "<flow>"
+	  on activitynode_ref 134915 // decision
+	end
+      end
+
+      activityaction 128003 "lancerSequence"
+	opaque_action
+	flow 141315 "<flow>"
+	  on activityaction_ref 128387 // activity action arreterSequence
+	end
+
+	flow 162691 "<flow>"
+	  on activitynode_ref 150915 // activity_final
+	end
+      end
+
+      activityaction 128131 "modifierOrdreSequence"
+	opaque_action
+	flow 142211 "<flow>"
+	  on activitynode_ref 141827 // decision
+	end
+      end
+
+      activityaction 128259 "modifierMinuteur"
+	opaque_action
+	flow 141955 "<flow>"
+	  on activitynode_ref 141699 // decision
+	end
+      end
+
+      activityaction 128387 "arreterSequence"
+	opaque_action
+	flow 141443 "<flow>"
+	  on activitynode_ref 141443 // decision
+	end
+      end
+
+      activitynode 141443 decision ""
+	flow 141571 "<flow>"
+	  on activityaction_ref 128003 // activity action lancerSequence
+	end
+
+	flow 141699 "<flow>"
+	  on activityaction_ref 128259 // activity action modifierMinuteur
+	end
+
+	flow 141827 "<flow>"
+	  on activityaction_ref 128131 // activity action modifierOrdreSequence
+	end
+      end
+
+      activitynode 141571 initial_node ""
+	flow 143107 "<flow>"
+	  on activitynode_ref 142083 // fork
+	end
+      end
+
+      activitynode 141699 decision ""
+	flow 142083 "<flow>"
+	  on activityaction_ref 128131 // activity action modifierOrdreSequence
+	end
+
+	flow 142595 "<flow>"
+	  on activityaction_ref 128003 // activity action lancerSequence
+	end
+      end
+
+      activitynode 141827 decision ""
+	flow 142339 "<flow>"
+	  on activityaction_ref 128259 // activity action modifierMinuteur
+	end
+
+	flow 142467 "<flow>"
+	  on activityaction_ref 128003 // activity action lancerSequence
+	end
+      end
+
+      activityaction 128515 "DemarrerChronometre"
+	opaque_action
+	flow 156419 "<flow>"
+	  on activityaction_ref 137091 // activity action Chronometre=15:30
+	end
+      end
+
+      activitynode 141955 initial_node ""
+	flow 142723 "<flow>"
+	  on activityaction_ref 128515 // activity action DemarrerChronometre
+	end
+      end
+
+      activitynode 142083 fork ""
+	flow 143235 "<flow>"
+	  on activityaction_ref 128003 // activity action lancerSequence
+	end
+
+	flow 143619 "<flow>"
+	  on activityaction_ref 128899 // activity action attenteTut
+	end
+      end
+
+      activityaction 128899 "attenteTut"
+	opaque_action
+      end
+
+      activitynode 134658 initial_node ""
+	flow 155651 "<flow>"
+	  on activityaction_ref 135939 // activity action lireBoutons
+	end
+      end
+
+      activityaction 135042 "incrementerSequence"
+	opaque_action
+	flow 135682 "<flow>"
+	  on activitynode_ref 135042 // merge
+	end
+      end
+
+      activityaction 135170 "decrementerSequence"
+	opaque_action
+	flow 135554 "<flow>"
+	  on activitynode_ref 135042 // merge
+	end
+      end
+
+      activitynode 134914 decision ""
+	flow 135170 "<flow>"
+	  on activityaction_ref 135170 // activity action decrementerSequence
+	    uml_guard "appui -"
+	end
+
+	flow 135298 "<flow>"
+	  on activityaction_ref 135042 // activity action incrementerSequence
+	    uml_guard "appui +"
+	end
+
+	flow 177283 "<flow>"
+	  on activityaction_ref 135939 // activity action lireBoutons
+	    uml_guard "pas d'appui (2s)"
+	end
+      end
+
+      activitynode 135042 merge ""
+	flow 152195 "<flow>"
+	  on activityaction_ref 136067 // activity action enregistrerSequence
+	    uml_guard "appui seq"
+	end
+      end
+
+      activitynode 135170 activity_final ""
+      end
+
+      activityaction 135426 "incrementerMinutes"
+	opaque_action
+	flow 177027 "<flow>"
+	  on activitynode_ref 149123 // merge
+	end
+      end
+
+      activityaction 135554 "decrementerMinutes"
+	opaque_action
+	flow 176899 "<flow>"
+	  on activitynode_ref 149123 // merge
+	end
+      end
+
+      activityaction 135682 "incrementerRapidement"
+	opaque_action
+	flow 154499 "<flow>"
+	  on activitynode_ref 149123 // merge
+	    uml_guard "fin incrementation"
+	end
+      end
+
+      activityaction 135810 "decrementerRapidement"
+	opaque_action
+	flow 177155 "<flow>"
+	  on activitynode_ref 149123 // merge
+	end
+      end
+
+      activityaction 135938 "resetChrononometre"
+	opaque_action
+	flow 154115 "<flow>"
+	  on activitynode_ref 149123 // merge
+	end
+      end
+
+      activitynode 136322 initial_node ""
+	flow 155523 "<flow>"
+	  on activityaction_ref 135683 // activity action lireBoutonsBoitier
+	end
+      end
+
+      activitynode 148611 decision ""
+	flow 150403 "<flow>"
+	  on activityaction_ref 135938 // activity action resetChrononometre
+	    uml_guard "appui + et -"
+	end
+
+	flow 176131 "<flow>"
+	  on activitynode_ref 160003 // decision
+	    uml_guard "appui +"
+	end
+
+	flow 176515 "<flow>"
+	  on activitynode_ref 160131 // decision
+	    uml_guard "appui -"
+	end
+      end
+
+      activityaction 135683 "lireBoutonsBoitier"
+	accept_event_action
+	flow 151555 "<flow>"
+	  on activitynode_ref 148611 // decision
+	end
+
+	flow 156035 "<flow>"
+	  on activityaction_ref 136707 // activity action doIt
+	    uml_guard "appui start/stop"
+	end
+
+	flow 169347 "<flow>"
+	  on activityaction_ref 147587 // activity action klaxonner
+	    uml_guard "appui bouton tut"
+	end
+
+	flow 169859 "<flow>"
+	  on activityaction_ref 147971 // activity action indiquerActivationBouton
+	    uml_guard "appui bouton"
+	end
+      end
+
+      activityaction 135939 "lireBoutons"
+	accept_event_action
+	flow 152707 "<flow>"
+	  on activityaction_ref 136323 // activity action entrerModeProgrammationSequence
+	    uml_guard "appui seq"
+	end
+      end
+
+      activityaction 136067 "enregistrerSequence"
+	opaque_action
+	flow 153091 "<flow>"
+	  on activitynode_ref 135170 // activity_final
+	end
+      end
+
+      activityaction 136323 "entrerModeProgrammationSequence"
+	opaque_action
+	flow 152835 "<flow>"
+	  on activityaction_ref 136451 // activity action lireBoutons
+	end
+
+	flow 161667 "<flow>"
+	  on activityaction_ref 140547 // activity action reglerSequence
+	end
+      end
+
+      activityaction 136451 "lireBoutons"
+	accept_event_action
+	flow 152963 "<flow>"
+	  on activitynode_ref 134914 // decision
+	end
+      end
+
+      activitynode 148867 initial_node ""
+	flow 153219 "<flow>"
+	  on activityaction_ref 136579 // activity action lireBoutons
+	end
+      end
+
+      activityaction 136579 "lireBoutons"
+	accept_event_action
+	flow 153347 "<flow>"
+	  on activityaction_ref 136707 // activity action doIt
+	    uml_guard "2 appuis start/stop"
+	end
+      end
+
+      activityaction 136707 "doIt"
+	opaque_action
+	flow 153475 "<flow>"
+	  on activitynode_ref 148995 // activity_final
+	end
+
+	flow 156163 "<flow>"
+	  on activitynode_ref 149635 // activity_final
+	end
+      end
+
+      activitynode 148995 activity_final ""
+      end
+
+      activitynode 149123 merge ""
+	flow 155779 "<flow>"
+	  on activitynode_ref 149379 // activity_final
+	    uml_guard "plus d'appui"
+	end
+      end
+
+      activitynode 149379 activity_final ""
+      end
+
+      activitynode 149507 initial_node ""
+	flow 155907 "<flow>"
+	  on activityaction_ref 135683 // activity action lireBoutonsBoitier
+	end
+      end
+
+      activitynode 149635 activity_final ""
+      end
+
+      activityaction 137091 "Chronometre=15:30"
+	accept_event_action
+	timeevent
+	flow 157443 "<flow>"
+	  on activityaction_ref 137219 // activity action FairedecompteSonore
+	end
+      end
+
+      activityaction 137219 "FairedecompteSonore"
+	opaque_action
+	flow 157571 "<flow>"
+	  on activityaction_ref 138115 // activity action allumerLed
+	end
+      end
+
+      activityaction 137347 "chronometre = :30"
+	accept_event_action
+	timeevent
+	flow 158851 "<flow>"
+	  on activityaction_ref 137475 // activity action diffuser
+	end
+      end
+
+      activitynode 149763 initial_node ""
+	flow 156547 "<flow>"
+	  on activityaction_ref 137347 // activity action chronometre = :30
+	end
+      end
+
+      activityaction 137475 "diffuser"
+	opaque_action
+	pin 136195 "30" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 156675 "<flow>"
+	  on activityaction_ref 137731 // activity action chronometre = :20
+	end
+
+	flow 172419 "<flow>"
+	  on activityaction_ref 149251 // activity action indiquerFinTest
+	end
+      end
+
+      activityaction 137603 "diffuser"
+	opaque_action
+	pin 136323 "20" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 156803 "<flow>"
+	  on activityaction_ref 137859 // activity action chronometre = :10
+	end
+      end
+
+      activityaction 137731 "chronometre = :20"
+	accept_event_action
+	timeevent
+	flow 156931 "<flow>"
+	  on activityaction_ref 137603 // activity action diffuser
+	end
+      end
+
+      activityaction 137859 "chronometre = :10"
+	accept_event_action
+	timeevent
+	flow 157187 "<flow>"
+	  on activityaction_ref 137987 // activity action diffuser
+	end
+      end
+
+      activityaction 137987 "diffuser"
+	opaque_action
+	pin 136451 "i" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 157315 "<flow>"
+	  on activitynode_ref 149891 // activity_final
+	end
+      end
+
+      activitynode 149891 activity_final ""
+      end
+
+      activityaction 138115 "allumerLed"
+	opaque_action
+	pin 136707 "haut" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 159875 "<flow>"
+	  on activitynode_ref 150403 // merge
+	end
+      end
+
+      activityaction 138883 "FairedecompteSonore"
+	opaque_action
+	flow 159491 "<flow>"
+	  on activitynode_ref 150275 // activity_final
+	end
+      end
+
+      activitynode 150019 initial_node ""
+	flow 173699 "<flow>"
+	  on activitynode_ref 150147 // decision
+	end
+      end
+
+      activitynode 150147 decision ""
+	flow 159235 "<flow>"
+	  on activityaction_ref 138115 // activity action allumerLed
+	    uml_guard "course 1"
+	end
+
+	flow 159619 "<flow>"
+	  on activityaction_ref 139267 // activity action allumerLed
+	    uml_guard "Course 2"
+	end
+
+	flow 159747 "<flow>"
+	  on activityaction_ref 139395 // activity action allumerLed
+	    uml_guard "course 3"
+	end
+
+	flow 173827 "<flow>"
+	  on activityaction_ref 149635 // activity action attendre
+	    uml_guard "course à blanc"
+	end
+      end
+
+      activitynode 150275 activity_final ""
+      end
+
+      activityaction 139267 "allumerLed"
+	opaque_action
+	pin 136963 "haut&&milieu" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 160003 "<flow>"
+	  on activitynode_ref 150403 // merge
+	end
+      end
+
+      activityaction 139395 "allumerLed"
+	opaque_action
+	flow 160131 "<flow>"
+	  on activitynode_ref 150403 // merge
+	end
+
+	pin 137219 "3leds" explicit_type ""
+	  unordered 
+	  in
+	end
+      end
+
+      activityaction 139523 "allumerLed"
+	opaque_action
+	pin 137091 "rouge" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 160387 "<flow>"
+	  on activityaction_ref 139907 // activity action attendre
+	end
+      end
+
+      activityaction 139779 "eteindreLed"
+	opaque_action
+	flow 160643 "<flow>"
+	  on activityaction_ref 140035 // activity action attendre
+	end
+
+	pin 137859 "rouge" explicit_type ""
+	  unordered 
+	  in
+	end
+      end
+
+      activitynode 150403 merge ""
+	flow 160771 "<flow>"
+	  on activityaction_ref 140163 // activity action attendre
+	end
+      end
+
+      activityaction 139907 "attendre"
+	opaque_action
+	flow 160515 "<flow>"
+	  on activityaction_ref 139779 // activity action eteindreLed
+	end
+
+	pin 137347 "3" explicit_type ""
+	  unordered 
+	  in
+	end
+      end
+
+      activityaction 140035 "attendre"
+	opaque_action
+	pin 137475 "0.5" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 161027 "<flow>"
+	  on activityaction_ref 138883 // activity action FairedecompteSonore
+	end
+      end
+
+      activityaction 140163 "attendre"
+	opaque_action
+	pin 137603 "1" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 160899 "<flow>"
+	  on activityaction_ref 139523 // activity action allumerLed
+	end
+      end
+
+      activityaction 140291 "envoyerCourse"
+	opaque_action
+	flow 174467 "<flow>"
+	  on activityaction_ref 149891 // activity action arreterChronometre
+	end
+      end
+
+      activityaction 140419 "eteindreLed"
+	opaque_action
+	pin 137731 "toutes" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 169603 "<flow>"
+	  on activitynode_ref 157699 // activity_final
+	end
+      end
+
+      expansionregion 128003 ""
+	iterative
+      end
+
+      expansionregion 128131 ""
+	iterative
+	activitynode 160003 decision ""
+	  flow 176259 "<flow>"
+	    on activityaction_ref 135426 // activity action incrementerMinutes
+	  end
+
+	  flow 176387 "<flow>"
+	    on activityaction_ref 135682 // activity action incrementerRapidement
+	      uml_guard "appui long"
+	  end
+	end
+
+	activitynode 160131 decision ""
+	  flow 176643 "<flow>"
+	    on activityaction_ref 135810 // activity action decrementerRapidement
+	      uml_guard "appui long"
+	  end
+
+	  flow 176771 "<flow>"
+	    on activityaction_ref 135554 // activity action decrementerMinutes
+	  end
+	end
+      end
+
+      activitynode 150531 initial_node ""
+	flow 161283 "<flow>"
+	  on activityaction_ref 136323 // activity action entrerModeProgrammationSequence
+	end
+      end
+
+      activityaction 140547 "reglerSequence"
+	opaque_action
+	flow 161795 "<flow>"
+	  on activityaction_ref 140675 // activity action reglerChronometre
+	end
+      end
+
+      activityaction 140675 "reglerChronometre"
+	opaque_action
+	flow 174723 "<flow>"
+	  on activityaction_ref 150019 // activity action sortirModeProgrammation
+	end
+      end
+
+      activityaction 140803 "lireBoutons"
+	accept_event_action
+	flow 162051 "<flow>"
+	  on activitynode_ref 150787 // fork
+	    uml_guard "appui bouton start/stop"
+	end
+      end
+
+      activitynode 150659 activity_final ""
+      end
+
+      activitynode 150787 fork ""
+	flow 162179 "<flow>"
+	  on activityaction_ref 128003 // activity action lancerSequence
+	end
+
+	flow 162307 "<flow>"
+	  on activityaction_ref 140931 // activity action lireBoutons
+	end
+      end
+
+      activityaction 140931 "lireBoutons"
+	accept_event_action
+	flow 162435 "<flow>"
+	  on activityaction_ref 141059 // activity action arreterSequence
+	    uml_guard "appui bouton start/stop "
+	end
+      end
+
+      activityaction 141059 "arreterSequence"
+	opaque_action
+	flow 162563 "<flow>"
+	  on activitynode_ref 150659 // activity_final
+	end
+      end
+
+      activitynode 150915 activity_final ""
+      end
+
+      expansionregion 134659 ""
+	iterative
+      end
+
+      activitynode 157443 initial_node ""
+	flow 169219 "<flow>"
+	  on activityaction_ref 135683 // activity action lireBoutonsBoitier
+	end
+      end
+
+      activityaction 147587 "klaxonner"
+	opaque_action
+	flow 169475 "<flow>"
+	  on activitynode_ref 157571 // activity_final
+	end
+      end
+
+      activitynode 157571 activity_final ""
+      end
+
+      activitynode 157699 activity_final ""
+      end
+
+      activitynode 157827 initial_node ""
+	flow 170243 "<flow>"
+	  on activityaction_ref 147715 // activity action lireBoutonIhmTest
+	end
+      end
+
+      activityaction 147715 "lireBoutonIhmTest"
+	accept_event_action
+	flow 170371 "<flow>"
+	  on activitynode_ref 158211 // decision
+	end
+      end
+
+      activitynode 157955 initial_node ""
+	flow 171779 "<flow>"
+	  on activitynode_ref 158339 // fork
+	end
+      end
+
+      activityaction 147971 "indiquerActivationBouton"
+	opaque_action
+	flow 169987 "<flow>"
+	  on activityaction_ref 148099 // activity action indiquerResultatTest
+	    uml_guard "test de chaque bouton effectué"
+	end
+      end
+
+      activityaction 148099 "indiquerResultatTest"
+	opaque_action
+	flow 170115 "<flow>"
+	  on activitynode_ref 158083 // activity_final
+	end
+      end
+
+      activitynode 158083 activity_final ""
+      end
+
+      activityaction 148227 "teserBoutons"
+	opaque_action
+      end
+
+      activitynode 158211 decision ""
+	flow 170627 "<flow>"
+	  on activityaction_ref 148227 // activity action teserBoutons
+	    uml_guard "appui testBouton"
+	end
+
+	flow 170883 "<flow>"
+	  on activityaction_ref 148355 // activity action testerSignalSonore
+	    uml_guard "appui testTut"
+	end
+
+	flow 171011 "<flow>"
+	  on activityaction_ref 148483 // activity action testerHautParleur
+	    uml_guard "appui testHautParleur"
+	end
+
+	flow 171139 "<flow>"
+	  on activityaction_ref 148739 // activity action testerSignauxVisuel
+	    uml_guard "appui testLeds"
+	end
+
+	flow 183811 "<flow>"
+	  on activityaction_ref 148611 // activity action testerAfficheur
+	    uml_guard "appui testAchiffeur"
+	end
+
+	flow 183939 "<flow>"
+	  on activityaction_ref 156547 // activity action visualiserNiveauBatterie
+	    uml_guard "appui testBatterie"
+	end
+      end
+
+      activityaction 148355 "testerSignalSonore"
+	opaque_action
+      end
+
+      activityaction 148483 "testerHautParleur"
+	opaque_action
+      end
+
+      activityaction 148611 "testerAfficheur"
+	opaque_action
+      end
+
+      activityaction 148739 "testerSignauxVisuel"
+	opaque_action
+      end
+
+      expansionregion 134915 ""
+	iterative
+	activityaction 156547 "visualiserNiveauBatterie"
+	  opaque_action
+	end
+      end
+
+      activityaction 148867 "lireBoutonAnnulerIHMTest"
+	accept_event_action
+	flow 171523 "<flow>"
+	  on activityaction_ref 148995 // activity action indiquerAnnulationTest
+	    uml_guard "appui bouton annulation"
+	end
+      end
+
+      activitynode 158339 fork ""
+	flow 171267 "<flow>"
+	  on activityaction_ref 135683 // activity action lireBoutonsBoitier
+	end
+
+	flow 171395 "<flow>"
+	  on activityaction_ref 148867 // activity action lireBoutonAnnulerIHMTest
+	end
+      end
+
+      activityaction 148995 "indiquerAnnulationTest"
+	opaque_action
+	flow 171651 "<flow>"
+	  on activitynode_ref 158467 // activity_final
+	end
+      end
+
+      activitynode 158467 activity_final ""
+      end
+
+      activitynode 158595 initial_node ""
+	flow 171907 "<flow>"
+	  on activityaction_ref 149123 // activity action allumerLeds
+	end
+
+	flow 172803 "<flow>"
+	  on activityaction_ref 149379 // activity action allumerDigitsAfficheur
+	end
+      end
+
+      activitynode 158723 activity_final ""
+      end
+
+      activityaction 149123 "allumerLeds"
+	opaque_action
+	pin 144387 "toutes" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 172035 "<flow>"
+	  on activityaction_ref 149251 // activity action indiquerFinTest
+	end
+      end
+
+      activityaction 149251 "indiquerFinTest"
+	opaque_action
+	flow 172163 "<flow>"
+	  on activitynode_ref 158723 // activity_final
+	end
+
+	flow 172547 "<flow>"
+	  on activitynode_ref 158979 // activity_final
+	end
+
+	flow 173059 "<flow>"
+	  on activitynode_ref 159235 // activity_final
+	end
+
+	flow 173443 "<flow>"
+	  on activitynode_ref 159491 // activity_final
+	end
+      end
+
+      activitynode 158851 initial_node ""
+	flow 172291 "<flow>"
+	  on activityaction_ref 137475 // activity action diffuser
+	end
+
+	flow 174211 "<flow>"
+	  on activityaction_ref 149763 // activity action diffuser
+	end
+      end
+
+      activitynode 158979 activity_final ""
+      end
+
+      activitynode 159107 initial_node ""
+	flow 172675 "<flow>"
+	  on activityaction_ref 149123 // activity action allumerLeds
+	end
+      end
+
+      activityaction 149379 "allumerDigitsAfficheur"
+	opaque_action
+	flow 172931 "<flow>"
+	  on activityaction_ref 149251 // activity action indiquerFinTest
+	end
+      end
+
+      activitynode 159235 activity_final ""
+      end
+
+      activitynode 159363 initial_node ""
+	flow 173187 "<flow>"
+	  on activityaction_ref 149507 // activity action lancerKlaxon
+	end
+      end
+
+      activitynode 159491 activity_final ""
+      end
+
+      activityaction 149507 "lancerKlaxon"
+	opaque_action
+	flow 173315 "<flow>"
+	  on activityaction_ref 149251 // activity action indiquerFinTest
+	end
+      end
+
+      activityaction 149635 "attendre"
+	opaque_action
+	pin 144515 "5" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 173955 "<flow>"
+	  on activitynode_ref 159619 // activity_final
+	end
+      end
+
+      activitynode 159619 activity_final ""
+      end
+
+      activityaction 149763 "diffuser"
+	opaque_action
+	pin 144643 "\"haut parleur opérationnel\"" explicit_type ""
+	  unordered 
+	  in
+	end
+
+	flow 174339 "<flow>"
+	  on activityaction_ref 149251 // activity action indiquerFinTest
+	end
+      end
+
+      activityaction 149891 "arreterChronometre"
+	opaque_action
+	flow 174595 "<flow>"
+	  on activityaction_ref 140419 // activity action eteindreLed
+	end
+      end
+
+      activityaction 150019 "sortirModeProgrammation"
+	opaque_action
+	flow 174851 "<flow>"
+	  on activityaction_ref 140803 // activity action lireBoutons
+	end
+      end
+    end
+
+    objectdiagram 134530 "diagObjets"
+      objectdiagramsettings end
+      size A4
+    end
+
+    classdiagram 141058 "diagClasses"
+      classdiagramsettings member_max_width 0 end
+      size A2
+    end
+
+    classdiagram 147714 "diagClasseDomaine"
+      classdiagramsettings member_max_width 0 end
+      size A4
+    end
+
+    sequencediagram 154626 "reglerChronometre"
+      sequencediagramsettings end
+      overlapping_bars size A0
+    end
+
+    class 134530 "LocalDisplay"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128130 // <generalisation>
+	relation 128130 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128130 // <generalisation>
+	  b parent class_ref 142210 // Display
+      end
+    end
+
+    class 134658 "RemoteDisplay"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 128002 // <generalisation>
+	relation 128002 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 128002 // <generalisation>
+	  b parent class_ref 142210 // Display
+      end
+    end
+
+    classinstance 134786 ""
+      type class_ref 134658 // RemoteDisplay
+      attributes
+        end
+      relations
+        end
+    end
+
+    classinstance 134914 ""
+      type class_ref 134530 // LocalDisplay
+      attributes
+        end
+      relations
+        end
+    end
+
+    class 135426 "Batterie"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classinstance 135682 ""
+      type class_ref 135426 // Batterie
+      attributes
+        end
+      relations
+        end
+    end
+
+    class 135554 "SalfTest"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classinstance 135810 ""
+      type class_ref 135554 // SalfTest
+      attributes
+        end
+      relations
+        end
+    end
+
+    class 135682 "Pi"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classinstance 135938 ""
+      type class_ref 135682 // Pi
+      attributes
+        end
+      relations
+        end
+    end
+
+    class 142210 "Display"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 142338 "Signals"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 128898 "signalType"
+	private explicit_type ""
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+      end
+    end
+
+    class 149890 "Speakers"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 129538 "startCountDown"
+	public explicit_return_type ""
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}${)}${const}${volatile}${throw}${abstract};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  ${body}}
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 150018 "Chonometer"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      attribute 129154 "minuts"
+	private explicit_type "uint"
+	cpp_decl "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} ${name}${value};
+"
+	java_decl ""
+	php_decl ""
+	python_decl ""
+	idl_decl ""
+	mysql_decl ""
+	MysqlColumn
+	get_oper operation_ref 129922 // getMinuts
+	set_oper operation_ref 129794 // setMinuts
+      end
+
+      operation 129794 "setMinuts"
+	force_body_gen cpp_inline public explicit_return_type "void"
+	nparams 1
+	  param in name "value" explicit_type "uint"
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}${type} ${name}${(}const ${t0} ${p0}${)}${const}${volatile}${throw};
+"
+	cpp_def "${inline}${type} ${class}::${name}${(}const ${t0} ${p0}${)}${const}${volatile}${throw}${staticnl}{
+  minuts = ${p0};
+}
+"
+	cpp_name_spec "set${Name}"
+	
+	java_name_spec "set${Name}"
+	
+	php_name_spec "set${Name}"
+	
+	python_name_spec "set${Name}"
+	
+	idl_name_spec "set_${name}"
+	set_of_attribute attribute_ref 129154 // minuts
+      end
+
+      operation 129922 "getMinuts"
+	force_body_gen const cpp_inline public explicit_return_type "uint"
+	nparams 0
+	cpp_decl "    ${comment}${friend}${static}${inline}${virtual}const ${type} ${name}${(}${)}${const}${volatile}${throw};
+"
+	cpp_def "${inline}const ${type} ${class}::${name}${(}${)}${const}${volatile}${throw}${staticnl}{
+  return minuts;
+}
+"
+	cpp_name_spec "get${Name}"
+	final 
+	java_name_spec "get${Name}"
+	php_final 
+	php_name_spec "get${Name}"
+	
+	python_name_spec "get${Name}"
+	
+	idl_name_spec "get_${name}"
+	get_of_attribute attribute_ref 129154 // minuts
+      end
+    end
+
+    class 150146 "ucLaunch"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 148483 // buttonActions (<directional composition>)
+	relation 148483 *-->
+	  stereotype "std::map"
+	  a role_name "buttonActions" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${stereotype}<int,${type}> ${name}${value};
+"
+	    classrelation_ref 148483 // buttonActions (<directional composition>)
+	  b parent class_ref 154883 // pfunc
+      end
+    end
+
+    class 134659 "Test"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      operation 128131 "Test"
+	cpp_inline public explicit_return_type ""
+	nparams 1
+	  param in name "" explicit_type "parametres"
+	cpp_decl "    ${comment}${inline}${name}${(}${t0} ${p0}${v0}${)}${volatile}${throw}${abstract} :Button(parametres){};
+"
+	
+	
+	
+	
+      end
+    end
+
+    class 148227 "spiBny"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 154883 "pfunc"
+      visibility package stereotype "typedef" explicit_base_type "void"
+      cpp_decl "${comment}typedef ${type}(* ${name})();
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 161411 "BaseDeDonnees"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classinstance 134659 ""
+      type class_ref 149890 // Speakers
+      attributes
+        end
+      relations
+        end
+    end
+
+    class 167939 "Led"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 135938 // <unidirectional association>
+	relation 135426 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135938 // <unidirectional association>
+	  b parent class_ref 157570 // SalfBoxIhm
+      end
+    end
+
+    classinstance 141187 "led"
+      type class_ref 167939 // Led
+      attributes
+        end
+      relations
+        end
+    end
+
+    class 168067 "Timer"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    classinstance 141315 "timer"
+      type class_ref 168067 // Timer
+      attributes
+        end
+      relations
+        end
+    end
+
+    class 156674 "SpiComBny"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 156802 "Digit"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 135042 // <aggregation>
+	relation_ref 134786 // <aggregation>
+      end
+
+      classrelation 135298 // <aggregation>
+	relation_ref 134914 // <aggregation>
+      end
+
+      classrelation 135554 // <aggregation>
+	relation_ref 135042 // <aggregation>
+      end
+    end
+
+    class 156930 "Minuts"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 134914 // <aggregation>
+	relation 134786 o---
+	  a role_name "" multiplicity "2" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${multiplicity}${value};
+"
+	    classrelation_ref 134914 // <aggregation>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135042 // <aggregation>
+      end
+    end
+
+    class 157058 "Seconds"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 135170 // 2 (<aggregation>)
+	relation 134914 o---
+	  a role_name "2" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135170 // 2 (<aggregation>)
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135298 // <aggregation>
+      end
+    end
+
+    class 157186 "Sequence"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 135426 // <aggregation>
+	relation 135042 o---
+	  a role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135426 // <aggregation>
+	  b role_name "" multiplicity "1" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135554 // <aggregation>
+      end
+
+      classrelation 161795 // <association>
+	relation 161795 ----
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 161795 // <association>
+	  b role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 161923 // <association>
+      end
+    end
+
+    class 157314 "Counter"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 135810 // <unidirectional association>
+	relation 135298 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 135810 // <unidirectional association>
+	  b parent class_ref 157570 // SalfBoxIhm
+      end
+    end
+
+    class 157442 "Button"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 136066 // <unidirectional association>
+	relation 135554 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 136066 // <unidirectional association>
+	  b parent class_ref 157570 // SalfBoxIhm
+      end
+    end
+
+    class 157570 "SalfBoxIhm"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 136194 // <generalisation>
+	relation 135682 ---|>
+	  a public
+	    cpp default "${type}"
+	    classrelation_ref 136194 // <generalisation>
+	  b parent class_ref 156674 // SpiComBny
+      end
+
+      classrelation 136834 // <unidirectional association>
+	relation 136194 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 136834 // <unidirectional association>
+	  b parent class_ref 156930 // Minuts
+      end
+
+      classrelation 136962 // <unidirectional association>
+	relation 136322 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 136962 // <unidirectional association>
+	  b parent class_ref 157058 // Seconds
+      end
+
+      classrelation 137090 // <unidirectional association>
+	relation 136450 --->
+	  a role_name "" private
+	    cpp default "    ${comment}${static}${thread_local}${mutable}${volatile}${const}${type} * ${name}${value};
+"
+	    classrelation_ref 137090 // <unidirectional association>
+	  b parent class_ref 157186 // Sequence
+      end
+
+      classrelation 137474 // <dependency>
+	relation 136834 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 137474 // <dependency>
+	  b parent class_ref 149890 // Speakers
+      end
+
+      classrelation 137602 // <dependency>
+	relation 136962 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 137602 // <dependency>
+	  b parent class_ref 157954 // Klaxon
+      end
+
+      classrelation 155267 // <dependency>
+	relation 155267 -_->
+	  a public
+	    cpp default "#include in source"
+	    classrelation_ref 155267 // <dependency>
+	  b parent class_ref 174979 // afficheur
+      end
+    end
+
+    class 157698 "Flight"
+      visibility package 
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+      classrelation 161923 // <association>
+	relation_ref 161795 // <association>
+      end
+    end
+  end
+
+  deploymentview 128002 "vueDeploiement"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    deploymentdiagram 141186 "diagDeploiement"
+      deploymentdiagramsettings
+       end
+      size A4
+    end
+
+    deploymentnode 128002 "Raspberry PI 3"
+    end
+
+    deploymentnode 128130 "Ampli"
+    end
+
+    deploymentnode 128258 "Speaker"
+    end
+
+    deploymentnode 128386 "CarteRelais"
+    end
+
+    deploymentnode 128898 "Led"
+    end
+
+    deploymentnode 129282 "Tablet"
+    end
+
+    deploymentnode 129410 "buttons"
+    end
+
+    deploymentnode 129666 "button"
+    end
+
+    artifact 135043 "main"
+      stereotype "source"
+      cpp_src "int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ::Button* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ::Button instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+"
+      associated_classes
+      end
+    end
+
+    deploymentnode 134531 "afficheur"
+    end
+
+    deploymentnode 134659 "batterie"
+    end
+
+    deploymentnode 134787 "niveauBatterie"
+    end
+
+    deploymentnode 134915 "jack/Rca"
+    end
+  end
+
+  componentview 128002 "vueComposants"
+    //component diagram settings
+    componentdiagramsettings
+     end
+    component 128002 "WiringPi"
+    end
+
+    component 128130 "espeak"
+    end
+
+    component 128258 "sqlite3"
+    end
+
+    component 128386 "raspian"
+    end
+
+    component 128514 "Android 4+"
+    end
+  end
+
+  deploymentview 134530 "vueClasse"
+    //deployment diagram settings
+    deploymentdiagramsettings
+     end
+    artifact 128002 "LocalDisplay"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 134530 // LocalDisplay
+      end
+    end
+
+    artifact 128130 "RemoteDisplay"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 134658 // RemoteDisplay
+      end
+    end
+
+    artifact 128258 "boutonPoussoir"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 128386 "HautParleur"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 128514 "BeepSignal"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 128642 "VisualSignal"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 128770 "Batterie"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 135426 // Batterie
+      end
+    end
+
+    artifact 128898 "SalfTest"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 135554 // SalfTest
+      end
+    end
+
+    artifact 129026 "Pi"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 135682 // Pi
+      end
+    end
+
+    artifact 129154 "Display"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 142210 // Display
+      end
+    end
+
+    artifact 129282 "Signals"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 142338 // Signals
+      end
+    end
+
+    artifact 129410 "TutButton"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 129538 "PlusButton"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 129666 "SeqButton"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 129794 "StartStopButton"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 129922 "GPIO_Input"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 130050 "Flight"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 130178 "MinusButton"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: Zarzitski$
+* $Rev$
+* $Date$
+
+\\brief Projet : CAR
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 130306 "Speakers"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 149890 // Speakers
+      end
+    end
+
+    artifact 128003 "Button"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 134659 // Test
+      end
+    end
+
+    artifact 128131 "Chonometer"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 150018 // Chonometer
+      end
+    end
+
+    artifact 128259 "ucLaunch"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 150146 // ucLaunch
+	class_ref 154883 // pfunc
+      end
+    end
+
+    artifact 128387 "Observer"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 128515 "Observable"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 141571 "classeTest"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+
+    artifact 148099 "spiBny"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+	class_ref 148227 // spiBny
+      end
+    end
+
+    artifact 148227 "observerTest"
+      stereotype "source"
+      cpp_h "/**
+* \\file ${name}.h
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+#ifndef ${NAMESPACE}_${NAME}_H
+#define ${NAMESPACE}_${NAME}_H
+
+${comment}
+${includes}
+${declarations}
+${namespace_start}
+${definition}
+${namespace_end}
+#endif
+"
+      cpp_src "/*****************************************************
+* \\file ${name}.cpp
+* $Author: BENHMIDA$
+* $Rev$
+* $Date$
+
+\\brief Projet : GEMARA
+*******************************************************/
+${comment}
+${includes}
+${namespace_start}
+${members}
+${namespace_end}
+
+#ifndef NDEBUG
+/*
+compléter la ligne de commande de génération pour le test unitaire
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _${name}_UT_ .....
+ou
+g++ -o ${name}Ut ${name}.cpp -std=c++11 -D _CLASSE_ABSTRAITE_ -D _${name}_UT_ .....
+
+commande de compilation générant le fichier objet
+
+g++ -c ${name}.cpp  -std=c++11 -D NDEBUG 
+*/
+#include <assert.h>
+#ifdef _${name}_UT_
+  #ifdef _CLASSE_ABSTRAITE_
+    class Test: public ${namespace}::${name}{
+      public:
+        Test(parametres):${name}(parametres){} 
+       //définir toutes les méthodes abstraites (i.e. =0) avec un corps vide
+     };
+ #endif // _CLASSE_ABSTRAITE_
+int main(int argc, char** argv){
+  #ifdef _CLASSE_ABSTRAITE_
+   ${namespace}::${name}* ptrInstance =new Test(parametres);
+  type valeur=?????;
+  ptrInstance->setAttr1(valeur);
+  assert(ptrInstance->getAttr1() == valeur);
+ #else
+  //instanciation de la classe à tester
+  ${namespace}::${name} instance(parametres);
+  //test de chaque méthode ; ici les accesseurs et mutateurs
+  type valeur=?????;
+  instance.setAttr1(valeur);
+  assert(instance.getAttr1() == valeur);
+ #endif // _CLASSE_ABSTRAITE_
+}
+#endif
+#endif"
+      associated_classes
+      end
+    end
+  end
+
+  usecaseview 128003 "vueCasUtilisation"
+    
+    usecasediagramsettings end
+    
+    sequencediagramsettings end
+    
+    collaborationdiagramsettings end
+    
+    classdiagramsettings member_max_width 0 end
+    
+    objectdiagramsettings end
+    
+    statediagramsettings
+     end
+    
+    activitydiagramsettings
+     end
+    usecasediagram 134659 "useCase"
+      usecasediagramsettings end
+      size A4
+    end
+
+    class 168195 "ComiteCourse"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    usecase 128003 "lancer"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    usecase 128131 "arreter"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+      simplerelation 134530
+	-_->
+	  stereotype "extend"
+	  on usecase_ref 128003 // lancer
+      end
+    end
+
+    usecase 128259 "testerBoitier"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    class 168323 "Button"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 168451 "Database"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    usecase 128002 "avertir"
+      
+      usecasediagramsettings end
+      
+      sequencediagramsettings end
+      
+      collaborationdiagramsettings end
+      
+      classdiagramsettings member_max_width 0 end
+      
+      objectdiagramsettings end
+      
+      statediagramsettings
+       end
+      
+      activitydiagramsettings
+       end
+    end
+
+    class 157826 "Time"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 157954 "Klaxon"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+
+    class 174979 "afficheur"
+      visibility package stereotype "actor"
+      cpp_decl "${comment}${template}class ${name}${inherit} {
+${members}};
+${inlines}
+"
+      java_decl ""
+      php_decl ""
+      python_2_2 python_decl ""
+      idl_decl ""
+      explicit_switch_type ""
+      mysql_decl ""
+      
+    end
+  end
+end

@@ -1,0 +1,20 @@
+class classeTest
+!!!142467.cpp!!!	classeTest()
+	this->id=1;
+!!!142723.cpp!!!	getId() : int
+	 return this->id;
+!!!142851.cpp!!!	changeId() : void
+	this->id = 4;
+	notify();
+!!!142979.cpp!!!	notify() : void
+   //~ for(iterator listBegin = this->observers.begin();const_iterator ite =! this->observers.end(); ++listBegin)
+   //~ {
+		   //~ (*listBegin)->Update(this);
+   //~ }
+	iterator itb=this->observers.begin();
+	const_iterator ite=this->observers.end();
+
+	for(;itb!=ite;++itb)
+	{
+		(*itb)->update(this);
+	}
