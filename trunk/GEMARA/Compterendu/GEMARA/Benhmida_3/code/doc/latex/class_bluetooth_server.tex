@@ -1,0 +1,149 @@
+\hypertarget{class_bluetooth_server}{}\section{Bluetooth\+Server Class Reference}
+\label{class_bluetooth_server}\index{Bluetooth\+Server@{Bluetooth\+Server}}
+
+
+permet de créer un serveur bluetooth  
+
+
+
+
+{\ttfamily \#include $<$Bluetooth\+Server.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_bluetooth_server_a8a33f843cb11c3d8bd1a1613bceeb963}{Bluetooth\+Server} (std\+::string server\+Mac\+Address)
+\begin{DoxyCompactList}\small\item\em constructeur \+: permet d\textquotesingle{}instancier les attributs \end{DoxyCompactList}\item 
+\hyperlink{class_bluetooth_server_ac664aa6e13215aacee09e560d28d5edf}{$\sim$\+Bluetooth\+Server} ()
+\begin{DoxyCompactList}\small\item\em destructeur \+: permet de fermer les sockets \end{DoxyCompactList}\item 
+void \hyperlink{class_bluetooth_server_a5e4e7348662fd1fd5f3aac54f2b73481}{launch} ()
+\begin{DoxyCompactList}\small\item\em permet de démarrer le serveur \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_bluetooth_server_a85d4d56d32b7aa99746b57784f1ebdbb}{read\+Data} ()
+\begin{DoxyCompactList}\small\item\em permet de réceptionner une donnée \end{DoxyCompactList}\item 
+void \hyperlink{class_bluetooth_server_a3c7deee96780cb1ca20e0debc3daafe6}{write\+Data} (std\+::string to\+Send)
+\begin{DoxyCompactList}\small\item\em permet d\textquotesingle{}envoyer une donnée \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+permet de créer un serveur bluetooth 
+
+\begin{DoxyAuthor}{Author}
+Benhmida 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Rev}
+590 
+\end{DoxyParagraph}
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2017-\/04-\/17 23\+:07\+:09 +0200 (lun. 17 mai 2017) 
+\end{DoxyParagraph}
+
+
+Definition at line 31 of file Bluetooth\+Server.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_bluetooth_server_a8a33f843cb11c3d8bd1a1613bceeb963}\label{class_bluetooth_server_a8a33f843cb11c3d8bd1a1613bceeb963}} 
+\index{Bluetooth\+Server@{Bluetooth\+Server}!Bluetooth\+Server@{Bluetooth\+Server}}
+\index{Bluetooth\+Server@{Bluetooth\+Server}!Bluetooth\+Server@{Bluetooth\+Server}}
+\subsubsection{\texorpdfstring{Bluetooth\+Server()}{BluetoothServer()}}
+{\footnotesize\ttfamily Bluetooth\+Server\+::\+Bluetooth\+Server (\begin{DoxyParamCaption}\item[{std\+::string}]{server\+Mac\+Address }\end{DoxyParamCaption})}
+
+
+
+constructeur \+: permet d\textquotesingle{}instancier les attributs 
+
+
+\begin{DoxyParams}{Parameters}
+{\em server\+Mac\+Address} & \+: adresse mac du serveur à créer \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 10 of file Bluetooth\+Server.\+cpp.
+
+\mbox{\Hypertarget{class_bluetooth_server_ac664aa6e13215aacee09e560d28d5edf}\label{class_bluetooth_server_ac664aa6e13215aacee09e560d28d5edf}} 
+\index{Bluetooth\+Server@{Bluetooth\+Server}!````~Bluetooth\+Server@{$\sim$\+Bluetooth\+Server}}
+\index{````~Bluetooth\+Server@{$\sim$\+Bluetooth\+Server}!Bluetooth\+Server@{Bluetooth\+Server}}
+\subsubsection{\texorpdfstring{$\sim$\+Bluetooth\+Server()}{~BluetoothServer()}}
+{\footnotesize\ttfamily Bluetooth\+Server\+::$\sim$\+Bluetooth\+Server (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+destructeur \+: permet de fermer les sockets 
+
+
+
+Definition at line 53 of file Bluetooth\+Server.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_bluetooth_server_a5e4e7348662fd1fd5f3aac54f2b73481}\label{class_bluetooth_server_a5e4e7348662fd1fd5f3aac54f2b73481}} 
+\index{Bluetooth\+Server@{Bluetooth\+Server}!launch@{launch}}
+\index{launch@{launch}!Bluetooth\+Server@{Bluetooth\+Server}}
+\subsubsection{\texorpdfstring{launch()}{launch()}}
+{\footnotesize\ttfamily void Bluetooth\+Server\+::launch (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+permet de démarrer le serveur 
+
+
+
+Definition at line 25 of file Bluetooth\+Server.\+cpp.
+
+\mbox{\Hypertarget{class_bluetooth_server_a85d4d56d32b7aa99746b57784f1ebdbb}\label{class_bluetooth_server_a85d4d56d32b7aa99746b57784f1ebdbb}} 
+\index{Bluetooth\+Server@{Bluetooth\+Server}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!Bluetooth\+Server@{Bluetooth\+Server}}
+\subsubsection{\texorpdfstring{read\+Data()}{readData()}}
+{\footnotesize\ttfamily void Bluetooth\+Server\+::read\+Data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+permet de réceptionner une donnée 
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyReturn}{Returns}
+retourne une string contenant les données reçues 
+\end{DoxyReturn}
+
+\end{DoxyItemize}
+
+Definition at line 37 of file Bluetooth\+Server.\+cpp.
+
+\mbox{\Hypertarget{class_bluetooth_server_a3c7deee96780cb1ca20e0debc3daafe6}\label{class_bluetooth_server_a3c7deee96780cb1ca20e0debc3daafe6}} 
+\index{Bluetooth\+Server@{Bluetooth\+Server}!write\+Data@{write\+Data}}
+\index{write\+Data@{write\+Data}!Bluetooth\+Server@{Bluetooth\+Server}}
+\subsubsection{\texorpdfstring{write\+Data()}{writeData()}}
+{\footnotesize\ttfamily void Bluetooth\+Server\+::write\+Data (\begin{DoxyParamCaption}\item[{std\+::string}]{to\+Send }\end{DoxyParamCaption})}
+
+
+
+permet d\textquotesingle{}envoyer une donnée 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}{Parameters}
+{\em to\+Send} & \+: string contenant les données à envoyer \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Definition at line 47 of file Bluetooth\+Server.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Camelia/\+Desktop/\+Compterendu/\+Compterendu/\+G\+E\+M\+A\+R\+A/\+Benhmida/code/\+S\+A\+L\+F\+\_\+\+P\+I/\+Partie\+\_\+\+T\+E\+S\+T\+\_\+\+Bluetooth/\hyperlink{_bluetooth_server_8h}{Bluetooth\+Server.\+h}\item 
+D\+:/\+Users/\+Camelia/\+Desktop/\+Compterendu/\+Compterendu/\+G\+E\+M\+A\+R\+A/\+Benhmida/code/\+S\+A\+L\+F\+\_\+\+P\+I/\+Partie\+\_\+\+T\+E\+S\+T\+\_\+\+Bluetooth/\hyperlink{_bluetooth_server_8cpp}{Bluetooth\+Server.\+cpp}\end{DoxyCompactItemize}
