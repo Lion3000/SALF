@@ -1,0 +1,427 @@
+\hypertarget{class_flight}{}\section{Flight Class Reference}
+\label{class_flight}\index{Flight@{Flight}}
+
+
+permet de paramétrer, lancer et arrêter un flight  
+
+
+
+
+{\ttfamily \#include $<$Flight.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_flight_acbf1e8c321e01e04db2fe651a08b30af}{Flight} ()
+\begin{DoxyCompactList}\small\item\em initialise les attributs de la classe \end{DoxyCompactList}\item 
+\hyperlink{class_flight_a6e9898949b83cfbc068b4d5820990782}{$\sim$\+Flight} ()
+\begin{DoxyCompactList}\small\item\em destructeur \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_a8dbcde73f89d46cfeeb9e5892c1c7400}{initialize\+Map\+Race\+Leds} ()
+\begin{DoxyCompactList}\small\item\em initialise la map reliant les numéros de course et les leds à allumer \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_flight_ac5b91d4615b20ee19f9f113cb061313c}{start} ()
+\begin{DoxyCompactList}\small\item\em demarre le lancement du flight \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_a42aa7eb78de33bc6cae6e0a0a569e9eb}{stop} ()
+\begin{DoxyCompactList}\small\item\em stoppe le lancement du flight \end{DoxyCompactList}\item 
+void $\ast$ \hyperlink{class_flight_a84fa12f82e85f6e708249d6a634c5923}{play\+Seconds} ()
+\begin{DoxyCompactList}\small\item\em lance le décompte vocal des secondes \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_ad26c2a5811f5cebb5955946bb6f93cca}{set\+Seconds} (int seconds)
+\begin{DoxyCompactList}\small\item\em change la valeur de l\textquotesingle{}attribut seconds \end{DoxyCompactList}\item 
+bool \hyperlink{class_flight_a905f20ea23734db3fe6c8d51b6e81bfe}{get\+Is\+Active} ()
+\begin{DoxyCompactList}\small\item\em indique si le flight est en cours de lancement ou non \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_a783bdc8737b1f4d8f6cb412a361c4bec}{set\+Minuts} (int minuts)
+\begin{DoxyCompactList}\small\item\em change la valeur de l\textquotesingle{}attribut minuts \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_ad7679d1041b3a96ba1f0d1a0a25400dc}{set\+Complete\+Sequence} (char first, char second, char third)
+\begin{DoxyCompactList}\small\item\em permet de paramétrer la séquence de course du flight en cours \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_a98d53d3ca75b71660f74a178df75bd3f}{set\+Sequence} (char sequence)
+\begin{DoxyCompactList}\small\item\em met à jour le digit correspondant au numéro de course (sequence) sur l\textquotesingle{}afficheur \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_abbbb8270b5c7706608a321ccb927f5a4}{check\+Minuts} (int m)
+\begin{DoxyCompactList}\small\item\em active les différentes leds et change le numéro de sequence en fonction du chronomètre \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_a8bde7d624b00590fae1da4eb9e682ceb}{do\+First\+Race} (int m)
+\begin{DoxyCompactList}\small\item\em envoie les signaux visuels de la première course \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_a678e5da38ff7b0a9f2c605167e90a2a6}{do\+Second\+Race} (int m)
+\begin{DoxyCompactList}\small\item\em envoie les signaux visuels de la deuxième course \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_a046562fcc923af19322ef74dea295809}{do\+Third\+Race} (int m)
+\begin{DoxyCompactList}\small\item\em envoie les signaux visuels de la troisième course \end{DoxyCompactList}\item 
+void \hyperlink{class_flight_a6c813df7df89bc3bc901387bb0854102}{get\+Sequence\+From\+Db} (std\+::string sequence\mbox{[}3\mbox{]})
+\begin{DoxyCompactList}\small\item\em récupère la sequence dans la base de données \end{DoxyCompactList}\item 
+int $\ast$ \hyperlink{class_flight_afab0d1a975b5165b7aba0844b7122eb9}{get\+Timer\+From\+Db} ()
+\begin{DoxyCompactList}\small\item\em récupère le temps de départ dans la base de données \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void $\ast$ \hyperlink{class_flight_a2cb1c243edbdb53858e2b97ebbe96cf6}{execute\+Start} (void $\ast$context)
+\begin{DoxyCompactList}\small\item\em permet à la méthode start d\textquotesingle{}être utilisée dans un tread \end{DoxyCompactList}\item 
+static void $\ast$ \hyperlink{class_flight_ac5fc14dc02d9a75a00ce6688003e8842}{execute\+Play\+Seconds} (void $\ast$context)
+\begin{DoxyCompactList}\small\item\em permet à la méthode start d\textquotesingle{}être utilisée dans un tread \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+permet de paramétrer, lancer et arrêter un flight 
+
+\begin{DoxyAuthor}{Author}
+Benhmida 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Rev}
+590 
+\end{DoxyParagraph}
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2017-\/04-\/17 23\+:07\+:09 +0200 (lun. 17 avril 2017) 
+\end{DoxyParagraph}
+
+
+Definition at line 30 of file Flight.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_flight_acbf1e8c321e01e04db2fe651a08b30af}\label{class_flight_acbf1e8c321e01e04db2fe651a08b30af}} 
+\index{Flight@{Flight}!Flight@{Flight}}
+\index{Flight@{Flight}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{Flight()}{Flight()}}
+{\footnotesize\ttfamily Flight\+::\+Flight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+initialise les attributs de la classe 
+
+
+
+Definition at line 10 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a6e9898949b83cfbc068b4d5820990782}\label{class_flight_a6e9898949b83cfbc068b4d5820990782}} 
+\index{Flight@{Flight}!````~Flight@{$\sim$\+Flight}}
+\index{````~Flight@{$\sim$\+Flight}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{$\sim$\+Flight()}{~Flight()}}
+{\footnotesize\ttfamily Flight\+::$\sim$\+Flight (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+destructeur 
+
+
+
+Definition at line 55 of file Flight.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_flight_abbbb8270b5c7706608a321ccb927f5a4}\label{class_flight_abbbb8270b5c7706608a321ccb927f5a4}} 
+\index{Flight@{Flight}!check\+Minuts@{check\+Minuts}}
+\index{check\+Minuts@{check\+Minuts}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{check\+Minuts()}{checkMinuts()}}
+{\footnotesize\ttfamily void Flight\+::check\+Minuts (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+active les différentes leds et change le numéro de sequence en fonction du chronomètre 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & minute à tester \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 143 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a8bde7d624b00590fae1da4eb9e682ceb}\label{class_flight_a8bde7d624b00590fae1da4eb9e682ceb}} 
+\index{Flight@{Flight}!do\+First\+Race@{do\+First\+Race}}
+\index{do\+First\+Race@{do\+First\+Race}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{do\+First\+Race()}{doFirstRace()}}
+{\footnotesize\ttfamily void Flight\+::do\+First\+Race (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+envoie les signaux visuels de la première course 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & minute actuelle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 75 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a678e5da38ff7b0a9f2c605167e90a2a6}\label{class_flight_a678e5da38ff7b0a9f2c605167e90a2a6}} 
+\index{Flight@{Flight}!do\+Second\+Race@{do\+Second\+Race}}
+\index{do\+Second\+Race@{do\+Second\+Race}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{do\+Second\+Race()}{doSecondRace()}}
+{\footnotesize\ttfamily void Flight\+::do\+Second\+Race (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+envoie les signaux visuels de la deuxième course 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & minute actuelle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 98 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a046562fcc923af19322ef74dea295809}\label{class_flight_a046562fcc923af19322ef74dea295809}} 
+\index{Flight@{Flight}!do\+Third\+Race@{do\+Third\+Race}}
+\index{do\+Third\+Race@{do\+Third\+Race}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{do\+Third\+Race()}{doThirdRace()}}
+{\footnotesize\ttfamily void Flight\+::do\+Third\+Race (\begin{DoxyParamCaption}\item[{int}]{m }\end{DoxyParamCaption})}
+
+
+
+envoie les signaux visuels de la troisième course 
+
+
+\begin{DoxyParams}{Parameters}
+{\em m} & minute actuelle \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 122 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_ac5fc14dc02d9a75a00ce6688003e8842}\label{class_flight_ac5fc14dc02d9a75a00ce6688003e8842}} 
+\index{Flight@{Flight}!execute\+Play\+Seconds@{execute\+Play\+Seconds}}
+\index{execute\+Play\+Seconds@{execute\+Play\+Seconds}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{execute\+Play\+Seconds()}{executePlaySeconds()}}
+{\footnotesize\ttfamily void Flight\+::execute\+Play\+Seconds (\begin{DoxyParamCaption}\item[{void $\ast$}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+permet à la méthode start d\textquotesingle{}être utilisée dans un tread 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & instance appelante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retourne la méthode play\+Seconds 
+\end{DoxyReturn}
+
+
+Definition at line 155 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a2cb1c243edbdb53858e2b97ebbe96cf6}\label{class_flight_a2cb1c243edbdb53858e2b97ebbe96cf6}} 
+\index{Flight@{Flight}!execute\+Start@{execute\+Start}}
+\index{execute\+Start@{execute\+Start}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{execute\+Start()}{executeStart()}}
+{\footnotesize\ttfamily void Flight\+::execute\+Start (\begin{DoxyParamCaption}\item[{void $\ast$}]{context }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+permet à la méthode start d\textquotesingle{}être utilisée dans un tread 
+
+
+\begin{DoxyParams}{Parameters}
+{\em context} & instance appelante \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+retourne la méthode start 
+\end{DoxyReturn}
+
+
+Definition at line 202 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a905f20ea23734db3fe6c8d51b6e81bfe}\label{class_flight_a905f20ea23734db3fe6c8d51b6e81bfe}} 
+\index{Flight@{Flight}!get\+Is\+Active@{get\+Is\+Active}}
+\index{get\+Is\+Active@{get\+Is\+Active}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{get\+Is\+Active()}{getIsActive()}}
+{\footnotesize\ttfamily bool Flight\+::get\+Is\+Active (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+indique si le flight est en cours de lancement ou non 
+
+\begin{DoxyReturn}{Returns}
+retourne vrai si le flight est en cours de lancement et false dans le cas contraire 
+\end{DoxyReturn}
+
+
+Definition at line 149 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a6c813df7df89bc3bc901387bb0854102}\label{class_flight_a6c813df7df89bc3bc901387bb0854102}} 
+\index{Flight@{Flight}!get\+Sequence\+From\+Db@{get\+Sequence\+From\+Db}}
+\index{get\+Sequence\+From\+Db@{get\+Sequence\+From\+Db}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{get\+Sequence\+From\+Db()}{getSequenceFromDb()}}
+{\footnotesize\ttfamily void Flight\+::get\+Sequence\+From\+Db (\begin{DoxyParamCaption}\item[{std\+::string}]{sequence\mbox{[}3\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+récupère la sequence dans la base de données 
+
+
+\begin{DoxyItemize}
+\item 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em tableau} & de string contenant la séquence de course extraite de la base de données \\
+\hline
+\end{DoxyParams}
+
+\end{DoxyItemize}
+
+Definition at line 59 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_afab0d1a975b5165b7aba0844b7122eb9}\label{class_flight_afab0d1a975b5165b7aba0844b7122eb9}} 
+\index{Flight@{Flight}!get\+Timer\+From\+Db@{get\+Timer\+From\+Db}}
+\index{get\+Timer\+From\+Db@{get\+Timer\+From\+Db}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{get\+Timer\+From\+Db()}{getTimerFromDb()}}
+{\footnotesize\ttfamily void Flight\+::get\+Timer\+From\+Db (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+récupère le temps de départ dans la base de données 
+
+\begin{DoxyReturn}{Returns}
+retourne un tableau d\textquotesingle{}entiers contenant les secondes et minutes extraites de la base de données 
+\end{DoxyReturn}
+
+
+Definition at line 41 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a8dbcde73f89d46cfeeb9e5892c1c7400}\label{class_flight_a8dbcde73f89d46cfeeb9e5892c1c7400}} 
+\index{Flight@{Flight}!initialize\+Map\+Race\+Leds@{initialize\+Map\+Race\+Leds}}
+\index{initialize\+Map\+Race\+Leds@{initialize\+Map\+Race\+Leds}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{initialize\+Map\+Race\+Leds()}{initializeMapRaceLeds()}}
+{\footnotesize\ttfamily void Flight\+::initialize\+Map\+Race\+Leds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+initialise la map reliant les numéros de course et les leds à allumer 
+
+
+
+Definition at line 28 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a84fa12f82e85f6e708249d6a634c5923}\label{class_flight_a84fa12f82e85f6e708249d6a634c5923}} 
+\index{Flight@{Flight}!play\+Seconds@{play\+Seconds}}
+\index{play\+Seconds@{play\+Seconds}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{play\+Seconds()}{playSeconds()}}
+{\footnotesize\ttfamily void Flight\+::play\+Seconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+lance le décompte vocal des secondes 
+
+
+
+Definition at line 160 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_ad7679d1041b3a96ba1f0d1a0a25400dc}\label{class_flight_ad7679d1041b3a96ba1f0d1a0a25400dc}} 
+\index{Flight@{Flight}!set\+Complete\+Sequence@{set\+Complete\+Sequence}}
+\index{set\+Complete\+Sequence@{set\+Complete\+Sequence}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{set\+Complete\+Sequence()}{setCompleteSequence()}}
+{\footnotesize\ttfamily void Flight\+::set\+Complete\+Sequence (\begin{DoxyParamCaption}\item[{char}]{first,  }\item[{char}]{second,  }\item[{char}]{third }\end{DoxyParamCaption})}
+
+
+
+permet de paramétrer la séquence de course du flight en cours 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em first} & numéro de course du premier départ \\
+\hline
+\mbox{\tt in}  & {\em second} & numéro de course du deuxième départ \\
+\hline
+\mbox{\tt in}  & {\em third} & numéro de course du troisième départ \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 22 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a783bdc8737b1f4d8f6cb412a361c4bec}\label{class_flight_a783bdc8737b1f4d8f6cb412a361c4bec}} 
+\index{Flight@{Flight}!set\+Minuts@{set\+Minuts}}
+\index{set\+Minuts@{set\+Minuts}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{set\+Minuts()}{setMinuts()}}
+{\footnotesize\ttfamily void Flight\+::set\+Minuts (\begin{DoxyParamCaption}\item[{int}]{minuts }\end{DoxyParamCaption})}
+
+
+
+change la valeur de l\textquotesingle{}attribut minuts 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em minuts} & valeur à insérer dans l\textquotesingle{}attribut minuts \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 213 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_ad26c2a5811f5cebb5955946bb6f93cca}\label{class_flight_ad26c2a5811f5cebb5955946bb6f93cca}} 
+\index{Flight@{Flight}!set\+Seconds@{set\+Seconds}}
+\index{set\+Seconds@{set\+Seconds}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{set\+Seconds()}{setSeconds()}}
+{\footnotesize\ttfamily void Flight\+::set\+Seconds (\begin{DoxyParamCaption}\item[{int}]{seconds }\end{DoxyParamCaption})}
+
+
+
+change la valeur de l\textquotesingle{}attribut seconds 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em seconds} & valeur à insérer dans l\textquotesingle{}attribut seconds \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 220 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a98d53d3ca75b71660f74a178df75bd3f}\label{class_flight_a98d53d3ca75b71660f74a178df75bd3f}} 
+\index{Flight@{Flight}!set\+Sequence@{set\+Sequence}}
+\index{set\+Sequence@{set\+Sequence}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{set\+Sequence()}{setSequence()}}
+{\footnotesize\ttfamily void Flight\+::set\+Sequence (\begin{DoxyParamCaption}\item[{char}]{sequence }\end{DoxyParamCaption})}
+
+
+
+met à jour le digit correspondant au numéro de course (sequence) sur l\textquotesingle{}afficheur 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sequence} & à afficher \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{class_flight_ac5b91d4615b20ee19f9f113cb061313c}\label{class_flight_ac5b91d4615b20ee19f9f113cb061313c}} 
+\index{Flight@{Flight}!start@{start}}
+\index{start@{start}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Flight\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+demarre le lancement du flight 
+
+
+
+Definition at line 167 of file Flight.\+cpp.
+
+\mbox{\Hypertarget{class_flight_a42aa7eb78de33bc6cae6e0a0a569e9eb}\label{class_flight_a42aa7eb78de33bc6cae6e0a0a569e9eb}} 
+\index{Flight@{Flight}!stop@{stop}}
+\index{stop@{stop}!Flight@{Flight}}
+\subsubsection{\texorpdfstring{stop()}{stop()}}
+{\footnotesize\ttfamily void Flight\+::stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+stoppe le lancement du flight 
+
+
+
+Definition at line 207 of file Flight.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Camelia/\+Desktop/\+Compterendu/\+Compterendu/\+G\+E\+M\+A\+R\+A/\+Benhmida/code/\+S\+A\+L\+F\+\_\+\+P\+I/\hyperlink{_flight_8h}{Flight.\+h}\item 
+D\+:/\+Users/\+Camelia/\+Desktop/\+Compterendu/\+Compterendu/\+G\+E\+M\+A\+R\+A/\+Benhmida/code/\+S\+A\+L\+F\+\_\+\+P\+I/\hyperlink{_flight_8cpp}{Flight.\+cpp}\end{DoxyCompactItemize}

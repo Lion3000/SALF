@@ -1,0 +1,131 @@
+\hypertarget{class_database}{}\section{Database Class Reference}
+\label{class_database}\index{Database@{Database}}
+
+
+permet de lire et écrire dans une base de données  
+
+
+
+
+{\ttfamily \#include $<$Database.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_database_ae6cc395486dbff94bb4e2af329d150ac}{Database} (std\+::string filename=\char`\"{}Salf.\+db\char`\"{})
+\begin{DoxyCompactList}\small\item\em initialise les attributs de l\textquotesingle{}instance de classe et ouvre la base de données \end{DoxyCompactList}\item 
+\hyperlink{class_database_a84d399a2ad58d69daab9b05330e1316d}{$\sim$\+Database} ()
+\begin{DoxyCompactList}\small\item\em destructeur \+: ferme la base de données \end{DoxyCompactList}\item 
+void \hyperlink{class_database_abbcb06c60168be70c736564c4b78747f}{execute\+Request} (std\+::string sql\+Request, bool is\+Select\+Request=false, std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ $\ast$data=N\+U\+LL)
+\begin{DoxyCompactList}\small\item\em exécute la requête en paramètre, si c\textquotesingle{}est un Select, la méthode renvoie le résultat de la requête dans un vecteur passé en paramètre \end{DoxyCompactList}\item 
+int \hyperlink{class_database_a307a7ba9ab4fcb42ccdbe7a1d6c75cf8}{prepare\+Request} ()
+\begin{DoxyCompactList}\small\item\em prépare la requete et permet de tester si elle est correcte \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+permet de lire et écrire dans une base de données 
+
+\begin{DoxyAuthor}{Author}
+Benhmida 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Rev}
+597 
+\end{DoxyParagraph}
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2017-\/04-\/24 23\+:17\+:55 +0200 (lun. 24 avril 2017) 
+\end{DoxyParagraph}
+
+
+Definition at line 27 of file Database.\+h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_database_ae6cc395486dbff94bb4e2af329d150ac}\label{class_database_ae6cc395486dbff94bb4e2af329d150ac}} 
+\index{Database@{Database}!Database@{Database}}
+\index{Database@{Database}!Database@{Database}}
+\subsubsection{\texorpdfstring{Database()}{Database()}}
+{\footnotesize\ttfamily Database\+::\+Database (\begin{DoxyParamCaption}\item[{std\+::string}]{filename = {\ttfamily \char`\"{}Salf.db\char`\"{}} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+initialise les attributs de l\textquotesingle{}instance de classe et ouvre la base de données 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & nom de la base de données à utiliser \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 43 of file Database.\+h.
+
+\mbox{\Hypertarget{class_database_a84d399a2ad58d69daab9b05330e1316d}\label{class_database_a84d399a2ad58d69daab9b05330e1316d}} 
+\index{Database@{Database}!````~Database@{$\sim$\+Database}}
+\index{````~Database@{$\sim$\+Database}!Database@{Database}}
+\subsubsection{\texorpdfstring{$\sim$\+Database()}{~Database()}}
+{\footnotesize\ttfamily Database\+::$\sim$\+Database (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+destructeur \+: ferme la base de données 
+
+
+
+Definition at line 57 of file Database.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_database_abbcb06c60168be70c736564c4b78747f}\label{class_database_abbcb06c60168be70c736564c4b78747f}} 
+\index{Database@{Database}!execute\+Request@{execute\+Request}}
+\index{execute\+Request@{execute\+Request}!Database@{Database}}
+\subsubsection{\texorpdfstring{execute\+Request()}{executeRequest()}}
+{\footnotesize\ttfamily bool Database\+::execute\+Request (\begin{DoxyParamCaption}\item[{std\+::string}]{sql\+Request,  }\item[{bool}]{is\+Select\+Request = {\ttfamily false},  }\item[{std\+::vector$<$ std\+::vector$<$ std\+::string $>$ $>$ $\ast$}]{data = {\ttfamily NULL} }\end{DoxyParamCaption})}
+
+
+
+exécute la requête en paramètre, si c\textquotesingle{}est un Select, la méthode renvoie le résultat de la requête dans un vecteur passé en paramètre 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sql\+Request} & \+: requête sql à exécuter \\
+\hline
+\mbox{\tt in}  & {\em is\+Select\+Request} & \+: booléen indiquant si la requête est une selection de données ou non (vrai si select, faux sinon) \\
+\hline
+\mbox{\tt in,out}  & {\em data} & \+: vecteur contenant les données extraites de la base de données (utilisé si la requête est un select) \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 12 of file Database.\+cpp.
+
+\mbox{\Hypertarget{class_database_a307a7ba9ab4fcb42ccdbe7a1d6c75cf8}\label{class_database_a307a7ba9ab4fcb42ccdbe7a1d6c75cf8}} 
+\index{Database@{Database}!prepare\+Request@{prepare\+Request}}
+\index{prepare\+Request@{prepare\+Request}!Database@{Database}}
+\subsubsection{\texorpdfstring{prepare\+Request()}{prepareRequest()}}
+{\footnotesize\ttfamily bool Database\+::prepare\+Request (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+prépare la requete et permet de tester si elle est correcte 
+
+\begin{DoxyReturn}{Returns}
+retourne 1 si la requête s\textquotesingle{}est exécuté correctement et -\/1 dans le cas contraire 
+\end{DoxyReturn}
+
+
+Definition at line 53 of file Database.\+cpp.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Camelia/\+Desktop/\+Compterendu/\+Compterendu/\+G\+E\+M\+A\+R\+A/\+Benhmida/code/\+S\+A\+L\+F\+\_\+\+P\+I/\hyperlink{_database_8h}{Database.\+h}\item 
+D\+:/\+Users/\+Camelia/\+Desktop/\+Compterendu/\+Compterendu/\+G\+E\+M\+A\+R\+A/\+Benhmida/code/\+S\+A\+L\+F\+\_\+\+P\+I/\hyperlink{_database_8cpp}{Database.\+cpp}\end{DoxyCompactItemize}

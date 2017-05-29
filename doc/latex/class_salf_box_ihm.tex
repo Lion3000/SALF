@@ -1,0 +1,413 @@
+\hypertarget{class_salf_box_ihm}{}\section{Salf\+Box\+Ihm Class Reference}
+\label{class_salf_box_ihm}\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+
+
+représente le boitier S\+A\+LF et permet de récupérer et changer son état  
+
+
+
+
+{\ttfamily \#include $<$Salf\+Box\+Ihm.\+h$>$}
+
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_salf_box_ihm_1_1_request}{Request}
+\begin{DoxyCompactList}\small\item\em structure utilisée pour lire et écrire dans la file de message permettant de changer l\textquotesingle{}état du boitier (leds et afficheur) \end{DoxyCompactList}\item 
+struct \hyperlink{struct_salf_box_ihm_1_1_request_get}{Request\+Get}
+\begin{DoxyCompactList}\small\item\em structure utilisée pour écrire dans la file de message pour les appuis sur boutons \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static void \hyperlink{class_salf_box_ihm_a0d0f3f0595146757c529e06e3006ac50}{init} ()
+\begin{DoxyCompactList}\small\item\em initialise les attributs et variables \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_a07966fefea031c574b51c72862dfca61}{update\+Io\+Extender} ()
+\begin{DoxyCompactList}\small\item\em met à jour l\textquotesingle{}afficheur \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_ab6f403e3660ecddbabb147a3d194d1e1}{get\+Io\+Extender} ()
+\begin{DoxyCompactList}\small\item\em récupère l\textquotesingle{}état du boitier \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_a1d898e4cc39968da624912a2abd0ebe9}{clear\+Io\+Extender} ()
+\begin{DoxyCompactList}\small\item\em met tous les digits de l\textquotesingle{}afficheur à zéro \end{DoxyCompactList}\item 
+static int \hyperlink{class_salf_box_ihm_aebeee5ca5aa174e6d79262c6f59dffa7}{get\+Io\+Extender\+File\+Get} ()
+\begin{DoxyCompactList}\small\item\em permet d\textquotesingle{}obtenir l\textquotesingle{}identifiant de la file de messages des boutons \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_a540d7a30e9dbdea8c9ec4542543e9a00}{set\+Compteur} (uint8\+\_\+t minuts, uint8\+\_\+t seconds)
+\begin{DoxyCompactList}\small\item\em modifie les digits de l\textquotesingle{}afficheur correspondant aux minutes et secondes \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_a5952f1c4c02a795f38b5630ac7a60c55}{set\+Sequence} (uint8\+\_\+t sequence)
+\begin{DoxyCompactList}\small\item\em modifie les digits de l\textquotesingle{}afficheur correspondant à la séquence (numéro de course) \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_a5364f829f08a56c32edfe47d206f6230}{set\+Leds} (\hyperlink{_led_color_8h_a81ea3de5b76240d46410f8b9acf4cbde}{Led\+Color} position\+Led, bool tut\+End=false)
+\begin{DoxyCompactList}\small\item\em allume ou éteint une ou plusieurs leds \end{DoxyCompactList}\item 
+static char \hyperlink{class_salf_box_ihm_afb383d3a23e457fc57bcca36526801f1}{get\+Seconds} ()
+\begin{DoxyCompactList}\small\item\em retourne la valeur des secondes inscrites sur l\textquotesingle{}afficheur \end{DoxyCompactList}\item 
+static char \hyperlink{class_salf_box_ihm_a3ffe43dd9ae6a29f4d6bb7871ef3cf45}{get\+Minuts} ()
+\begin{DoxyCompactList}\small\item\em retourne la valeur des minutes inscrites sur l\textquotesingle{}afficheur \end{DoxyCompactList}\item 
+static int \hyperlink{class_salf_box_ihm_aabf6bdbc268b0ab0097562284ad533fa}{get\+Etat\+Led} ()
+\item 
+static char \hyperlink{class_salf_box_ihm_accd0e647513951730e0465874a8384ea}{get\+Sequence} ()
+\begin{DoxyCompactList}\small\item\em retourne la sequence en cours \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_ae665d726b6f7ad5bf72d1fc26893abf5}{do\+Tut} ()
+\begin{DoxyCompactList}\small\item\em méthode appelé lors de l\textquotesingle{}appui sur le bouton tut \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_a1ad2fe50aaa00fecd8eb29cd605c91e4}{do\+Seq} ()
+\begin{DoxyCompactList}\small\item\em méthode appelé lors de l\textquotesingle{}appui sur le bouton Seq \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_a21fa5d5d54ae0e93285dd5a20f832eba}{do\+Minus} ()
+\begin{DoxyCompactList}\small\item\em méthode appelé lors de l\textquotesingle{}appui sur le bouton -\/ \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_a8501840e90de2416c2a66a60566d8d59}{do\+Plus} ()
+\begin{DoxyCompactList}\small\item\em méthode appelé lors de l\textquotesingle{}appui sur le bouton + \end{DoxyCompactList}\item 
+static void \hyperlink{class_salf_box_ihm_ad5bc73201b44237264423a15596a0520}{do\+Start\+Stop} ()
+\begin{DoxyCompactList}\small\item\em méthode appelé lors de l\textquotesingle{}appui sur le bouton start/stop \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const int \hyperlink{class_salf_box_ihm_a18d938d3fb8caaa41d3ac73ff1b44528}{I\+O\+\_\+\+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+S\+I\+ZE} = 4
+\item 
+static const long \hyperlink{class_salf_box_ihm_a17f893cfff5ab3325fa77896a3ce9650}{C\+O\+M\+P\+T\+E\+UR} = 2
+\item 
+static const long \hyperlink{class_salf_box_ihm_a7e0bc33d7cce75be082ca75bac2f28da}{L\+E\+DS} = 3
+\item 
+static const long \hyperlink{class_salf_box_ihm_a0e994adbb9f92e763100e01f5faa3747}{S\+E\+Q\+U\+E\+N\+CE} = 4
+\item 
+static char \hyperlink{class_salf_box_ihm_a93253b04921128f64d671919aa49c81f}{io\+Extender} \mbox{[}\hyperlink{class_salf_box_ihm_a18d938d3fb8caaa41d3ac73ff1b44528}{I\+O\+\_\+\+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+S\+I\+ZE}+1\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+représente le boitier S\+A\+LF et permet de récupérer et changer son état 
+
+\begin{DoxyAuthor}{Author}
+Benhmida 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+
+\end{DoxyVersion}
+\begin{DoxyParagraph}{Rev}
+597 
+\end{DoxyParagraph}
+\begin{DoxyDate}{Date}
+
+\end{DoxyDate}
+\begin{DoxyParagraph}{Date}
+2017-\/04-\/24 23\+:17\+:55 +0200 (lun. 23 mai 2017) 
+\end{DoxyParagraph}
+
+
+Definition at line 42 of file Salf\+Box\+Ihm.\+h.
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{class_salf_box_ihm_a1d898e4cc39968da624912a2abd0ebe9}\label{class_salf_box_ihm_a1d898e4cc39968da624912a2abd0ebe9}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!clear\+Io\+Extender@{clear\+Io\+Extender}}
+\index{clear\+Io\+Extender@{clear\+Io\+Extender}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{clear\+Io\+Extender()}{clearIoExtender()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::clear\+Io\+Extender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+met tous les digits de l\textquotesingle{}afficheur à zéro 
+
+
+
+Definition at line 136 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a21fa5d5d54ae0e93285dd5a20f832eba}\label{class_salf_box_ihm_a21fa5d5d54ae0e93285dd5a20f832eba}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!do\+Minus@{do\+Minus}}
+\index{do\+Minus@{do\+Minus}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{do\+Minus()}{doMinus()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::do\+Minus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+méthode appelé lors de l\textquotesingle{}appui sur le bouton -\/ 
+
+
+
+Definition at line 183 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a8501840e90de2416c2a66a60566d8d59}\label{class_salf_box_ihm_a8501840e90de2416c2a66a60566d8d59}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!do\+Plus@{do\+Plus}}
+\index{do\+Plus@{do\+Plus}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{do\+Plus()}{doPlus()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::do\+Plus (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+méthode appelé lors de l\textquotesingle{}appui sur le bouton + 
+
+
+
+Definition at line 178 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a1ad2fe50aaa00fecd8eb29cd605c91e4}\label{class_salf_box_ihm_a1ad2fe50aaa00fecd8eb29cd605c91e4}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!do\+Seq@{do\+Seq}}
+\index{do\+Seq@{do\+Seq}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{do\+Seq()}{doSeq()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::do\+Seq (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+méthode appelé lors de l\textquotesingle{}appui sur le bouton Seq 
+
+
+
+Definition at line 173 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_ad5bc73201b44237264423a15596a0520}\label{class_salf_box_ihm_ad5bc73201b44237264423a15596a0520}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!do\+Start\+Stop@{do\+Start\+Stop}}
+\index{do\+Start\+Stop@{do\+Start\+Stop}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{do\+Start\+Stop()}{doStartStop()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::do\+Start\+Stop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+méthode appelé lors de l\textquotesingle{}appui sur le bouton start/stop 
+
+
+
+Definition at line 188 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_ae665d726b6f7ad5bf72d1fc26893abf5}\label{class_salf_box_ihm_ae665d726b6f7ad5bf72d1fc26893abf5}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!do\+Tut@{do\+Tut}}
+\index{do\+Tut@{do\+Tut}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{do\+Tut()}{doTut()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::do\+Tut (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+méthode appelé lors de l\textquotesingle{}appui sur le bouton tut 
+
+
+
+Definition at line 168 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_aabf6bdbc268b0ab0097562284ad533fa}\label{class_salf_box_ihm_aabf6bdbc268b0ab0097562284ad533fa}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!get\+Etat\+Led@{get\+Etat\+Led}}
+\index{get\+Etat\+Led@{get\+Etat\+Led}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{get\+Etat\+Led()}{getEtatLed()}}
+{\footnotesize\ttfamily int Salf\+Box\+Ihm\+::get\+Etat\+Led (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 208 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_ab6f403e3660ecddbabb147a3d194d1e1}\label{class_salf_box_ihm_ab6f403e3660ecddbabb147a3d194d1e1}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!get\+Io\+Extender@{get\+Io\+Extender}}
+\index{get\+Io\+Extender@{get\+Io\+Extender}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{get\+Io\+Extender()}{getIoExtender()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::get\+Io\+Extender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+récupère l\textquotesingle{}état du boitier 
+
+\mbox{\Hypertarget{class_salf_box_ihm_aebeee5ca5aa174e6d79262c6f59dffa7}\label{class_salf_box_ihm_aebeee5ca5aa174e6d79262c6f59dffa7}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!get\+Io\+Extender\+File\+Get@{get\+Io\+Extender\+File\+Get}}
+\index{get\+Io\+Extender\+File\+Get@{get\+Io\+Extender\+File\+Get}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{get\+Io\+Extender\+File\+Get()}{getIoExtenderFileGet()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::get\+Io\+Extender\+File\+Get (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+permet d\textquotesingle{}obtenir l\textquotesingle{}identifiant de la file de messages des boutons 
+
+\begin{DoxyReturn}{Returns}
+retourne l\textquotesingle{}identifiant de la file 
+\end{DoxyReturn}
+
+
+Definition at line 55 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a3ffe43dd9ae6a29f4d6bb7871ef3cf45}\label{class_salf_box_ihm_a3ffe43dd9ae6a29f4d6bb7871ef3cf45}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!get\+Minuts@{get\+Minuts}}
+\index{get\+Minuts@{get\+Minuts}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{get\+Minuts()}{getMinuts()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::get\+Minuts (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+retourne la valeur des minutes inscrites sur l\textquotesingle{}afficheur 
+
+\begin{DoxyReturn}{Returns}
+retourne la valeur des minutes inscrites sur l\textquotesingle{}afficheur 
+\end{DoxyReturn}
+
+
+Definition at line 193 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_afb383d3a23e457fc57bcca36526801f1}\label{class_salf_box_ihm_afb383d3a23e457fc57bcca36526801f1}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!get\+Seconds@{get\+Seconds}}
+\index{get\+Seconds@{get\+Seconds}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{get\+Seconds()}{getSeconds()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::get\+Seconds (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+retourne la valeur des secondes inscrites sur l\textquotesingle{}afficheur 
+
+\begin{DoxyReturn}{Returns}
+retourne la valeur des secondes inscrites sur l\textquotesingle{}afficheur 
+\end{DoxyReturn}
+
+
+Definition at line 198 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_accd0e647513951730e0465874a8384ea}\label{class_salf_box_ihm_accd0e647513951730e0465874a8384ea}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!get\+Sequence@{get\+Sequence}}
+\index{get\+Sequence@{get\+Sequence}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{get\+Sequence()}{getSequence()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::get\+Sequence (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+retourne la sequence en cours 
+
+\begin{DoxyReturn}{Returns}
+retourne la valeur de la sequence en cours 
+\end{DoxyReturn}
+
+
+Definition at line 203 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a0d0f3f0595146757c529e06e3006ac50}\label{class_salf_box_ihm_a0d0f3f0595146757c529e06e3006ac50}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!init@{init}}
+\index{init@{init}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+initialise les attributs et variables 
+
+
+
+Definition at line 21 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a540d7a30e9dbdea8c9ec4542543e9a00}\label{class_salf_box_ihm_a540d7a30e9dbdea8c9ec4542543e9a00}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!set\+Compteur@{set\+Compteur}}
+\index{set\+Compteur@{set\+Compteur}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{set\+Compteur()}{setCompteur()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::set\+Compteur (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{minuts,  }\item[{uint8\+\_\+t}]{seconds }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+modifie les digits de l\textquotesingle{}afficheur correspondant aux minutes et secondes 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em uint8\+\_\+t} & minuts \+: minutes à afficher sur le boitier \\
+\hline
+\mbox{\tt in}  & {\em uint8\+\_\+t} & seconds\+: secondes à afficher sur le boitier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 59 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a5364f829f08a56c32edfe47d206f6230}\label{class_salf_box_ihm_a5364f829f08a56c32edfe47d206f6230}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!set\+Leds@{set\+Leds}}
+\index{set\+Leds@{set\+Leds}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{set\+Leds()}{setLeds()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::set\+Leds (\begin{DoxyParamCaption}\item[{\hyperlink{_led_color_8h_a81ea3de5b76240d46410f8b9acf4cbde}{Led\+Color}}]{position\+Led,  }\item[{bool}]{tut\+End = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+allume ou éteint une ou plusieurs leds 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em position\+Led} & led ou combinaison de leds à allumer ou éteindre \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 76 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a5952f1c4c02a795f38b5630ac7a60c55}\label{class_salf_box_ihm_a5952f1c4c02a795f38b5630ac7a60c55}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!set\+Sequence@{set\+Sequence}}
+\index{set\+Sequence@{set\+Sequence}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{set\+Sequence()}{setSequence()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::set\+Sequence (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sequence }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+modifie les digits de l\textquotesingle{}afficheur correspondant à la séquence (numéro de course) 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em sequence} & \+: numéro de sequence à afficher sur le boitier \\
+\hline
+\end{DoxyParams}
+
+
+Definition at line 68 of file Salf\+Box\+Ihm.\+cpp.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a07966fefea031c574b51c72862dfca61}\label{class_salf_box_ihm_a07966fefea031c574b51c72862dfca61}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!update\+Io\+Extender@{update\+Io\+Extender}}
+\index{update\+Io\+Extender@{update\+Io\+Extender}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{update\+Io\+Extender()}{updateIoExtender()}}
+{\footnotesize\ttfamily void Salf\+Box\+Ihm\+::update\+Io\+Extender (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+met à jour l\textquotesingle{}afficheur 
+
+
+
+Definition at line 103 of file Salf\+Box\+Ihm.\+cpp.
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{class_salf_box_ihm_a17f893cfff5ab3325fa77896a3ce9650}\label{class_salf_box_ihm_a17f893cfff5ab3325fa77896a3ce9650}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!C\+O\+M\+P\+T\+E\+UR@{C\+O\+M\+P\+T\+E\+UR}}
+\index{C\+O\+M\+P\+T\+E\+UR@{C\+O\+M\+P\+T\+E\+UR}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{C\+O\+M\+P\+T\+E\+UR}{COMPTEUR}}
+{\footnotesize\ttfamily const long Salf\+Box\+Ihm\+::\+C\+O\+M\+P\+T\+E\+UR = 2\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 55 of file Salf\+Box\+Ihm.\+h.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a18d938d3fb8caaa41d3ac73ff1b44528}\label{class_salf_box_ihm_a18d938d3fb8caaa41d3ac73ff1b44528}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!I\+O\+\_\+\+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+S\+I\+ZE@{I\+O\+\_\+\+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+S\+I\+ZE}}
+\index{I\+O\+\_\+\+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+S\+I\+ZE@{I\+O\+\_\+\+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+S\+I\+ZE}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{I\+O\+\_\+\+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+S\+I\+ZE}{IO\_EXTENDER\_SIZE}}
+{\footnotesize\ttfamily const int Salf\+Box\+Ihm\+::\+I\+O\+\_\+\+E\+X\+T\+E\+N\+D\+E\+R\+\_\+\+S\+I\+ZE = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 54 of file Salf\+Box\+Ihm.\+h.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a93253b04921128f64d671919aa49c81f}\label{class_salf_box_ihm_a93253b04921128f64d671919aa49c81f}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!io\+Extender@{io\+Extender}}
+\index{io\+Extender@{io\+Extender}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{io\+Extender}{ioExtender}}
+{\footnotesize\ttfamily char Salf\+Box\+Ihm\+::io\+Extender\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 56 of file Salf\+Box\+Ihm.\+h.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a7e0bc33d7cce75be082ca75bac2f28da}\label{class_salf_box_ihm_a7e0bc33d7cce75be082ca75bac2f28da}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!L\+E\+DS@{L\+E\+DS}}
+\index{L\+E\+DS@{L\+E\+DS}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{L\+E\+DS}{LEDS}}
+{\footnotesize\ttfamily const long Salf\+Box\+Ihm\+::\+L\+E\+DS = 3\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 55 of file Salf\+Box\+Ihm.\+h.
+
+\mbox{\Hypertarget{class_salf_box_ihm_a0e994adbb9f92e763100e01f5faa3747}\label{class_salf_box_ihm_a0e994adbb9f92e763100e01f5faa3747}} 
+\index{Salf\+Box\+Ihm@{Salf\+Box\+Ihm}!S\+E\+Q\+U\+E\+N\+CE@{S\+E\+Q\+U\+E\+N\+CE}}
+\index{S\+E\+Q\+U\+E\+N\+CE@{S\+E\+Q\+U\+E\+N\+CE}!Salf\+Box\+Ihm@{Salf\+Box\+Ihm}}
+\subsubsection{\texorpdfstring{S\+E\+Q\+U\+E\+N\+CE}{SEQUENCE}}
+{\footnotesize\ttfamily const long Salf\+Box\+Ihm\+::\+S\+E\+Q\+U\+E\+N\+CE = 4\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Definition at line 55 of file Salf\+Box\+Ihm.\+h.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+D\+:/\+Users/\+Camelia/\+Desktop/\+Compterendu/\+Compterendu/\+G\+E\+M\+A\+R\+A/\+Benhmida/code/\+S\+A\+L\+F\+\_\+\+P\+I/\hyperlink{_salf_box_ihm_8h}{Salf\+Box\+Ihm.\+h}\item 
+D\+:/\+Users/\+Camelia/\+Desktop/\+Compterendu/\+Compterendu/\+G\+E\+M\+A\+R\+A/\+Benhmida/code/\+S\+A\+L\+F\+\_\+\+P\+I/\hyperlink{_salf_box_ihm_8cpp}{Salf\+Box\+Ihm.\+cpp}\end{DoxyCompactItemize}
