@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="format-detection" content="telephone=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <title>Test SALF</title>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/SalfPiBny.js"></script>
+        <script type="text/javascript" src="js/UcTester.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+    </head>
+    <body>
+        <!-- Le contenant de l'IHM de l'application -->
+        <div id="myApp">
+
+          <!-- L'IHM de chargement -->
+          <div id="loginPanel" style="display: block;" class="rotating">
+            <div class="sk-cube-grid">
+              <div class="sk-cube sk-cube1"></div>
+              <div class="sk-cube sk-cube2"></div>
+              <div class="sk-cube sk-cube3"></div>
+              <div class="sk-cube sk-cube4"></div>
+              <div class="sk-cube sk-cube5"></div>
+              <div class="sk-cube sk-cube6"></div>
+              <div class="sk-cube sk-cube7"></div>
+              <div class="sk-cube sk-cube8"></div>
+              <div class="sk-cube sk-cube9"></div>
+            </div>
+          </div>
+
+          <!-- L'IHM de test de la SALF BOX -->
+          <div id="testPanel" style="display: none;">
+            <h1>TEST OF SALF BOX</h1>
+            <h2>Choose the element to test</h2>
+            <table>
+              <tr>
+                <td class="size25pourcent" rowspan="2">
+                  <img id="speaker_off" onclick="ucTester.onClick(BoxElementTest.SPEAKER)" src="./img/speaker_off.png" />
+                  <img id="speaker_on" class="hidden" src="./img/speaker_on.png" />
+                </td>
+                <td class="size50pourcent" colspan="5" rowspan="2">
+                  <img id="display_off" onclick="ucTester.onClick(BoxElementTest.DISPLAY)" src="./img/display.png" />
+                  <img id="display_0" class="hidden" src="./img/display_0.png" />
+                  <img id="display_1" class="hidden" src="./img/display_1.png" />
+                  <img id="display_2" class="hidden" src="./img/display_2.png" />
+                  <img id="display_3" class="hidden" src="./img/display_3.png" />
+                  <img id="display_4" class="hidden" src="./img/display_4.png" />
+                  <img id="display_5" class="hidden" src="./img/display_5.png" />
+                  <img id="display_6" class="hidden" src="./img/display_6.png" />
+                  <img id="display_7" class="hidden" src="./img/display_7.png" />
+                  <img id="display_8" class="hidden" src="./img/display_8.png" />
+                  <img id="display_9" class="hidden" src="./img/display_9.png" />
+                </td>
+                <td class="size25pourcent">
+                  <img id="led_red_off" onclick="ucTester.onClick(BoxElementTest.LED_RED)" src="./img/ledRed_off.png" />
+                  <img id="led_red_on" class="hidden" src="./img/ledRed_on.png" />
+                </td>
+              </tr>
+              <tr>
+                <td class="size25pourcent">
+                  <img id="led_top_off" onclick="ucTester.onClick(BoxElementTest.LED_TOP)" src="./img/ledTop_off.png" />
+                  <img id="led_top_on" class="hidden" src="./img/ledTop_on.png" />
+                </td>
+              </tr>
+              <tr>
+                <td class="size25pourcent" rowspan="2">
+                  <img id="klaxon_off" onclick="ucTester.onClick(BoxElementTest.TUT)" src="./img/klaxon_off.png" />
+                  <img id="klaxon_on" class="hidden" src="./img/klaxon_on.png" />
+                </td>
+                <td class="size10pourcent" rowspan="2">
+                  <img id="button_start_stop_off" onclick="ucTester.onClick(BoxElementTest.BUTTONS)" src="./img/button_start_stop_off.png" />
+                  <img id="button_start_stop_on" class="hidden" src="./img/button_start_stop_on.png" />
+                </td>
+                <td class="size10pourcent" rowspan="2">
+                  <img id="button_plus_off" onclick="ucTester.onClick(BoxElementTest.BUTTONS)" src="./img/button_plus_off.png" />
+                  <img id="button_plus_on" class="hidden" src="./img/button_plus_on.png" />
+                </td>
+                <td class="size10pourcent" rowspan="2">
+                  <img id="button_minus_off" onclick="ucTester.onClick(BoxElementTest.BUTTONS)" src="./img/button_minus_off.png" />
+                  <img id="button_minus_on" class="hidden" src="./img/button_minus_on.png" />
+                </td>
+                <td class="size10pourcent" rowspan="2">
+                  <img id="button_seq_off" onclick="ucTester.onClick(BoxElementTest.BUTTONS)" src="./img/button_seq_off.png" />
+                  <img id="button_seq_on" class="hidden" src="./img/button_seq_on.png" />
+                </td>
+                <td class="size10pourcent" rowspan="2">
+                  <img id="button_tut_off" onclick="ucTester.onClick(BoxElementTest.BUTTONS)" src="./img/button_tut_off.png" />
+                  <img id="button_tut_on" class="hidden" src="./img/button_tut_on.png" />
+                </td>
+                <td class="size25pourcent">
+                  <img id="led_middle_off" onclick="ucTester.onClick(BoxElementTest.LED_MIDDLE)" src="./img/ledMiddle_off.png" />
+                  <img id="led_middle_on" class="hidden" src="./img/ledMiddle_on.png" />
+                </td>
+              </tr>
+              <tr>
+                <td class="size25pourcent">
+                  <img id="led_bottom_off" onclick="ucTester.onClick(BoxElementTest.LED_BOTTOM)" src="./img/ledBottom_off.png" />
+                  <img id="led_bottom_on" class="hidden" src="./img/ledBottom_on.png" />
+                </td>
+              </tr>
+            </table>
+            </div>
+        </div>
+    </body>
+</html>
