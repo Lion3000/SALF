@@ -15,16 +15,21 @@ ButtonController::ButtonController(int idFileButtons)
 	this->sequenceConfiguring = false; 
 	this->idFileButtons = idFileButtons;
 	this->seqModified = false; 
+	this->onPress = false; 
+	this->timeConfigured = false; 
+	this->sequenceConfigured = false; 
 	this->started = false; 
-	this->nbAppuiSeq = 0; 
+	this->nbAppuiSeq = -1; 
 	this->buttonCombinaison = 0;
 	this->symbolPosition = 0;
 	this->minuts = 0;
 	this->seconds = 0;	
 	this->selectedSymbol = ' ';	
-	this->sequence[0] = '1' ; this->sequence[1] = '2' ; this->sequence[2] = '3'; 
+	this->sequence[0] = DEFAULT_FIRST_RACE ; this->sequence[1] = DEFAULT_SECOND_RACE ; this->sequence[2] = DEFAULT_THIRD_RACE; 
 	this->flight= new Flight();
 	resetSymbols();
+	pthread_t threadCheckTestMode;
+	pthread_create(&threadCheckTestMode, NULL, &ButtonController::executeCheckTestMode,this);
 }
 
 void ButtonController::resetSymbols()
@@ -40,7 +45,8 @@ void ButtonController::getButtonsState(){
 	ButtonController::RequestGet msg;
 	msgrcv(idFileButtons, &msg, sizeof(int), 0, 0);
 	this->buttonCombinaison = msg.data[0];	
-	this->onPress = (msg.type==PRESS) ? true : false;
+	if(msg.type==PRESS) this->onPress = true;
+	else this->onPress = false;
 	manageButtons();				
 }
 
@@ -49,19 +55,23 @@ void ButtonController::manageButtons()
 	switch(buttonCombinaison){
 		
 		case (int)Button::START_STOP :
-			startStop();
+			if(!SalfBoxIhm::getIsTesting())			
+				startStop();
 			break;
 			
 		case (int)Button::SEQ :
-			seq();
+			if(!SalfBoxIhm::getIsTesting())
+				seq();
 			break;
 		
 		case (int)Button::PLUS :
-			plusMinus();
+			if(!SalfBoxIhm::getIsTesting())
+				plusMinus();
 			break;
 		
-		case (int)Button::MINUS :			
-			plusMinus();
+		case (int)Button::MINUS :	
+			if(!SalfBoxIhm::getIsTesting())		
+				plusMinus();
 			break;
 		
 		case (int)Button::TUT :
@@ -69,7 +79,8 @@ void ButtonController::manageButtons()
 			break;
 			
 		case (int)Button::CLEAR :
-			clearTimer();
+			if(!SalfBoxIhm::getIsTesting())
+				clearTimer();
 			break;
 			
 		default:
@@ -91,61 +102,36 @@ void ButtonController::clearTimer()
 	}
 }
 
-void * ButtonController::startStopFlightLaunch()
-{	
-	//paramétrage du timer
-	int * timer = flight->getTimerFromDb();
-	flight->setMinuts(timer[0]);
-	flight->setSeconds(timer[1]);
-	free(timer);
-	
-	//paramétrage de la séquence
-	std::string sequenceList[3];
-	flight->getSequenceFromDb(sequenceList);
-	char seqTotal[3];
-	seqTotal[0] = sequenceList[0][0];
-	seqTotal[1] = sequenceList[1][0];
-	seqTotal[2] = sequenceList[2][0];	
-	flight->setCompleteSequence(seqTotal[0], seqTotal[1], seqTotal[2]);			
-	
-	//lancement
-	pthread_t threadLaunch;
-	pthread_create(&threadLaunch, NULL, &Flight::executeStart,flight);
-	pthread_join(threadLaunch, NULL);
-} 
-
-void * ButtonController::executeStartStopFlightLaunch(void * context)
-{
-	return ((ButtonController *)context)->startStopFlightLaunch();
-}
-
 void ButtonController::startStop()
 {	
 	if(this->onPress)
-	{		
+	{						
 		if(this->started)
 		{
-			if(this->flight->getIsActive()){
-				this->flight->stop();
-				SalfBoxIhm::clearIoExtender();
-				this->started = false;
-			}				
-		}	
-		
-		else if(!this->started){
-			if(timerConfiguring){
-				timerConfiguring = false;
-				std::string sql = std::string("INSERT INTO timer(minuts, seconds) VALUES(") + std::to_string(this->minuts) + std::string(",") + std::to_string(this->seconds) + std::string(");");
-				database.executeRequest(sql);	
-				puts("Timer enregistré\n");		
-			}
-			else{
-				if(!this->flight->getIsActive()){
-				pthread_t threadLaunch;
-				pthread_create(&threadLaunch, NULL, &ButtonController::executeStartStopFlightLaunch,this);
-				puts("LANCEMENT\n");
-				this->started = true;
+			UcLancer().stop(this->flight);	
+			//~ UcLancer().stop();	
+			this->started = false;								
+		}			
+		else if(!this->started)
+		{
+			printf("%d\n", SalfBoxIhm::getIsTesting());
+			if(!SalfBoxIhm::getIsTesting())
+			{
+				if(timerConfiguring){
+					timerConfiguring = false;
+					std::string sql = std::string("INSERT INTO timer(minuts, seconds) VALUES(") + std::to_string(this->minuts) + std::string(",") + std::to_string(this->seconds) + std::string(");");
+					database.executeRequest(sql);	
+					timeConfigured = true;
+					puts("Timer enregistré\n");		
 				}
+				else{
+					puts("else\n");						
+					UcLancer().doIt(this->flight, this->timeConfigured, this->sequenceConfigured);	
+					//~ UcLancer().doIt(this->timeConfigured, this->sequenceConfigured);	
+					this->timeConfigured = false;			
+					this->sequenceConfigured = false;			
+					this->started = true;				
+				}							
 			}
 		}	
 	}	
@@ -163,20 +149,11 @@ void ButtonController::seq()
 		pthread_create(&threadSeq, NULL, &ButtonController::executeSetUpSequence, this);	
 	}		
 }
-using namespace std;
-void ButtonController::getAvailableSymbol()
-{
-	std::vector<char>::iterator it;
-	it = find(symbols.begin(), symbols.end(), this->sequence[currentRace-1]);
-	if(it == symbols.end()){
-		sequence[currentRace-1] = symbols.at(0);	
-	}
-}
 
 bool ButtonController::checkSequenceConfiguration(){
 	if((this->sequence[0] != this->sequence[1]) && (this->sequence[0] != this->sequence[2]))
-	{
-		if(this->sequence[1] != this->sequence[2])
+	{		
+		if((this->sequence[1] != this->sequence[2]))
 		{
 			return true;
 		}
@@ -187,20 +164,27 @@ bool ButtonController::checkSequenceConfiguration(){
 
 void * ButtonController::setUpSequence()
 {	
+	
 	this->nbAppuiSeq++;	
 	currentRace = nbAppuiSeq;
-	
-	if(nbAppuiSeq == 1) sequenceConfiguring = true;
+	if(nbAppuiSeq == 0) sequenceConfiguring = true;
 	else if(nbAppuiSeq == 3) nbAppuiSeq = 0;	
+	
 	if(seqModified)
-	{
-		sequence[currentRace-2] = selectedSymbol;				 
-		symbols.erase(symbols.begin()+(symbolPosition)); 
-		getAvailableSymbol();								
+	{				
+		printf("currentRace %d\n", currentRace);
+		sequence[currentRace-1] = selectedSymbol;	
 		seqModified = false;
 	}
-	SalfBoxIhm::setSequence(sequence[currentRace-1]);
-	printf("Sequence entière = %c - %c - %c\n", this->sequence[0], this->sequence[1], this->sequence[2]);	
+
+	SalfBoxIhm::setSequence(sequence[(currentRace-1 != -1) ? currentRace-1 : 0]); 
+	printf("SEQUENCE COMPLETE = %c, %c, %c\n", this->sequence[0], this->sequence[1], this->sequence[2]);
+	std::string minStr = std::string(1,this->sequence[0]) + std::string(1,this->sequence[1]);
+	std::string secStr = std::string(1,this->sequence[2]) + "0";
+	
+	int min = stoi(minStr);
+	int sec = stoi(secStr);
+	SalfBoxIhm::setCompteur(min, sec);
 	if(checkSequenceConfiguration() == true){
 		
 		std::this_thread::sleep_for(std::chrono::seconds(2));
@@ -211,7 +195,13 @@ void * ButtonController::setUpSequence()
 			database.executeRequest(sql);
 			resetSymbols();
 			sequenceConfiguring = false;
+			sequenceConfigured = true;
 			resetSymbols();
+			SalfBoxIhm::setSequence(0xc);
+			std::this_thread::sleep_for(std::chrono::seconds(1));
+			SalfBoxIhm::setSequence(0);
+			this->nbAppuiSeq = -1;	
+			
 			puts("SEQUENCE CONFIGUREE ET ENREGISTREE\n");
 		}
 	}	
@@ -223,9 +213,12 @@ void ButtonController::plusMinus()
 		if(this->sequenceConfiguring)
 		{	
 			seqModified = true;
-			if(buttonCombinaison == (int)Button::PLUS) symbolPosition++; 
-			else if(buttonCombinaison == (int)Button::MINUS) symbolPosition--;				
-			if((buttonCombinaison == (int)Button::PLUS) && (symbolPosition == symbols.size())){
+			if(buttonCombinaison == (int)Button::PLUS)
+				symbolPosition++; 
+			else if(buttonCombinaison == (int)Button::MINUS) 
+				symbolPosition--;
+				
+			if((buttonCombinaison == (int)Button::PLUS) && (symbolPosition >= symbols.size())){
 				symbolPosition = 0; //si +
 			}	
 			else if((buttonCombinaison == (int)Button::MINUS) && (symbolPosition < 0)){
@@ -241,6 +234,26 @@ void ButtonController::plusMinus()
 			pthread_create(&thread, NULL, &ButtonController::executeIncrementDecrement, this);				
 		}	
 	}	
+}
+ 
+void * ButtonController::executeCheckTestMode(void * context)
+{
+	return ((ButtonController *)context)->checkTestMode();
+}
+
+void * ButtonController::checkTestMode()
+{
+	while(true){
+		
+		if(SalfBoxIhm::getIsTesting() && this->started)
+		{
+			//~ UcLancer().stop();	
+			//~ puts("dans check test");
+			UcLancer().stop(this->flight);	
+			this->started = false;
+		}				
+		std::this_thread::sleep_for(std::chrono::milliseconds(500));	
+	}
 }
 
 void * ButtonController::incrementDecrement()
@@ -269,14 +282,14 @@ void * ButtonController::executeTut(void * context)
 
 void * ButtonController::tut()
 {
-	if(this->onPress){
-		SalfBoxIhm::setLeds((LedColor)( (int)LedColor::TUT_CONTACTEUR|SalfBoxIhm::getEtatLed()));
+	if(!SalfBoxIhm::getIsTesting() && this->onPress)
+	{
+		SalfBoxIhm::setLeds((LedColor)((int)LedColor::TUT_CONTACTEUR|SalfBoxIhm::getEtatLeds()));
 		std::this_thread::sleep_for(std::chrono::seconds(2));
 		
-		int truc = (SalfBoxIhm::etatLed-(int)LedColor::TUT_CONTACTEUR);
-		if(truc < 0)
-			truc = 0;
-		SalfBoxIhm::setLeds((LedColor)truc, true);
+		int ledsValue = (SalfBoxIhm::getEtatLeds() & ~(int)LedColor::TUT_CONTACTEUR);
+		//~ ledsValue = 
+		SalfBoxIhm::setLeds((LedColor)ledsValue, true);
 	}
 }
 

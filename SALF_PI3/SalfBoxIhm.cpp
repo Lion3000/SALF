@@ -12,8 +12,9 @@
 #include <fstream>
 #include <iostream>
 
-int SalfBoxIhm::buttonState, SalfBoxIhm::etatLed, SalfBoxIhm::ioExtenderFileId, SalfBoxIhm::ioExtenderFileGet;
+int SalfBoxIhm::buttonState, SalfBoxIhm::etatLeds, SalfBoxIhm::ioExtenderFileId, SalfBoxIhm::ioExtenderFileGet;
 std::map<ButtonGpio, Button> SalfBoxIhm::gpioMasques;
+bool SalfBoxIhm::isTesting;	
 char SalfBoxIhm::ioExtender[IO_EXTENDER_SIZE+1];
 key_t SalfBoxIhm::keySetBox, SalfBoxIhm::keyGetBox;
 std::ofstream SalfBoxIhm::spi;
@@ -21,17 +22,13 @@ std::ofstream SalfBoxIhm::spi;
 void SalfBoxIhm::init() 
 {
 	wiringPiSetupPhys();
-	wiringPiISR(ButtonGpio::MINUS_PIN, INT_EDGE_BOTH, doMinus);
-	wiringPiISR(ButtonGpio::PLUS_PIN, INT_EDGE_BOTH, doPlus);
-	wiringPiISR(ButtonGpio::SEQ_PIN, INT_EDGE_BOTH, doSeq);
-	wiringPiISR(ButtonGpio::START_STOP_PIN, INT_EDGE_BOTH, doStartStop);
-	wiringPiISR(ButtonGpio::TUT_PIN, INT_EDGE_BOTH, doTut);
-	
-	spi.open("/dev/spidev0.0");
+	initializeInterrupt();
+		spi.open("/dev/spidev0.0");
 	keySetBox = ftok("/tmp",1);
 	keyGetBox = ftok("/tmp",2);
 	buttonState = 0;	
-	etatLed = 0;	
+	etatLeds = 0;	
+	isTesting = false;
 	ioExtenderFileId = msgget(SalfBoxIhm::keySetBox, 0666 | IPC_CREAT);
 	ioExtenderFileGet = msgget(SalfBoxIhm::keyGetBox, 0666 | IPC_CREAT);
 	SalfBoxIhm::initializeButtonsMap();
@@ -42,6 +39,16 @@ void SalfBoxIhm::init()
 	ioExtender[4]= 0x0;
 	puts("init OK");
 }
+
+void SalfBoxIhm::initializeInterrupt()
+{
+	wiringPiISR(ButtonGpio::MINUS_PIN, INT_EDGE_BOTH, doMinus);
+	wiringPiISR(ButtonGpio::PLUS_PIN, INT_EDGE_BOTH, doPlus);
+	wiringPiISR(ButtonGpio::SEQ_PIN, INT_EDGE_BOTH, doSeq);
+	wiringPiISR(ButtonGpio::START_STOP_PIN, INT_EDGE_BOTH, doStartStop);
+	wiringPiISR(ButtonGpio::TUT_PIN, INT_EDGE_BOTH, doTut);
+}
+
 
 void SalfBoxIhm::initializeButtonsMap()
 {
@@ -74,15 +81,16 @@ void SalfBoxIhm::setSequence(uint8_t sequence) {
 }
 
 void SalfBoxIhm::setLeds(LedColor positionLed, bool tutEnd) {
-	if((int)SalfBoxIhm::getLeds()&(int)LedColor::TUT_CONTACTEUR == (int)LedColor::TUT_CONTACTEUR){
-		if(!tutEnd)
+	if((SalfBoxIhm::getEtatLeds() & ~(int)LedColor::TUT_CONTACTEUR) == (int)LedColor::TUT_CONTACTEUR){		
+		if(!tutEnd){
 			positionLed = (LedColor)((int)positionLed|(int)LedColor::TUT_CONTACTEUR);
+		}
 	}
 	SalfBoxIhm::Request msg;
 	msg.mtype = SalfBoxIhm::LEDS;
 	msg.ioExtender[IoExtender::LEDS] = (char)positionLed ;
 	msgsnd(ioExtenderFileId, &msg, IO_EXTENDER_SIZE, 0);
-	SalfBoxIhm::etatLed = (int)positionLed;
+	SalfBoxIhm::etatLeds = (int)positionLed;
 }
 
 uint8_t SalfBoxIhm::inverseDigits(uint8_t nb)
@@ -205,8 +213,17 @@ char SalfBoxIhm::getSequence() {
 	return SalfBoxIhm::ioExtender[IoExtender::SEQUENCE];
 }
 
-int SalfBoxIhm::getEtatLed(){
-	return SalfBoxIhm::etatLed;
+int SalfBoxIhm::getEtatLeds(){
+	return SalfBoxIhm::etatLeds;
+}
+
+void SalfBoxIhm::setIsTesting(bool value){
+	SalfBoxIhm::isTesting = value;
+	printf("testing dans salfbox %d\n", isTesting);
+}
+		
+bool SalfBoxIhm::getIsTesting(){
+	return SalfBoxIhm::isTesting;
 }
 
 #ifndef NDEBUG

@@ -36,7 +36,7 @@ class Flight
 		char currentRace;
 		Speaker * speaker;
 		char completeSequence[Race::MAX_RACE_NUMBER];
-		int minuts, seconds;
+		int minuts, seconds, numberOfRaces;
 		std::map<char,LedColor> mapRaceLeds;
 		std::map<LedColor,LedColor> mapLedsReds;		
 		

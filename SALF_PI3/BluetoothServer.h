@@ -18,7 +18,7 @@
 #include <bluetooth/bluetooth.h> // bluetooth
 #include <bluetooth/rfcomm.h> // bluetooth
 
-#define MAX_BUFFER_SIZE 2
+#define MAX_BUFFER_SIZE 255
 
 /**
 * \class BluetoothServer
@@ -32,19 +32,16 @@ class BluetoothServer
 {
 	private:
 		struct sockaddr_rc loc_addr, rem_addr;
-		char buf[MAX_BUFFER_SIZE];
-		int s, client, bytes_read;
+		int s, client, bytes_read;		
 		socklen_t opt;   
-		std::string serverMacAddress;
 		
 	public:
 		
 		/**
 		* \fn    BluetoothServer();
 		* \brief constructeur : permet d'instancier les attributs
-		* \param serverMacAddress : adresse mac du serveur à créer
 		*/
-		BluetoothServer(std::string serverMacAddress);
+		BluetoothServer();
 		
 		/**
 		* \fn    ~BluetoothServer();
@@ -54,6 +51,8 @@ class BluetoothServer
 			close(client);
 			close(s);
 		}
+		
+		void closeClientSocket();
 		
 		/**
 		* \fn   void launch();

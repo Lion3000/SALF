@@ -46,14 +46,15 @@ class SalfBoxIhm
 		static key_t keySetBox, keyGetBox;
 		static int ioExtenderFileId, ioExtenderFileGet, etatLeds, buttonState;
 		static std::ofstream spi;
-		static std::map<ButtonGpio, Button> gpioMasques;	
-
+		static std::map<ButtonGpio, Button> gpioMasques;
+		static bool isTesting;			
 
 	public: // constantes
 
 		static const int IO_EXTENDER_SIZE = 4;
 		static const long COMPTEUR = 2, LEDS = 3, SEQUENCE = 4;
 		static char ioExtender[IO_EXTENDER_SIZE+1];	
+		
 
 	public:	// structures
 
@@ -111,6 +112,12 @@ class SalfBoxIhm
 		* \brief initialise les attributs et variables 
 		*/
 		static void init();
+		
+		/**
+		* \fn    void initializeInterrupt();
+		* \brief initialise les interruptions gpio
+		*/
+		static void initializeInterrupt();
 		
 		/**
 		* \fn    void updateIoExtender();
@@ -172,13 +179,13 @@ class SalfBoxIhm
 		* \return retourne la valeur des minutes inscrites sur l'afficheur
 		*/
 		static char getMinuts();
-		
+
 		/**
-		* \fn    void getLeds();
+		* \fn    void getEtatLed();
 		* \brief permet d'obtenir l'état actuel des leds
 		* \return retourne la valeur de l'état actuel des leds
 		*/
-		static int getEtatLed();
+		static int getEtatLeds();
 		
 		/**
 		* \fn    void getSequence();
@@ -216,5 +223,17 @@ class SalfBoxIhm
 		* \brief méthode appelé lors de l'appui sur le bouton start/stop
 		*/
 		static void doStartStop();
+		
+		/**
+		* \fn    void setIsTesting();
+		* \brief active et désactive le mode test 
+		*/
+		static void setIsTesting(bool value);
+		
+		/**
+		* \fn    void getIsTesting();
+		* \brief active et désactive le mode test 
+		*/
+		static bool getIsTesting();
 };
 #endif
