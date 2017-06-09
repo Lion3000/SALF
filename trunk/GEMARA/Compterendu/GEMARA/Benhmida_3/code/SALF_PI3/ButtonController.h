@@ -12,6 +12,8 @@
 #ifndef _ButtonController_H
 #define _ButtonController_H
 
+#include "UcLancer.h"
+#include "UcTester.h"
 #include "buttonConfig.h"
 #include "SalfBoxIhm.h"
 #include "Flight.h"
@@ -42,7 +44,7 @@ class ButtonController
 		int buttonCombinaison, minuts, seconds, idFileButtons;
 		char sequence[3];
 		char selectedSymbol;
-		bool started, sequenceConfiguring, timerConfiguring, onPress, seqModified;
+		bool started, sequenceConfiguring, sequenceConfigured, timerConfiguring, onPress,timeConfigured, seqModified;
 		std::vector<char> symbols;		
 		Database database;
 		Flight * flight;		
@@ -56,6 +58,14 @@ class ButtonController
 		static void * executeIncrementDecrement(void * context);
 		
 		/**
+		* \fn    void executeIncrementDecrement();
+		* \brief permet de lancer la méthode checkTestRequest dans un thread
+		* \param[in] context instance en cours
+		* \return retourne la méthode checkTestRequest de l'instance en cours
+		*/
+		static void * executeCheckTestMode(void * context);
+		
+		/**
 		* \fn    void executeSetUpSequence();
 		* \brief permet de lancer la méthode SetUpSequence dans un thread
 		* \param[in] context instance en cours
@@ -63,13 +73,6 @@ class ButtonController
 		*/
 		static void * executeSetUpSequence(void * context);
 		
-		/**
-		* \fn    void executeStartStopFlightLaunch();
-		* \brief permet de lancer la méthode StopFlightLaunch dans un thread
-		* \param[in] context instance en cours
-		* \return retourne la méthode StopFlightLaunch de l'instance en cours
-		*/
-		static void * executeStartStopFlightLaunch(void * context);
 		
 		/**
 		* \fn    void executeTut();
@@ -78,12 +81,6 @@ class ButtonController
 		* \return retourne la méthode tut de l'instance en cours
 		*/
 		static void * executeTut(void * context);
-		
-		/**
-		* \fn    void startStopFlightLaunch();
-		* \brief permet de démarrer ou d'arrêter le lancement du flight
-		*/
-		void * startStopFlightLaunch();
 		
 		/**
 		* \fn    void incrementDecrement();
@@ -102,6 +99,11 @@ class ButtonController
 		* \brief envoie un signal sonore
 		*/	
 		void * tut();
+		/**
+		* \fn    void checkTestRequest();
+		* \brief vérifie que la salfbox n'est pas en état de test
+		*/	
+		void * checkTestMode();
 		
 		/**
 		* \fn    void resetSymbols();

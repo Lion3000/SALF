@@ -8,6 +8,10 @@
 #ifndef RACECONFIG_H_
 #define RACECONFIG_H_
 
+#define DEFAULT_STARTING_TIME 17
+#define DEFAULT_FIRST_RACE '1'
+#define DEFAULT_SECOND_RACE '2'
+#define DEFAULT_THIRD_RACE '3'
 
 /**
  * \enum race

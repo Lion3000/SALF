@@ -33,7 +33,6 @@ void Database::executeRequest(std::string sqlRequest, bool isSelectRequest, std:
 			}
 			else if (currentRow == SQLITE_DONE) 
 			{
-				puts("SQL OK");
 				break;
 			}
 			else

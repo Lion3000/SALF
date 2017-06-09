@@ -36,7 +36,8 @@ class Speaker
 		* \brief initialise les attributs de la classe
 		*/
 		Speaker(std::string voiceLanguage = "en") : voiceLanguage(voiceLanguage){
-			espeak_Initialize(AUDIO_OUTPUT_PLAYBACK, 0, NULL, 0);
+			espeak_Initialize(AUDIO_OUTPUT_SYNCH_PLAYBACK, 0, NULL, 0);
+			espeak_SetParameter(espeakRATE, 200, 0);
 			espeak_SetVoiceByName(voiceLanguage.c_str());
 		}
 		
